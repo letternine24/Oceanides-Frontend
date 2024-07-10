@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import '@styles/MainPage/Body.css'
 import GetNavigatingSection from './Components/NavigatingSection';
 import GetEmpoweringSection  from './Components/EmpoweringSection'

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import GenerateHeader from './components/Header/Header';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Header from './components/Header/Header';
 import GenerateBody from './pages/MainPage/Body';
 import './App.css'
 
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <GenerateHeader />
+      <Header />
       <GenerateBody />
     </div>
   )

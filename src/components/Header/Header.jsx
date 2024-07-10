@@ -1,27 +1,43 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/Header/Header.css";
-import ListInformation from "@pages/MainPage/Components/InformationList";
+import InformationList from "./InformationList";
+import { useEffect } from "react";
 
-function GenerateHeader() {
+const Header = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".corsa_header");
+      if (window.scrollY > 0) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header id="corsa_header">
-      <div id="header_main" className="container_wrap container_wrap_logo">
+    <header className="corsa_header">
+      <div className="header_main container_wrap container_wrap_logo">
         <div className="container">
           <div className="inner-container">
             <div className="d-inline">
               <span className="logo avia-standard-logo">
-                <a href="http://localhost:3000/">
+                <a href="/">
                   <img src="/images/corsa-logo.png" alt="corsa-logo" />
                 </a>
               </span>
-
-              <ListInformation></ListInformation>
+              <InformationList />
             </div>
           </div>
         </div>
       </div>
     </header>
   );
-}
+};
 
-export default GenerateHeader;
+export default Header;
