@@ -1,0 +1,91 @@
+.BackgroundImg-3 {
+    background-image: url("/public/images/common-bg.png");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-attachment: fixed;
+    height: 80vh;
+    background-size: cover !important;
+}
+
+.custom-alignment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    min-height: 21px;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    float: left;
+    position: relative;
+    clear: both;
+}
+
+.flex_column_table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    float: left;
+}
+
+.flex_column {
+    float: none;
+    display: table-cell;
+    position: relative;
+    width: 100%;
+}
+
+.flex-placeholder{
+    display: table-cell;
+    width: 6%;
+}
+
+.border-line {
+    border-color: gold;
+    width: 100%;
+    border-top-width: 2px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    border-top-style: solid;
+    margin-top: -1px;
+    height: 1px;
+    top: 50%;
+}
+
+.content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: content-box;
+    min-height: 1px;
+    z-index: -1;
+}
+
+.trading-text {
+    color: gold;
+    font-size: 4vw;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.paragraph-text {
+    color: white;
+    font-size: 30px;
+}
+
+.trade-info-img {
+    background-image: url("/public/images/section-3-trading-info-logo-smaller.png");
+    background-repeat: no-repeat;
+    height: 20vh;
+    margin-top: 40px;
+}
+
+.trade-img {
+    background-image: url("/public/images/section-3-trading-logo-smaller.png");
+    background-repeat: no-repeat;
+    height: 40vh;
+    margin-top: 40px;
+    max-width: 100%;
+    vertical-align: bottom;
+    background-size: contain;
+}

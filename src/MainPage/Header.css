@@ -1,0 +1,17 @@
+#corsa_header {
+  background-image: url("/public/images/common-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#header_main {
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.content {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: content-box;
+  min-height: 1px;
+  z-index: -1;
+}
