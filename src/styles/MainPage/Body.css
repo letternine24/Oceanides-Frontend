@@ -1,11 +1,9 @@
 .BackgroundImg {
-    background-image: url("/public/images/section-1-bg.png");
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    background-attachment: fixed;
-    height: 80vh;
-    background-size: cover !important;
-  }
+  background-image: url("/images/section-1-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 
 .headerText {
   color: gold;
@@ -17,13 +15,13 @@
   position: absolute !important;
 }
 
-.paragraphText{
+.paragraphText {
   color: white;
   font-size: 2vw;
   margin-top: 30px;
 }
 
-.demoText{
+.demoText {
   color: gold;
   text-decoration: none;
   background-color: #22175b;
@@ -33,13 +31,13 @@
   padding: 12px 16px 10px;
 }
 
-.demoText:hover{
+.demoText:hover {
   background-color: gold;
   color: black;
   transition: 0.4s;
 }
 
-.tradingText{
+.tradingText {
   color: black;
   text-decoration: none;
   background-color: gold;
@@ -50,13 +48,5 @@
 }
 
 .smallerText {
-  font-size: 15px !important;
-}
-
-.content {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  box-sizing: content-box;
-  min-height: 1px;
-  z-index: -1;
+  font-size: 1vw !important;
 }

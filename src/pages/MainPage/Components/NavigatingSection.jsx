@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './NavigatingSection.css'
+import '@styles/MainPage/NavigatingSection.css'
 
 function GetNavigatingSection(){
     return (

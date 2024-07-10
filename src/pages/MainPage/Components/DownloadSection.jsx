@@ -1,46 +1,39 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './TradingSection.css'
+import '@styles/MainPage/DownloadSection.css'
 
-function GetTradingSection(){
+function GetDownloadSection(){
     return (
-        <div id="section_3" className="BackgroundImg-3" >
+        <div id="section_4">
 
             <div className="container">
             <main className="template-page content container">
                 <div className="post-entry post-entry-type-page post-entry-15">
                     <div className="entry-content-wrapper clearfix">
 
-                        <div className="flex_column_table">
+                    <div className="flex_column_table">
                             <div className="flex_column">
                                 <div className="custom-alignment">
-                                    <span className="border-line"></span>
-
+                                    
                                     <div>
-                                        <h1 className="trading-text">
-                                            Trading 
+                                        <h1 className="download-text bold">
+                                            Download
                                             <br></br>
-                                            Anywhere,
-                                            <br></br>
-                                            at Any Time
+                                            Now
                                         </h1>
                                     </div>
 
-                                    <div className="paragraph-text">
+                                    <div className="coming-text bold">
                                         <p>
-                                            <strong>
-                                                Trade Global Stocks, Forex, 
+                                            <b>
+                                                Coming Soon: The app will be
                                                 <br></br>
-                                                Metals, Crypto CFDs and More
+                                                available for download through the
                                                 <br></br>
-                                                with our world recognized
+                                                Apple and Google Store. Stay tuned
                                                 <br></br>
-                                                cTrader App.
-                                            </strong>
+                                                for updates!
+                                            </b>
                                         </p>
-                                    </div>      
-
-                                    <div className="container">
-                                        <div className="trade-info-img"></div>
                                     </div>
                                     
                                 </div>
@@ -49,8 +42,8 @@ function GetTradingSection(){
                             <div className="flex-placeholder"></div>
 
                             <div className="flex_column">
-                                <div className="custom-alignment">
-                                    <div className="trade-img"></div>
+                                <div className="custon-alignment-img">
+                                    <div className="download-img"></div>
                                 </div>
                             </div>
 
@@ -65,4 +58,4 @@ function GetTradingSection(){
     )
 }
 
-export default GetTradingSection;
+export default GetDownloadSection;

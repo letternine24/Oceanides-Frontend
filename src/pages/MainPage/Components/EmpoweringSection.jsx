@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './EmpoweringSection.css'
+import '@styles/MainPage/EmpoweringSection.css'
 
 function GetEmpoweringSection(){
     return(

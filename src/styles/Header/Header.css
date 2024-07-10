@@ -1,11 +1,11 @@
 #corsa_header {
-  background-image: url("/public/images/common-bg.png");
+  background-image: url("/images/common-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #header_main {
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .content {

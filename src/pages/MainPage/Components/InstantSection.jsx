@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './InstantSection.css'
+import '@styles/MainPage/InstantSection.css'
 
 function GetInstantSection(){
     return (
