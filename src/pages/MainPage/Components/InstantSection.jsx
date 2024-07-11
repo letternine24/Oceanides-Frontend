@@ -15,7 +15,7 @@ function GetInstantSection(){
                                     
                                     <div>
                                         <h1 className="download-text bold">
-                                            Download
+                                            Test
                                             <br></br>
                                             Now
                                         </h1>
