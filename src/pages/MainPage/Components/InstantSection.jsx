@@ -2,7 +2,7 @@ import '@styles/MainPage/InstantSection.css'
 
 function GetInstantSection(){
     return (
-        <div id="section_4">
+        <div id="section_5" className="Background-color">
 
             <div className="container">
             <main className="template-page content container">
@@ -14,23 +14,28 @@ function GetInstantSection(){
                                 <div className="custom-alignment">
                                     
                                     <div>
-                                        <h1 className="download-text bold">
-                                            Test
+                                        <h1 className="instant-text bold">
+                                            Instant Deposits,
                                             <br></br>
-                                            Now
+                                            FAST
+                                            <br></br>
+                                            Withdrawal
                                         </h1>
                                     </div>
 
                                     <div className="coming-text bold">
                                         <p>
                                             <b>
-                                                Coming Soon: The app will be
+                                                Fund your account easily and securely
                                                 <br></br>
-                                                available for download through the
+                                                through our wide range of payment
                                                 <br></br>
-                                                Apple and Google Store. Stay tuned
+                                                options.
                                                 <br></br>
-                                                for updates!
+                                                <br></br>
+                                                Your funds are held securely in Tier 1
+                                                <br></br>
+                                                banks.
                                             </b>
                                         </p>
                                     </div>
@@ -41,9 +46,7 @@ function GetInstantSection(){
                             <div className="flex-placeholder"></div>
 
                             <div className="flex_column">
-                                <div className="custon-alignment-img">
-                                    <div className="download-img"></div>
-                                </div>
+                                <div className="payment-img"></div>
                             </div>
 
                         </div>

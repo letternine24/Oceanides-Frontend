@@ -1,0 +1,19 @@
+.Background-color {
+    background-color: #ffcc00;
+    height: 60vh;
+  }
+
+.instant-text {
+    color: black;
+    font-size: 3vw;
+    letter-spacing: 1px;
+}
+
+.payment-img {
+    background-image: url("/images/section-5-payment-logo.png");
+    background-repeat: no-repeat;
+    height: 30vh;
+    max-width: 100%;
+    vertical-align: middle;
+    background-size: contain;
+}

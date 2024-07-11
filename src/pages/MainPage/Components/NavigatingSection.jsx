@@ -26,7 +26,7 @@ function GetNavigatingSection(){
                             </p>
                         </section>
 
-                        <div>
+                        <div className='content'>
                             <a href="" className='demoText'>
                                 <span>
                                     DEMO ACCOUNT

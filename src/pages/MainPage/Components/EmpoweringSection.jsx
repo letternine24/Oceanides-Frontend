@@ -17,7 +17,8 @@ function GetEmpoweringSection(){
                             </section>
                         </div>
 
-                        <div className="empower-img">
+                        <div className='empower-img-content'>
+                            <div className="empower-img"></div>
                         </div>
 
                     </div>

@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-attachment: fixed;
-  height: 80vh;
+  height: 60vh;
   background-size: cover !important;
 }
 
@@ -12,17 +12,19 @@
   font-size: 40px;
   line-height: 1.65em;
   clear: both;
-  width: 36.4%;
+  width: 100%;
 }
 
 .empower_container {
-  padding-top: 100px;
+  padding-top: 30px;
 }
 
 .empower-img {
   background-image: url("/images/section-2-process-logo-larger.png");
   background-repeat: no-repeat;
   height: 40vh;
+  margin-left: 10%;
+  margin-top: 5%;
 }
 
 .content {
@@ -32,3 +34,9 @@
   min-height: 1px;
   z-index: -1;
 }
+
+.empower-img-content {
+  text-align: center;
+  vertical-align: middle;
+}
+
