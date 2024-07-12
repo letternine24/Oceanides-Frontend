@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
-import AboutUsLayout from "./AboutUsLayout";
 import "@styles/AboutUs/WhoWhyCorsaFutures.css";
 
-const Home = () => {
+const AboutUs = () => {
   return (
     <div className="">
       <Header />
@@ -45,7 +44,7 @@ const Home = () => {
                 <h1>WHY CHOOSE US?</h1>
               </div>
               <div className="why-us-img">
-                <img src="https://corsafutures.com/wp-content/uploads/2024/01/09content1.png" />
+              <img src="https://corsafutures.com/wp-content/uploads/2024/01/09content1.png" />
               </div>
 
               <div className="why-us-start-today p-5">
@@ -65,9 +64,7 @@ const Home = () => {
                   grow, learn, and succeed together.
                 </p>
 
-                <button className="btn btn-outline-warning">
-                  Join Us Now
-                </button>
+                <button className="btn btn-outline-warning">Join Us Now</button>
               </div>
             </div>
           </div>
@@ -77,4 +74,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default AboutUs;

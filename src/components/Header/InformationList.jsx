@@ -117,18 +117,18 @@ const InformationList = () => {
             <a
               className="nav-link dropdown-toggle text-light"
               aria-expanded="false"
-              href="#"
+              href="/about-us"
             >
               ABOUT US
             </a>
             <ul className="dropdown-menu multi-level-dropdown">
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/about-us">
                   Who & Why Corsa Futures
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/regulatory-supervision">
                   Regulatory Supervision
                 </a>
               </li>
