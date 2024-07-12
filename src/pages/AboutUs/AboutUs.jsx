@@ -5,14 +5,16 @@ import "@styles/AboutUs/WhoWhyCorsaFutures.css";
 
 const AboutUs = () => {
   return (
-    <div className="">
+    <>
       <Header />
       <main>
         <section className="about-us">
-          <div className="container about-us-container">
-            <div className="about-us-content">
-              <h6>About Us</h6>
-              <h1>WHO AND WHY CORSA FUTURES</h1>
+          <div className="container about-us-content">
+            <h5>About Us</h5>
+            <hr className="corsa-hr" />
+            <h1>WHO AND WHY CORSA FUTURES</h1>
+
+            <div>
               <p>
                 With more than 10 years of experience, Corsa Futures stands as a
                 premier provider and trailblazer in CFD trading, consistently
@@ -40,14 +42,18 @@ const AboutUs = () => {
         <section className="why-us">
           <div className="container why-us-container">
             <div className="why-us-content">
-              <div className="mt-5 mb-5">
+              <div className="why-us-content-title">
                 <h1>WHY CHOOSE US?</h1>
               </div>
-              <div className="why-us-img">
-              <img src="https://corsafutures.com/wp-content/uploads/2024/01/09content1.png" />
+
+              <div>
+                <img
+                  className="why-us-img"
+                  src="https://corsafutures.com/wp-content/uploads/2024/01/09content1.png"
+                />
               </div>
 
-              <div className="why-us-start-today p-5">
+              <div className="why-us-start-today">
                 <h1>START WITH US TODAY</h1>
                 <p>
                   Embark on your trading journey with Corsa Futures and discover
@@ -70,7 +76,7 @@ const AboutUs = () => {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 };
 

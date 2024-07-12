@@ -133,17 +133,17 @@ const InformationList = () => {
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/legal-documents">
                   Legal Docuements
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/privacy-policy">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/contact-us">
                   Contact Us
                 </a>
               </li>

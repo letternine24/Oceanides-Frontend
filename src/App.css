@@ -1,8 +1,14 @@
 html {
   font-size: clamp(14px, 2vw, 16px);
+  font-family: "Lato", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+.corsa-hr {
+  width: 40%;
+  border: 1px solid #ffcb00;
 }
