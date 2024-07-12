@@ -1,21 +1,14 @@
-import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Header from './components/Header/Header';
-import Body from './pages/MainPage/Body';
-import Footer from './components/Footer/Footer'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./App.css";
+import Router from "./Router";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Body />
-      <Footer />
+    <div id="app">
+      <Router />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

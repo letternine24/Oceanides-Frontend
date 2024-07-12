@@ -113,10 +113,41 @@ const InformationList = () => {
             </ul>
           </li>
 
-          <li className="nav-item">
-            <a className="nav-link text-light" href="#">
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle text-light"
+              aria-expanded="false"
+              href="/about-us"
+            >
               ABOUT US
             </a>
+            <ul className="dropdown-menu multi-level-dropdown">
+              <li>
+                <a className="dropdown-item" href="/about-us">
+                  Who & Why Corsa Futures
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="/regulatory-supervision">
+                  Regulatory Supervision
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Legal Docuements
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li className="nav-item">
