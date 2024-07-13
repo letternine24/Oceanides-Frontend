@@ -1,23 +1,7 @@
-.about-us {
-  padding-top: 100px;
-  background-repeat: no-repeat;
-  background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
-  color: #fff;
-  height: 100%;
-}
-
-.about-us-content {
-  padding: 2rem;
-  font-weight: 700;
-}
-
-.why-us {
-  padding: 1rem;
-}
-
-.why-us-content-title {
+.why-us-title {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  font-weight: 900;
 }
 
 .why-us-img {
@@ -29,7 +13,21 @@
   background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
   color: #fff;
   height: 100%;
-  padding: 3rem;
+  padding: 2.5rem;
   margin-top: 2rem;
   border-radius: 0.5rem;
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
+.why-us-start-today-hr {
+  border: 2px solid #ffcb00;
+}
+
+.why-us-start-today-title {
+  color: #ffcb00;
 }

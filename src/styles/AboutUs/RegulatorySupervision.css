@@ -1,22 +1,13 @@
-.regulatory-supervision {
-  padding-top: 8rem;
-  background-repeat: no-repeat;
-  background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
-  color: #fff;
-  height: 100%;
-  font-weight: 700;
-}
-
-.regulatory-supervision-description {
+.regulatory-supervision-container {
   padding: 3rem 6rem;
   text-align: center;
 }
 
-.regulatory-supervision-description h1 {
+.regulatory-supervision-title {
   color: #ffcb00;
 }
 
-.regulatory-supervision-description p {
+.regulatory-supervision-description {
   width: 50%;
   margin: 0 auto;
 }
@@ -26,9 +17,6 @@
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.certificate-img-container {
 }
 
 .certificate-img {

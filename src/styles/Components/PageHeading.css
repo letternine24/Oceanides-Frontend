@@ -1,0 +1,30 @@
+.page-heading {
+  padding-top: 100px;
+  background-repeat: no-repeat;
+  background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
+  color: #fff;
+  height: 100%;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  background-blend-mode: color;
+}
+
+.page-heading-container,
+.page-heading-content {
+  padding: 1rem 2rem 1.5rem;
+}
+
+.page-heading-title {
+  font-weight: 700;
+  padding-bottom: 1.5rem;
+}
+
+.page-heading-hr {
+  width: 40%;
+  border: 1.5px solid yellow;
+}
+
+.page-heading-header {
+  font-size: 34px;
+  font-weight: 900;
+}
