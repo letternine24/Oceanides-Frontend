@@ -24,7 +24,7 @@ const Header = () => {
     <header className="corsa_header">
       <div className="header_main container_wrap container_wrap_logo">
         <div className="container">
-          <div className="inner-container">
+          <div className="inner-container pl-5">
             <div className="d-inline">
               <span className="logo avia-standard-logo">
                 <a href="/">
