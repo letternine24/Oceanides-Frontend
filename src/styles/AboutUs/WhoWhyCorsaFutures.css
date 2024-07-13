@@ -1,32 +1,33 @@
-.about-us {
-  padding-top: 100px;
-  background-repeat: no-repeat;
-  background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
-  background-position: 0% 0%;
-  background-attachment: scroll;
-  color: #fff;
-  height: 75dvh;
+.why-us-title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
 }
 
-.about-us-container {
-}
-
-.about-us-content {
-  margin-top: 24px;
-}
-
-.why-us {
-  padding-top: 36px;
-  padding-bottom: 36px;
-}
-
-.why-us-container {
+.why-us-img {
+  width: 100%;
 }
 
 .why-us-start-today {
   background-repeat: no-repeat;
   background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
   color: #fff;
-  height: 35dvh;
-  margin-top: 36px;
+  height: 100%;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
+.why-us-start-today-hr {
+  border: 2px solid #ffcb00;
+}
+
+.why-us-start-today-title {
+  color: #ffcb00;
 }

@@ -1,32 +1,39 @@
-.about-us {
-  padding-top: 100px;
-  background-repeat: no-repeat;
-  background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
-  background-position: 0% 0%;
-  background-attachment: scroll;
-  color: #fff;
-  height: 55dvh;
+.regulatory-supervision-container {
+  padding: 3rem 6rem;
+  text-align: center;
 }
 
-.about-us-container {
+.regulatory-supervision-title {
+  color: #ffcb00;
 }
 
-.about-us-content {
-  margin-top: 24px;
+.regulatory-supervision-description {
+  width: 50%;
+  margin: 0 auto;
 }
 
-.why-us {
-  padding-top: 36px;
-  padding-bottom: 36px;
+.certificate {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.why-us-container {
+.certificate-img {
+  width: 100%;
+  max-width: 450px;
 }
 
-.why-us-start-today {
-  background-repeat: no-repeat;
-  background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
-  color: #fff;
-  height: 35dvh;
-  margin-top: 36px;
+.certificate-text-container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.certificate-text-title {
+  text-transform: uppercase;
+}
+
+.certificate-text-description {
+  font-size: 1rem;
+  color: #b0b0b0;
 }
