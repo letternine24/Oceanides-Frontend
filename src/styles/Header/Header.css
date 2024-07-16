@@ -42,11 +42,6 @@
   color: white;
 }
 
-.inner-container {
-  padding-left: 5.5rem;
-  padding-right: 5.5rem;
-}
-
 /* CLEAN UP MULTI LEVEL DROPDOWN CSS */
 .multi-level-dropdown,
 .multi-level-dropdown-menu {
@@ -64,6 +59,6 @@
 }
 
 .multi-level-dropdown-menu {
-  margin-left: -83%;
+  margin-left: -90%;
   margin-top: -18%;
 }

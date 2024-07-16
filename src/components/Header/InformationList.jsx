@@ -73,41 +73,55 @@ const InformationList = () => {
               TRADING TOOLS
             </a>
             <ul className="dropdown-menu multi-level-dropdown">
+              <li>
+                <a className="dropdown-item" href="/economic-calendar">
+                  Economic Calendar
+                </a>
+              </li>
               <li className="dropdown-item dropdown">
                 <a
                   className="dropdown-item dropdown-toggle multi-level-dropdown-container"
                   href="#"
                   data-bs-toggle="dropdown"
                 >
-                  Trading Account Type
+                  Trading Calculator
                 </a>
                 <ul className="dropdown-menu multi-level-dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Standard Account
+                    <a className="dropdown-item" href="/all-in-one">
+                      All in One
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Pro Account
+                      Currency
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Demo Account
+                      Pip Value
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Margin
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Swaps
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Profit & Loss
                     </a>
                   </li>
                 </ul>
               </li>
-              <li className="dropdown-divider"></li>
               <li>
-                <a className="dropdown-item" href="#">
-                  Instruments
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Deposit & Withdrawal
+                <a className="dropdown-item" href="/market-news">
+                  Market News
                 </a>
               </li>
             </ul>
