@@ -3,9 +3,11 @@
   background-repeat: no-repeat;
   color: #fff;
   height: 100%;
+  width: 100%;
   padding-left: 10rem;
   padding-right: 10rem;
   background-blend-mode: color;
+  background-size: cover;
 }
 
 .page-heading-container,
@@ -20,12 +22,12 @@
 
 .page-heading-hr {
   width: 40%;
-  border: 1.5px solid yellow;
+  border: 3px solid gold;
 }
 
 .page-heading-header {
-  font-size: 34px;
-  font-weight: 900;
+  font-size: 55px;
+  font-weight: 700;
 }
 
 /* .page-heading-header-img { 
@@ -36,3 +38,7 @@
   width: 250px;
   height: 250px;
 } */
+
+.page-heading-content > p {
+  font-size: 25px;
+}

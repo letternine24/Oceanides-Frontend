@@ -2,6 +2,7 @@
   height: 100%;
   padding-left: 10rem;
   padding-right: 10rem;
+  background-size: cover;
 }
 
 .page-body-container,
@@ -15,8 +16,8 @@
 }
 
 .page-body-hr {
-  width: 40%;
-  border: 1px solid #ffcb00;
+  width: 60%;
+  border: 2px solid gold;
 }
 
 .page-body-header {
