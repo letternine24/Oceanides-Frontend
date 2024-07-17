@@ -1,12 +1,19 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "@styles/Components/PageLinks.css";
 
-const PageLinks = ({ links }) => {
+const PageLinks = ({ links, additionalStyles }) => {
   const listItems = links.map((link) => (
     <li key={link.id} className="page-links-content">
-      <a className="page-links-item" href={link.url}>
+      <NavLink
+        className="page-links-item"
+        activeClassName="active"
+        exact
+        to={link.url}
+        style={{ ...additionalStyles }}
+      >
         {link.title}
-      </a>
+      </NavLink>
     </li>
   ));
 

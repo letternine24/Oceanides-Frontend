@@ -1,6 +1,3 @@
-.page-links {
-}
-
 .page-links-list {
   display: flex;
   justify-content: center;
@@ -31,4 +28,8 @@
   padding: 12px 16px 10px;
   font-size: 13px;
   min-width: 90px;
+}
+
+.active {
+  background-color: #0050ff;
 }

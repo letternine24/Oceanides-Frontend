@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
 import PageBody from "@components/Pages/PageBody";
+import Icon from "@components/Icon/Icon";
 import "@styles/AboutUs/LegalDocuments.css";
 
 const LegalDocuments = () => {
@@ -23,16 +24,10 @@ const LegalDocuments = () => {
         </div>
 
         <div className="legal-documents-links">
-          {/*  */}
           <div className="legal-documents-links-container">
-            <ul className="">
+            <ul>
               <li>
-                <span
-                  className="iconlist-char"
-                  aria-hidden="true"
-                  data-av_icon=""
-                  data-av_iconfont="entypo-fontello"
-                ></span>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Anti-Money-Laundering-Policy.pdf"
                   title="Anti-Money Laundering Policy"
@@ -43,14 +38,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Anti-Spam-Policy.pdf"
                   title="Anti-Spam Policy "
@@ -59,14 +47,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Customer-Agreement.pdf"
                   title="Customer Agreement"
@@ -75,14 +56,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Copy-Trading-Policy.pdf"
                   title="Copy Trading Policy"
@@ -91,14 +65,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Order-Execution-Policy.pdf"
                   title="Order Execution Policy"
@@ -107,14 +74,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Privacy-Policy.pdf"
                   title="Privacy Policy"
@@ -126,16 +86,9 @@ const LegalDocuments = () => {
           </div>
           {/* 2nd */}
           <div className="legal-documents-links-container">
-            <ul className="">
+            <ul>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Refund-and-Cancellation-Policy.pdf"
                   title="Return &amp; Refund Policy"
@@ -146,14 +99,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Risk-Disclosure-Statement.pdf"
                   title="Risk Disclosure"
@@ -164,14 +110,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Terms-and-Conditions.pdf"
                   title="Terms and Conditions"
@@ -182,14 +121,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
 
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Terms-of-Business.pdf"
@@ -201,14 +133,7 @@ const LegalDocuments = () => {
                 </a>
               </li>
               <li>
-                <div className="">
-                  <span
-                    className="iconlist-char"
-                    aria-hidden="true"
-                    data-av_icon=""
-                    data-av_iconfont="entypo-fontello"
-                  ></span>
-                </div>
+                <Icon name="legal" />
                 <a
                   href="https://front.corsafutures.com/wp-content/uploads/2024/01/Terms-of-Use.pdf"
                   title="Terms of Use"
