@@ -14,6 +14,7 @@ import Currency from "@pages/TradingTools/Subpages/Currency";
 import PipValue from "@pages/TradingTools/Subpages/PipValue";
 import Margin from "@pages/TradingTools/Subpages/Margin";
 import Swaps from "@pages/TradingTools/Subpages/Swaps";
+import Platform from "@pages/Platform/Platform";
 
 const Router = () => {
   return (
@@ -37,6 +38,9 @@ const Router = () => {
         <Route path="/pip-value" element={<PipValue />} />
         <Route path="/margin" element={<Margin />} />
         <Route path="/swaps" element={<Swaps />} />
+
+        {/* Platform */}
+        <Route path="/platform" element={<Platform />} />
 
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>

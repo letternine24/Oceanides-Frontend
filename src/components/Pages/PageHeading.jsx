@@ -16,7 +16,7 @@ const PageHeading = ({ pageTitle, pageHeader, pageBgImg, pageHeaderImg, children
       className="page-heading"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      <div className="container ">
+      <div className="container">
         <div className="row page-heading-container">
           {pageTitle && <h3 className="page-heading-title">{pageTitle}</h3>}
           <hr className="page-heading-hr"></hr>
