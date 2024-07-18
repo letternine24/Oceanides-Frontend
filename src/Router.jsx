@@ -16,6 +16,16 @@ import Margin from "@pages/TradingTools/Subpages/Margin";
 import Swaps from "@pages/TradingTools/Subpages/Swaps";
 import ProfitLoss from "@pages/TradingTools/Subpages/ProfitLoss";
 import Platform from "@pages/Platform/Platform";
+import TradingAccountType from "@pages/Trading/TradingAccountType";
+import DepositWithdrawal from "@pages/Trading/DepositWithdrawal";
+import Instruments from "@pages/Trading/Instruments";
+import Forex from "@pages/Trading/Subpages/Forex";
+import Stocks from "@pages/Trading/Subpages/Stocks";
+import Indices from "@pages/Trading/Subpages/Indices";
+import PreciousMetals from "@pages/Trading/Subpages/PreciousMetals";
+import Energies from "@pages/Trading/Subpages/Energies";
+import Commodities from "@pages/Trading/Subpages/Commodities";
+import Cryptocurrencies from "@pages/Trading/Subpages/Cryptocurrencies";
 
 const Router = () => {
   return (
@@ -43,6 +53,22 @@ const Router = () => {
 
         {/* Platform */}
         <Route path="/platform" element={<Platform />} />
+
+        {/* Trading */}
+        <Route path="/trading-account-type" element={<TradingAccountType />} />
+
+        {/* Deposit & Withdrawal */}
+        <Route path="/deposit-withdrawal" element={<DepositWithdrawal />} />
+
+        {/* Instruments */}
+        <Route path="/instruments" element={<Instruments />} />
+        <Route path="/forex" element={<Forex />} />
+        <Route path="/stocks" element={<Stocks />} />
+        <Route path="/indices" element={<Indices />} />
+        <Route path="/precious-metals" element={<PreciousMetals />} />
+        <Route path="/energies" element={<Energies />} />
+        <Route path="/commodities" element={<Commodities />} />
+        <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
 
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>

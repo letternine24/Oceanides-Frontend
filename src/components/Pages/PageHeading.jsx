@@ -27,7 +27,7 @@ const PageHeading = ({ pageTitle, pageHeader, pageBgImg, children }) => {
       <div className="container">
         <div className="row page-heading-container">
           {pageTitle && <h3 className="page-heading-title">{pageTitle}</h3>}
-          <hr className="page-heading-hr"></hr>
+          <div className="page-heading-hr"></div>
           <h1 className="page-heading-header">{pageHeader}</h1>
         </div>
         <div className={"row page-heading-content"}>

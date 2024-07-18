@@ -6,7 +6,7 @@ import "@styles/Components/PageBody.css";
 import DemoBtn from "../../components/Buttons/DemoTrading";
 
 const Platform = () => {
-  const commonBg = "/images/common-bg.png";
+  const commonBg = "/assets/images/common-bg.png";
   const yellowBg = "/assets/icons/yellow-bg.png";
 
   return (

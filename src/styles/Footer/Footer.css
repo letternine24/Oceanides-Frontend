@@ -1,3 +1,9 @@
+#footer{
+    border-top: solid;
+    border-color: gold;
+    border-width: 5px;
+}
+
 .footer-bg {
   background-image: url("/assets/images/common-bg.png");
   background-repeat: no-repeat;

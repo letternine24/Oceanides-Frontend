@@ -200,10 +200,68 @@ const InformationList = () => {
     <nav className="navbar navbar-expand-lg float-end mt-3">
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <a className="nav-link text-light" href="#">
+          <li className="nav-item dropdown">
+            <a href="/trading-account-type" className="nav-link dropdown-toggle text-light" aria-expanded="false">
               TRADING
             </a>
+            <ul className="dropdown-menu multi-level-dropdown">
+              <li>
+                <a className="dropdown-item" href="/trading-account-type">
+                  Trading Account Type
+                </a>
+              </li>
+              <li className="dropdown-item dropdown">
+                <a
+                  className="dropdown-item dropdown-toggle multi-level-dropdown-container"
+                  href="/instruments"
+                  // data-bs-toggle="dropdown"
+                >
+                  Instruments
+                </a>
+                <ul className="dropdown-menu multi-level-dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="/forex">
+                      Forex
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/stocks">
+                      Stocks
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/indices">
+                      Indices
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/precious-metals">
+                      Precious Metals
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/energies">
+                      Energies
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/commodities">
+                      Commodities
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/cryptocurrencies">
+                      Cryptocurrencies
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a className="dropdown-item" href="/deposit-withdrawal">
+                  Deposit & Withdrawal
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="nav-item">
             <a className="nav-link text-light" href="/platform">

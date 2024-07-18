@@ -16,8 +16,7 @@
 }
 
 .page-heading-title {
-  font-weight: 700;
-  padding-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .page-heading-hr {
@@ -27,7 +26,7 @@
 
 .page-heading-header {
   font-size: 55px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* .page-heading-header-img { 
