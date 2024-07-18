@@ -35,7 +35,7 @@
 
   .trading-button:hover {
     background-color: gold;
-    color: white;
+    color: red;
     font-weight: 200;
     transition: 0.4s;
   }

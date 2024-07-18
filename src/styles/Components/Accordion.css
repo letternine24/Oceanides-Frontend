@@ -1,5 +1,5 @@
 .accordion-items-btn {
-  color: #1b1464;
+  color: #1b1464 !important;
 }
 
 .accordion-items div strong {
@@ -7,5 +7,5 @@
 }
 
 .accordion-items div {
-  color: #1b1464;
+  color: #1b1464 !important;
 }

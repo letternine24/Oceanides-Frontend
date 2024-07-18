@@ -10,7 +10,6 @@
 
 .page-links-item {
   border-radius: 3px;
-  font-size: 12px;
   text-decoration: none;
   display: inline-block;
   border-bottom-style: solid;
@@ -28,8 +27,13 @@
   padding: 12px 16px 10px;
   font-size: 13px;
   min-width: 90px;
+  font-weight: 600;
 }
 
 .active {
-  background-color: #0050ff;
+  background-color: gold;
+  color: black;
+  border: 2px solid darkblue;
+  font-size: 13px;
+  font-weight: 600;
 }
