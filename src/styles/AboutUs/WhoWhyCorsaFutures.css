@@ -24,8 +24,16 @@
   }
 }
 
-.why-us-start-today-hr {
-  border: 2px solid #ffcb00;
+.why-us-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.why-us-heading .hr {
+  height: 1px;
+  width: 50%;
+  border-color: #1b1464;
 }
 
 .why-us-start-today-title {

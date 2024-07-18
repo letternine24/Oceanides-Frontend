@@ -1,27 +1,27 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
-import "@styles/TradingTools/ProfitLoss.css";
 import PageLinks from "@components/Pages/PageLinks";
+import Images from "@components/Images/Images";
+import Hr from "@components/Hr/Hr";
+import "@styles/TradingTools/ProfitLoss.css";
 import { TradingCalculatorLinks } from "@utils/constants/Links";
 
 const ProfitLoss = () => {
-  const headerImg =
-    "https://corsafutures.com/wp-content/uploads/2024/01/12content4.png";
-
   return (
     <main>
-      <PageHeading pageHeader="TRADING CALCULATOR" pageHeaderImg={headerImg}>
-        <p>
-          We provide you with Corsa Futures Trading Calculators to make your
-          trading journey easier than simple.
-        </p>
-
+      <PageHeading
+        pageHeader="TRADING CALCULATOR"
+        pageHeaderImg={"trading-header"}
+        pageSubHeader={
+          "We provide you with Corsa Futures Trading Calculators to make your trading journey easier than simple."
+        }
+      >
         {/* COMPONENT */}
         <PageLinks links={TradingCalculatorLinks} />
 
         <div className="profit-loss-container">
           <div className="profit-loss-container-img">
-            <img src="https://front.corsafutures.com/wp-content/uploads/2024/01/cal-6.png" />
+            <Images name="profit-loss-calc" />
           </div>
 
           <div className="profit-loss-container-faq">
@@ -69,11 +69,11 @@ const ProfitLoss = () => {
           </div>
         </div>
 
-        <hr />
+        <Hr width={"100%"} color={"#FFF"} />
 
         <div className="profit-loss-container">
-          <div className="profit-loss-container-img">
-            <img src="https://front.corsafutures.com/wp-content/uploads/2024/01/cal-7.png" />
+            <div className="profit-loss-container-img">
+              <Images name="profit-loss-2-calc" />
           </div>
 
           <div className="profit-loss-container-faq">

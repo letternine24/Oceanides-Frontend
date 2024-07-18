@@ -6,12 +6,11 @@
 }
 
 .profit-loss-container-img {
-}
-
-.profit-loss-container-img img {
+  width: 60%;
 }
 
 .profit-loss-container-faq {
+  width: 40%;
 }
 
 .profit-loss-container-how-it-works {
@@ -23,5 +22,16 @@
   p {
     font-weight: 400;
     font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .profit-loss-container {
+    flex-direction: column;
+  }
+
+  .profit-loss-container-img,
+  .profit-loss-container-faq {
+    width: 100%;
   }
 }

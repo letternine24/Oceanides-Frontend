@@ -12,7 +12,7 @@
 
 .page-heading-container,
 .page-heading-content {
-  padding: 1rem 2rem 1.5rem;
+  padding: 1.5rem 0;
 }
 
 .page-heading-title {
@@ -22,23 +22,32 @@
 
 .page-heading-hr {
   width: 40%;
-  border: 3px solid gold;
+  border: 2px solid #ffcb00;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .page-heading-header {
-  font-size: 55px;
+  font-size: 32px;
   font-weight: 700;
 }
 
-/* .page-heading-header-img { 
+.page-heading-container-bg {
   display: flex;
+  justify-content: space-between;
 }
 
-.page-heading-header-img img { 
-  width: 250px;
-  height: 250px;
-} */
+.page-heading-container > p {
+  font-size: 16px;
+}
 
-.page-heading-content > p {
-  font-size: 25px;
+@media only screen and (max-width: 959px) {
+  .page-heading {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .page-heading-container-bg {
+    flex-direction: column;
+  }
 }

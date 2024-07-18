@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "@components/Header/Header";
-import Footer from "@components/Footer/Footer";
 import PageHeading from "@components/Pages/PageHeading";
 import "@styles/AboutUs/WhoWhyCorsaFutures.css";
-import PageBody from "../../components/Pages/PageBody";
+import Hr from "@components/Hr/Hr";
+import PageBody from "@components/Pages/PageBody";
 
 const AboutUs = () => {
   return (
@@ -37,7 +36,10 @@ const AboutUs = () => {
         </PageHeading>
 
         <PageBody>
-          <h1 className="why-us-title">WHY CHOOSE US?</h1>
+          <div className="why-us-heading">
+            <h1 className="why-us-title">WHY CHOOSE US?</h1>
+            <Hr />
+          </div>
 
           <div>
             <img
@@ -47,7 +49,7 @@ const AboutUs = () => {
           </div>
 
           <div className="why-us-start-today">
-            <hr className="why-us-start-today-hr"></hr>
+            <Hr width={"100%"}/>
             <h1 className="why-us-start-today-title">START WITH US TODAY</h1>
             <p>
               Embark on your trading journey with Corsa Futures and discover the

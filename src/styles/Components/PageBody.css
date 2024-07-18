@@ -24,3 +24,10 @@
   font-size: 34px;
   font-weight: 900;
 }
+
+@media only screen and (max-width: 959px) {
+  .page-body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

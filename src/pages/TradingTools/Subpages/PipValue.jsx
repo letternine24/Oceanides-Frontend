@@ -1,27 +1,26 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
-import "@styles/TradingTools/PipValue.css";
 import PageLinks from "@components/Pages/PageLinks";
+import Images from "@components/Images/Images";
+import "@styles/TradingTools/PipValue.css";
 import { TradingCalculatorLinks } from "@utils/constants/Links";
 
 const PipValue = () => {
-  const headerImg =
-    "https://corsafutures.com/wp-content/uploads/2024/01/12content4.png";
-
   return (
     <main>
-      <PageHeading pageHeader="TRADING CALCULATOR" pageHeaderImg={headerImg}>
-        <p>
-          We provide you with Corsa Futures Trading Calculators to make your
-          trading journey easier than simple.
-        </p>
-
+      <PageHeading
+        pageHeader="TRADING CALCULATOR"
+        pageHeaderImg={"trading-header"}
+        pageSubHeader={
+          "We provide you with Corsa Futures Trading Calculators to make your trading journey easier than simple."
+        }
+      >
         {/* COMPONENT */}
         <PageLinks links={TradingCalculatorLinks} />
 
         <div className="pip-value-container">
           <div className="pip-value-container-img">
-            <img src="https://corsafutures.com/wp-content/uploads/2024/01/cal-3.png" />
+            <Images name="pip-value-calc" />
           </div>
 
           <div className="pip-value-container-faq">

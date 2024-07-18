@@ -1,28 +1,36 @@
-.pip-value-container {
+.margin-container {
   display: flex;
   gap: 3rem;
   margin-top: 1rem;
 }
 
-.pip-value-container-img {
-  
-}
-
-.pip-value-container-img img {
-}
-
-.pip-value-container-faq {
-  
-}
-
-.pip-value-container-how-it-works { 
-  h2 { 
+.margin-container-how-it-works {
+  h2 {
     font-weight: 600;
     font-size: 28px;
   }
 
-  p { 
+  p {
     font-weight: 400;
     font-size: 16px;
+  }
+}
+
+.margin-container-img {
+  width: 60%;
+}
+
+.margin-container-faq {
+  width: 60%;
+}
+
+@media only screen and (max-width: 959px) {
+  .margin-container {
+    flex-direction: column;
+  }
+
+  .margin-container-img,
+  .margin-container-faq {
+    width: 100%;
   }
 }

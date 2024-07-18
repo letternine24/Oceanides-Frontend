@@ -1,27 +1,26 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
-import "@styles/TradingTools/AllInOne.css";
+import Images from "@components/Images/Images";
 import PageLinks from "@components/Pages/PageLinks";
+import "@styles/TradingTools/AllInOne.css";
 import { TradingCalculatorLinks } from "@utils/constants/Links";
 
 const AllInOne = () => {
-  const headerImg =
-    "https://corsafutures.com/wp-content/uploads/2024/01/12content4.png";
-
   return (
     <main>
-      <PageHeading pageHeader="TRADING CALCULATOR" pageHeaderImg={headerImg}>
-        <p>
-          We provide you with Corsa Futures Trading Calculators to make your
-          trading journey easier than simple.
-        </p>
-
+      <PageHeading
+        pageHeader="TRADING CALCULATOR"
+        pageHeaderImg={"trading-header"}
+        pageSubHeader={
+          "We provide you with Corsa Futures Trading Calculators to make your trading journey easier than simple."
+        }
+      >
         {/* COMPONENT */}
         <PageLinks links={TradingCalculatorLinks} />
 
         <div className="all-in-one-container">
           <div className="all-in-one-container-img">
-            <img src="https://corsafutures.com/wp-content/uploads/2024/01/cal-1-544x705.png" />
+            <Images name="all-in-one-calc" />
           </div>
 
           <div className="all-in-one-container-faq">
