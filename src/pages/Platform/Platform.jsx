@@ -7,7 +7,7 @@ import DemoBtn from "../../components/Buttons/DemoTrading";
 
 const Platform = () => {
   const commonBg = "/assets/images/common-bg.png";
-  const yellowBg = "/assets/icons/yellow-bg.png";
+  const yellowBg = "/assets/images/main-yellow-bg.png";
 
   return (
     <>
@@ -74,7 +74,7 @@ const Platform = () => {
               <div className="flex-column-platform">
                 <div className="container">
                   <img
-                    src="/assets/images/section-3-trading-logo-larger.png"
+                    src="/assets/icons/trading-img-ic.png"
                     className="img-size"
                   />
 
@@ -87,11 +87,9 @@ const Platform = () => {
                         Store
                       </p>
                     </h2>
-
-                    <img
-                      src="/assets/icons/download.png"
-                      className="img-size"
-                    />
+                    
+                    <img src="/assets/icons/download.png" className="img-size" />
+                    
                   </div>
                 </div>
               </div>
@@ -117,7 +115,9 @@ const Platform = () => {
                   Futures cTrader account.
                 </p>
 
-                <img src="/assets/icons/ctdownload.png" className="img-size" />
+                <a href="#">
+                  <img src="/assets/icons/ctdownload.png" className="img-size" />
+                </a>
 
                 <p className="custom-padding">
                   Supports Microsoft Windows 2008/7/8/10 operating systems.
@@ -209,7 +209,10 @@ const Platform = () => {
                   </p>
                   <br></br>
 
-                  <img src="/assets/icons/webtrader.png" className="img-size" />
+                  <a href="#">
+                    <img src="/assets/icons/webtrader.png" className="img-size" />
+                  </a>
+
                 </div>
               </div>
             </div>

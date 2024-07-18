@@ -14,5 +14,5 @@ export const InstrumentLinks = [
   { title: "Precious Metals", url: "/precious-metals", id: 4 },
   { title: "Energies", url: "/energies", id: 5 },
   { title: "Commodities", url: "/commodities", id: 6 },
-  { title: "Cryptocurrencies", url: "/cryptocurrenices", id: 7 },
+  { title: "Cryptocurrencies", url: "/cryptocurrencies", id: 7 },
 ];

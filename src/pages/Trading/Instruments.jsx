@@ -6,9 +6,9 @@ import { InstrumentLinks } from "@utils/constants/Links";
 
 const Instruments = () => {
 
-    const imgBg = '/assets/images/Trading/Instruments/instrument-bg.png'
-    const imgInstrument = '/assets/images/Trading/Instruments/instrument-list.png'
-    const imgSearch = '/assets/images/Trading/Instruments/search.png'
+    const imgBg = '/assets/images/instrument-bg.png'
+    const imgInstrument = '/assets/images/instrument-list.png'
+    const imgSearch = '/assets/images/instrument-search.png'
 
     return (
       <>
