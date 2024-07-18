@@ -28,7 +28,7 @@ const Header = () => {
             <div className="d-inline">
               <span className="logo avia-standard-logo">
                 <a href="/">
-                  <img src="/images/corsa-logo.png" alt="corsa-logo" />
+                  <img src="/assets/images/corsa-logo.png" alt="corsa-logo" />
                 </a>
               </span>
               <InformationList />

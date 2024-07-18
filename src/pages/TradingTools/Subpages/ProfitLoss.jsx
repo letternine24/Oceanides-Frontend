@@ -1,10 +1,10 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
-import "@styles/TradingTools/Margin.css";
+import "@styles/TradingTools/ProfitLoss.css";
 import PageLinks from "@components/Pages/PageLinks";
 import { TradingCalculatorLinks } from "@utils/constants/Links";
 
-const Margin = () => {
+const ProfitLoss = () => {
   const headerImg =
     "https://corsafutures.com/wp-content/uploads/2024/01/12content4.png";
 
@@ -19,47 +19,107 @@ const Margin = () => {
         {/* COMPONENT */}
         <PageLinks links={TradingCalculatorLinks} />
 
-        <div className="margin-container">
-          <div className="margin-container-img">
-            <img src="https://corsafutures.com/wp-content/uploads/2024/01/cal-4.png" />
+        <div className="profit-loss-container">
+          <div className="profit-loss-container-img">
+            <img src="https://front.corsafutures.com/wp-content/uploads/2024/01/cal-6.png" />
           </div>
 
-          <div className="margin-container-faq">
-            <div className="margin-container-how-it-works">
+          <div className="profit-loss-container-faq">
+            <div className="profit-loss-container-how-it-works">
               <h2>HOW IT WORKS:</h2>
               <p>
-                Our margin calculator helps you calculate the margin needed to
-                open and hold positions.
+                Our profit and loss calculator will help you find out how much
+                you stand to lose or gain if your stop-loss and/or take-profit
+                levels are reached.
               </p>
               <p>
-                Enter your account base currency, select the instrument and the
-                leverage, and finally enter the size of your position in lots.
+                Select your base currency, the instrument you are trading on,
+                your trade size in lots and account type. Set the opening price
+                and your stop loss and take profit values.
               </p>
             </div>
 
-            <div className="margin-container-how-it-works">
+            <div className="profit-loss-container-how-it-works">
               <h2>THE CALCULATION IS PERFORMED AS FOLLOWS:</h2>
               <p>
-                Required Margin =Trade Size / Leverage * Account Currency
-                Exchange Rate
+                SL / TP Levels = SL, TP Amount / Pip Value Formula * Exchange
+                Rate
                 <br />
                 <br />
                 Example:
                 <br />
-                Volume in Lots: 5 (One Standard Lot = 100,000Units)
+                TP Amount: 100 USD
                 <br />
-                Leverage: 100
+                SL Amount: 100 USD
+                <br />
+                Pip Value Formula: 1,000
                 <br />
                 Account Base Currency: USD
                 <br />
-                Instrument: EUR/USD
+                Instrument: USD/JPY
                 <br />
-                Exchange Rate: 1.365 (EUR/USD)
+                Exchange Rate: 110.252 (USD/JPY)
                 <br />
                 <br />
-                Required Margin = 500,000 / 100 * 1.365
+                SL / TP Levels = 100 / 1,000 * 110.252
                 <br />
-                Required margin is $6,825.00 USD
+                SL / TP Levels = 11 pip
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="profit-loss-container">
+          <div className="profit-loss-container-img">
+            <img src="https://front.corsafutures.com/wp-content/uploads/2024/01/cal-7.png" />
+          </div>
+
+          <div className="profit-loss-container-faq">
+            <div className="profit-loss-container-how-it-works">
+              <h2>HOW IT WORKS:</h2>
+              <p>
+                Our profit and loss calculator will help you find out how much
+                you stand to lose or gain if your stop-loss and/or take-profit
+                levels have been reached.
+              </p>
+              <p>
+                Select your base currency, the instrument you are trading on,
+                your trade size in lots and account type. Set the opening price
+                and your stop loss and take profit values.
+              </p>
+            </div>
+
+            <div className="profit-loss-container-how-it-works">
+              <h2>THE CALCULATION IS PERFORMED AS FOLLOWS:</h2>
+              <p>
+                SL / TP Amount = SL, TP Levels * Points * Volume in Lots *
+                Contract Size * Exchange Rate
+                <br />
+                <br />
+                Example:
+                <br />
+                TP Levels: 6254
+                <br />
+                SL Levels: 6254
+                <br />
+                Point: 0.001
+                <br />
+                Volume in Lots: 1
+                <br />
+                Contract Size: 100,000
+                <br />
+                Account Base Currency: USD
+                <br />
+                Instrument: USD/JPY
+                <br />
+                Exchange Rate: 110.255 (USD/JPY)
+                <br />
+                <br />
+                SL / TP Amount = 6,254.00 * 0.001 * 1 * 100,000 * (1 / 110.255)
+                <br />
+                SL / TP Amount = $5,672.31
               </p>
             </div>
           </div>
@@ -69,4 +129,4 @@ const Margin = () => {
   );
 };
 
-export default Margin;
+export default ProfitLoss;

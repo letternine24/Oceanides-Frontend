@@ -14,6 +14,7 @@ import Currency from "@pages/TradingTools/Subpages/Currency";
 import PipValue from "@pages/TradingTools/Subpages/PipValue";
 import Margin from "@pages/TradingTools/Subpages/Margin";
 import Swaps from "@pages/TradingTools/Subpages/Swaps";
+import ProfitLoss from "@pages/TradingTools/Subpages/ProfitLoss";
 import Platform from "@pages/Platform/Platform";
 
 const Router = () => {
@@ -38,6 +39,7 @@ const Router = () => {
         <Route path="/pip-value" element={<PipValue />} />
         <Route path="/margin" element={<Margin />} />
         <Route path="/swaps" element={<Swaps />} />
+        <Route path="/profit-loss" element={<ProfitLoss />} />
 
         {/* Platform */}
         <Route path="/platform" element={<Platform />} />

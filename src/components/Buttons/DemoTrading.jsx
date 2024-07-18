@@ -12,7 +12,7 @@ const DemoBtn = () => {
             <a href="" className='trading-button'>
                 <span>
                     START TRADING
-                    <img src="/assets/icons/platform/arrow.png" className="arrow-icon"/>
+                    <img src="/assets/icons/arrow-circle.png" className="arrow-icon"/>
                 </span>
             </a>
         </div>

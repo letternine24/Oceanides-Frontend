@@ -1,5 +1,5 @@
 .BackgroundImg-2 {
-  background-image: url("/images/section-2-process-bg.png");
+  background-image: url("/assets/images/section-2-process-bg.png");
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-attachment: fixed;
@@ -20,7 +20,7 @@
 }
 
 .empower-img {
-  background-image: url("/images/section-2-process-logo-larger.png");
+  background-image: url("/assets/images/section-2-process-logo-larger.png");
   background-repeat: no-repeat;
   height: 40vh;
   margin-left: 10%;
@@ -39,4 +39,3 @@
   text-align: center;
   vertical-align: middle;
 }
-

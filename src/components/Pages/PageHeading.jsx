@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "@styles/Components/PageHeading.css";
 
-const PageHeading = ({ pageTitle, pageHeader, pageBgImg, pageHeaderImg, children }) => {
+const PageHeading = ({ pageTitle, pageHeader, pageBgImg, children }) => {
   const [backgroundImg, setBackgroundImg] = useState("https://corsafutures.com/wp-content/uploads/2024/01/00bg.png");
 
   useEffect(() => {
@@ -10,7 +10,15 @@ const PageHeading = ({ pageTitle, pageHeader, pageBgImg, pageHeaderImg, children
     }
   }, [backgroundImg]);
 
-  console.log(backgroundImg);
+  // const renderHeadingWithBg = () => { 
+  //   return ( 
+
+  //   );
+  // }
+
+
+
+
   return (
     <section
       className="page-heading"
@@ -22,9 +30,8 @@ const PageHeading = ({ pageTitle, pageHeader, pageBgImg, pageHeaderImg, children
           <hr className="page-heading-hr"></hr>
           <h1 className="page-heading-header">{pageHeader}</h1>
         </div>
-        <div className={"row page-heading-content " + (pageHeaderImg ? 'page-heading-header-img' : '')}>
+        <div className={"row page-heading-content"}>
           {children}
-          {/* {pageHeaderImg && <img src={pageHeaderImg} />} */}
         </div>
       </div>
     </section>

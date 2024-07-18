@@ -1,5 +1,5 @@
 .BackgroundImg-3 {
-  background-image: url("/images/common-bg.png");
+  background-image: url("/assets/images/common-bg.png");
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-attachment: fixed;
@@ -74,14 +74,14 @@
 }
 
 .trade-info-img {
-  background-image: url("/images/section-3-trading-info-logo-smaller.png");
+  background-image: url("/assets/images/section-3-trading-info-logo-smaller.png");
   background-repeat: no-repeat;
   height: 20vh;
   margin-top: 40px;
 }
 
 .trade-img {
-  background-image: url("/images/section-3-trading-logo-smaller.png");
+  background-image: url("/assets/images/section-3-trading-logo-smaller.png");
   background-repeat: no-repeat;
   height: 40vh;
   margin-top: 40px;

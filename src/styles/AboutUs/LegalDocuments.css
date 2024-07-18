@@ -1,4 +1,3 @@
-
 .legal-documents-content {
   padding: 2rem;
 }
@@ -11,6 +10,11 @@
 .legal-documents-links-container {
   margin-top: 1rem;
   flex: 1;
+}
+
+.legal-documents-links-container ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 .legal-documents-links li {
