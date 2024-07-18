@@ -8,7 +8,7 @@ import { DepositWithdrawalAccordion } from "../../utils/constants/DepositWithdra
 const DepositWithdrawal = () => {
 
     const imgBg = '/assets/images/common-bg.png'
-    const imgPayment = '/assets/images/Trading/DepositWithdrawal/payment-method.png'
+    const imgPayment = '/assets/images/depositwidthdraw-payment-method.png'
     const headerMessage = <p>Instant Deposits. Fast Withdrawls. No Commission.</p>
 
     return (

@@ -4,8 +4,8 @@ import "@styles/Trading/TradingAccountType.css";
 
 const TradingAccountType = () => {
 
-    const imgBg = '/images/Trading/TradingAccountType/trading-account-bg.png'
-    const imgStandard = '/images/Trading/TradingAccountType/standard.png'
+    const imgBg = '/assets/images/trading-account-bg.png'
+    const imgStandard = '/assets/images/trading-account-standard.png'
 
     return (
       <>

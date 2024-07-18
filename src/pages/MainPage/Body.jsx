@@ -1,28 +1,3 @@
-// import '@styles/MainPage/Body.css'
-// import NavigatingSection from './Components/NavigatingSection';
-// import GetEmpoweringSection  from './Components/EmpoweringSection'
-// import GetTradingSection from './Components/TradingSection';
-// import GetDownloadSection from './Components/DownloadSection';
-// import GetInstantSection from './Components/InstantSection';
-// import GetSeizeSection from './Components/SeizeSection';
-// import GetEmbarkSection from './Components/EmbarkSection';
-
-// function Body() {
-//   return (
-//     <div id="corsa_body">
-//         <NavigatingSection />
-//         <GetEmpoweringSection />
-//         <GetTradingSection />
-//         <GetDownloadSection />
-//         <GetInstantSection />
-//         <GetSeizeSection />
-//         <GetEmbarkSection />
-//     </div>
-//   );
-// }
-
-// export default Body;
-
 import React from "react";
 import PageBody from "@components/Pages/PageBody";
 import '@styles/MainPage/Body.css'
@@ -31,20 +6,20 @@ import DemoBtn from "../../components/Buttons/DemoTrading";
 const Body = () => {
 
   // background images
-  const navigatingBg = "/assets/images/MainPage/navigating-bg.png";
-  const empoweringBg = "/assets/images/MainPage/empowering-bg.png";
+  const navigatingBg = "/assets/images/main-navigating-bg.png";
+  const empoweringBg = "/assets/images/main-empowering-bg.png";
   const commonBg = "/assets/images/common-bg.png";
-  const seizeBg = "/assets/images/MainPage/seize-bg.png";
-  const embarkBg = "/assets/images/MainPage/embark-bg.png";
-  const yellowBg = "/assets/images/MainPage/yellow-bg.png";
+  const seizeBg = "/assets/images/main-seize-bg.png";
+  const embarkBg = "/assets/images/main-embark-bg.png";
+  const yellowBg = "/assets/images/main-yellow-bg.png";
 
   // icons
-  const empoweringIC = "/assets/icons/MainPage/empowering-ic.png"
-  const tradingTextIC = 'assets/icons/MainPage/trading-text-ic.png'
-  const tradingImgIC = 'assets/icons/MainPage/trading-img-ic.png'
-  const downloadIC = 'assets/icons/MainPage/download-ic.png'
-  const paymentIC = 'assets/icons/MainPage/payment-ic.png'
-  const seizeIC = 'assets/icons/MainPage/seize-ic.png'
+  const empoweringIC = "/assets/icons/main-empowering-ic.png"
+  const tradingTextIC = 'assets/icons/main-trading-text-ic.png'
+  const tradingImgIC = 'assets/icons/main-trading-img-ic.png'
+  const downloadIC = 'assets/icons/main-download-ic.png'
+  const paymentIC = 'assets/icons/main-payment-ic.png'
+  const seizeIC = 'assets/icons/main-seize-ic.png'
 
   return (
     <>

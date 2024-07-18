@@ -6,9 +6,9 @@ import { InstrumentLinks } from "@utils/constants/Links";
 
 const Cryptocurrencies = () => {
 
-    const imgBg = '/assets/images/Trading/Instruments/instrument-bg.png'
-    const imgIcon = '/assets/icons/Trading/Instruments/forex-ic.png'
-    const imgSearch = '/assets/images/Trading/Instruments/search.png'
+    const imgBg = '/assets/images/instrument-bg.png'
+    const imgSearch = '/assets/images/instrument-search.png'
+    const imgIcon = '/assets/icons/instruments-forex-ic.png'
 
     return (
       <>
@@ -24,7 +24,7 @@ const Cryptocurrencies = () => {
             <div className="instrument-container">
                 <div className="page-instrument-hr"></div>
                 <div className="page-instrument-content">
-                    <h1>Precious Metals</h1>
+                    <h1>Cryptocurrency</h1>
                     
                     <p>
                         Engage in margin trading of the leading cryptocurrencies with a regulated broker, 
