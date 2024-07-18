@@ -34,8 +34,8 @@
   transition: 0.4s;
 }
 
-.arrow-icon {
-  width: 7%;
+.page-instrument-button .arrow-icon {
+  width: 10%;
   padding-left: 0.3em;
 }
 
