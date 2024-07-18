@@ -1,0 +1,36 @@
+.swaps-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.swaps-container-img {
+  width: 60%;
+}
+
+.swaps-container-faq {
+  width: 40%;
+}
+
+.swaps-container-how-it-works {
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .swaps-container {
+    flex-direction: column;
+  }
+
+  .swaps-container-img,
+  .swaps-container-faq {
+    width: 100%;
+  }
+}

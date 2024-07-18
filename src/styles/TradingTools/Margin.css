@@ -1,0 +1,36 @@
+.margin-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.margin-container-how-it-works {
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.margin-container-img {
+  width: 60%;
+}
+
+.margin-container-faq {
+  width: 60%;
+}
+
+@media only screen and (max-width: 959px) {
+  .margin-container {
+    flex-direction: column;
+  }
+
+  .margin-container-img,
+  .margin-container-faq {
+    width: 100%;
+  }
+}

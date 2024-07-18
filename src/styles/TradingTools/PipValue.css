@@ -1,0 +1,36 @@
+.pip-value-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.pip-value-container-img {
+  width: 60%;
+}
+
+.pip-value-container-faq {
+  width: 40%;
+}
+
+.pip-value-container-how-it-works {
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .pip-value-container {
+    flex-direction: column;
+  }
+
+  .pip-value-container-img,
+  .pip-value-container-faq {
+    width: 100%;
+  }
+}

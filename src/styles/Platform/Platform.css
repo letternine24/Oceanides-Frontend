@@ -1,0 +1,74 @@
+.page-body-header-platform {
+    font-size: 60px;
+    padding: 1rem 2rem 1.5rem;
+    font-weight: 700;
+}
+
+.page-body-text-platform {
+    padding: 1rem 2rem 1.5rem;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.flex-table-platform {
+    display: flex;
+    width: 100%;
+    float: left;
+}
+
+.flex-column-platform {
+    display: flex;
+    float: none;
+    width: 50%;
+    flex: 1;
+}
+
+.border {
+    border: 5px solid darkblue !important;
+    border-radius: 10px;
+}
+
+.img-size {
+    height: auto;
+    width: auto;
+    padding-left: 1rem;
+    background-size: contain;
+}
+
+.flex-placeholder {
+    display: flex;
+    width: 8%;
+  }
+
+.download-section {
+    text-align: end;
+    width: 100%;
+    margin-left: 400px;
+}
+
+.download-section > h1 {
+    font-size: 80px;
+}
+
+.custom-padding {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.page-body-section-header-platform {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.page-body-section-platform {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.container > .page-body-hr {
+    width: 100% !important;
+}
