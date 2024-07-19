@@ -44,8 +44,8 @@ const Platform = () => {
               benefits when paired with the Corsa Futures cTrader account.
             </p>
 
-            <div className="flex-table-platform">
-              <div className="flex-column-platform">
+            <div className="platform-content-container">
+              <div className="platform-content-left">
                 <div className="border">
                   <p>+ 55+ pre – installed technical indicators</p>
                   <p>+ 6 chart types & 28 timeframes</p>
@@ -71,7 +71,7 @@ const Platform = () => {
 
               <div className="flex-placeholder"></div>
 
-              <div className="flex-column-platform">
+              <div className="platform-content-right">
                 <div className="container">
                   <img
                     src="/assets/icons/trading-img-ic.png"
@@ -101,23 +101,27 @@ const Platform = () => {
         {/* Download Ctrader For Windows */}
 
         <PageBody pageBgImg={commonBg}>
+          
           <h1 className="page-body-header-platform white-text">
-            <hr className="page-body-hr"></hr>
+            <div className="page-body-hr"></div>
             cTrader Desktop Platform
           </h1>
 
-          <div className="flex-table-platform">
-            <div className="flex-column-platform">
+          <div className="platform-content-container">
+            <div className="platform-content-left">
               <div className="container page-body-text-platform white-text">
                 <p className="custom-padding">
                   Get your complimentary download today and leverage the full
                   range of advantages it brings when used alongside the Corsa
                   Futures cTrader account.
                 </p>
-
-                <a href="#">
-                  <img src="/assets/icons/ctdownload.png" className="img-size" />
-                </a>
+                
+                <div className="overlay-wrap">
+                  <a href="https://getctrader.com/corsafutures/ctrader-corsafutures-setup.exe">
+                    <img src="/assets/icons/ctdownload.png" className="img-size" />
+                    <div className="highlight-overlay"></div>
+                  </a>
+                </div>
 
                 <p className="custom-padding">
                   Supports Microsoft Windows 2008/7/8/10 operating systems.
@@ -128,12 +132,13 @@ const Platform = () => {
 
             <div className="flex-placeholder"></div>
 
-            <div className="flex-column-platform">
-              <div className="container">
+            <div className="platform-content-right">
+              <div className="platform-margin">
                 <img src="/assets/icons/laptop.png" className="img-size" />
               </div>
             </div>
           </div>
+
         </PageBody>
 
         {/* Download Ctrader For Windows */}
@@ -141,10 +146,10 @@ const Platform = () => {
         {/* Download Ctrader For Mobile/Tablets/Web */}
 
         <PageBody>
-          <hr className="page-body-hr"></hr>
+          <div className="page-body-hr"></div>
 
-          <div className="flex-table-platform">
-            <div className="flex-column-platform">
+          <div className="platform-content-container">
+            <div className="platform-content-left">
               <div className="container">
                 <p className="page-body-section-header-platform">
                   DOWNLOAD CTRADER FOR MOBILE & TABLETS
@@ -173,15 +178,15 @@ const Platform = () => {
 
             <div className="flex-placeholder"></div>
 
-            <div className="flex-column-platform">
-              <div className="container">
+            <div className="platform-content-right">
+              <div className="platform-margin">
                 <img src="/assets/icons/phone.png" className="img-size" />
               </div>
             </div>
           </div>
 
-          <div className="flex-table-platform">
-            <div className="flex-column-platform">
+          <div className="platform-content-container">
+            <div className="platform-content-left">
               <div className="container">
                 <img src="/assets/icons/monitor.png" className="img-size" />
               </div>
@@ -189,9 +194,9 @@ const Platform = () => {
 
             <div className="flex-placeholder"></div>
 
-            <div className="flex-column-platform">
+            <div className="platform-content-left">
               <div className="container">
-                <hr className="page-body-hr"></hr>
+                <div className="page-body-hr"></div>
                 <p className="page-body-section-header-platform">
                   DOWNLOAD CTRADER WEB PLATFORM
                 </p>
