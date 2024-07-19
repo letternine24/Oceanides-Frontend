@@ -1,31 +1,30 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
-import "@styles/TradingTools/Currency.css";
 import PageLinks from "@components/Pages/PageLinks";
+import Images from "@components/Images/Images";
+import "@styles/TradingTools/Currency.css";
 import { TradingCalculatorLinks } from "@utils/constants/Links";
 
 const Currency = () => {
-  const headerImg =
-    "https://corsafutures.com/wp-content/uploads/2024/01/12content4.png";
-
   return (
     <main>
-      <PageHeading pageHeader="TRADING CALCULATOR" pageHeaderImg={headerImg}>
-        <p>
-          We provide you with Corsa Futures Trading Calculators to make your
-          trading journey easier than simple.
-        </p>
-
+      <PageHeading
+        pageHeader="TRADING CALCULATOR"
+        pageHeaderImg={"trading-header"}
+        pageSubHeader={
+          "We provide you with Corsa Futures Trading Calculators to make your trading journey easier than simple."
+        }
+      >
         {/* COMPONENT */}
         <PageLinks links={TradingCalculatorLinks} />
 
-        <div className="all-in-one-container">
-          <div className="all-in-one-container-img">
-            <img src="https://corsafutures.com/wp-content/uploads/2024/01/cal-2.png" />
+        <div className="currency-container">
+          <div className="currency-container-img">
+            <Images name="currency-calc" />
           </div>
 
-          <div className="all-in-one-container-faq">
-            <div className="all-in-one-container-how-it-works">
+          <div className="currency-container-faq">
+            <div className="currency-container-how-it-works">
               <h2>HOW IT WORKS:</h2>
               <p>
                 Our currency converter enables you to convert to and from
@@ -38,7 +37,7 @@ const Currency = () => {
               </p>
             </div>
 
-            <div className="all-in-one-container-how-it-works">
+            <div className="currency-container-how-it-works">
               <h2>DID YOU KNOW?</h2>
               <p>
                 Even though the forex market is open 24 hours a day, it is not

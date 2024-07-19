@@ -1,23 +1,50 @@
 import React, { useEffect, useState } from "react";
 import "@styles/Components/PageHeading.css";
+import Images from "@components/Images/Images";
+import Hr from "@components/Hr/Hr";
 
-const PageHeading = ({ pageTitle, pageHeader, pageBgImg, children }) => {
-  const [backgroundImg, setBackgroundImg] = useState("https://corsafutures.com/wp-content/uploads/2024/01/00bg.png");
+const RenderHeading = ({ title, header, subHeader }) => {
+  return (
+    <div className="container page-heading-container">
+      {title && <h3 className="page-heading-title">{title}</h3>}
+      <Hr />
+      <h1 className="page-heading-header">{header}</h1>
+      {subHeader && <p>{subHeader}</p>}
+    </div>
+  );
+};
+
+const RenderHeadingWithBg = ({ title, header, headerImg, subHeader }) => {
+  return (
+    <div className="container page-heading-container page-heading-container-bg">
+      <RenderHeading title={title} header={header} subHeader={subHeader} />
+      {headerImg && (
+        <Images
+          name={headerImg}
+          style={{ maxWidth: "350px", maxHeight: "350px" }}
+        />
+      )}
+    </div>
+  );
+};
+
+const PageHeading = ({
+  pageTitle,
+  pageHeader,
+  pageSubHeader,
+  pageBgImg,
+  pageHeaderImg,
+  children,
+}) => {
+  const [backgroundImg, setBackgroundImg] = useState(
+    "https://corsafutures.com/wp-content/uploads/2024/01/00bg.png"
+  );
 
   useEffect(() => {
     if (pageBgImg) {
       setBackgroundImg(pageBgImg);
     }
-  }, [backgroundImg]);
-
-  // const renderHeadingWithBg = () => { 
-  //   return ( 
-
-  //   );
-  // }
-
-
-
+  }, [pageBgImg]);
 
   return (
     <section
@@ -25,14 +52,21 @@ const PageHeading = ({ pageTitle, pageHeader, pageBgImg, children }) => {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <div className="container">
-        <div className="row page-heading-container">
-          {pageTitle && <h3 className="page-heading-title">{pageTitle}</h3>}
-          <div className="page-heading-hr"></div>
-          <h1 className="page-heading-header">{pageHeader}</h1>
-        </div>
-        <div className={"row page-heading-content"}>
-          {children}
-        </div>
+        {pageHeaderImg ? (
+          <RenderHeadingWithBg
+            title={pageTitle}
+            header={pageHeader}
+            headerImg={pageHeaderImg}
+            subHeader={pageSubHeader}
+          />
+        ) : (
+          <RenderHeading
+            title={pageTitle}
+            header={pageHeader}
+            subHeader={pageSubHeader}
+          />
+        )}
+        <div className="row page-heading-content">{children}</div>
       </div>
     </section>
   );
