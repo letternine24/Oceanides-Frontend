@@ -38,7 +38,7 @@ const ContactUs = () => {
                     />
                   </div>
                 </div>
-              </div>
+            </div>
               <div class="row mb-2">
                 <div class="form-group">
                   <label for="name">Email</label>

@@ -20,7 +20,13 @@ const Currency = () => {
 
         <div className="currency-container">
           <div className="currency-container-img">
-            <Images name="currency-calc" />
+            <Images
+              name="currency-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="currency-container-faq">

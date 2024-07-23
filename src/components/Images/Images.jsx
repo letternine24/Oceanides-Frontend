@@ -5,7 +5,7 @@ const Images = ({ name, additionalClass, style }) => {
   return (
     <img
       src={`/assets/images/${name}.png`}
-      className={`images ${additionalClass}`}
+      className={`images ${additionalClass ?? ""}`}
       style={style}
     />
   );

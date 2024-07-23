@@ -20,7 +20,13 @@ const PipValue = () => {
 
         <div className="pip-value-container">
           <div className="pip-value-container-img">
-            <Images name="pip-value-calc" />
+            <Images
+              name="pip-value-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="pip-value-container-faq">

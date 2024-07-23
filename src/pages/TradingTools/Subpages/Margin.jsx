@@ -1,8 +1,9 @@
 import React from "react";
 import PageHeading from "@components/Pages/PageHeading";
-import "@styles/TradingTools/Margin.css";
 import PageLinks from "@components/Pages/PageLinks";
+import Images from "@components/Images/Images";
 import { TradingCalculatorLinks } from "@utils/constants/Links";
+import "@styles/TradingTools/Margin.css";
 
 const Margin = () => {
   return (
@@ -19,7 +20,13 @@ const Margin = () => {
 
         <div className="margin-container">
           <div className="margin-container-img">
-            <img src="https://corsafutures.com/wp-content/uploads/2024/01/cal-4.png" />
+            <Images
+              name="margin-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="margin-container-faq">

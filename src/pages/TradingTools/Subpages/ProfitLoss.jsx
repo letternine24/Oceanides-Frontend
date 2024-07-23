@@ -21,7 +21,13 @@ const ProfitLoss = () => {
 
         <div className="profit-loss-container">
           <div className="profit-loss-container-img">
-            <Images name="profit-loss-calc" />
+            <Images
+              name="profit-loss-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="profit-loss-container-faq">
@@ -72,8 +78,14 @@ const ProfitLoss = () => {
         <Hr width={"100%"} color={"#FFF"} />
 
         <div className="profit-loss-container">
-            <div className="profit-loss-container-img">
-              <Images name="profit-loss-2-calc" />
+          <div className="profit-loss-container-img">
+            <Images
+              name="profit-loss-2-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="profit-loss-container-faq">

@@ -20,7 +20,13 @@ const Swaps = () => {
 
         <div className="swaps-container">
           <div className="swaps-container-img">
-            <Images name="swaps-calc" />
+            <Images
+              name="swaps-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="swaps-container-faq">

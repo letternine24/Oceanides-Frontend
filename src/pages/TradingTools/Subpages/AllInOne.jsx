@@ -20,7 +20,13 @@ const AllInOne = () => {
 
         <div className="all-in-one-container">
           <div className="all-in-one-container-img">
-            <Images name="all-in-one-calc" />
+            <Images
+              name="all-in-one-calc"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </div>
 
           <div className="all-in-one-container-faq">
