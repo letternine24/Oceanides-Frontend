@@ -370,7 +370,7 @@ const InformationList = () => {
           </li>
 
           <li className="nav-item">
-            <a className="nav-link text-light" href="#">
+            <a className="nav-link text-light" href="/sign-up">
               SIGNUP
             </a>
           </li>

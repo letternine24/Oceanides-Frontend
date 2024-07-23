@@ -26,6 +26,7 @@ import PreciousMetals from "@pages/Trading/Subpages/PreciousMetals";
 import Energies from "@pages/Trading/Subpages/Energies";
 import Commodities from "@pages/Trading/Subpages/Commodities";
 import Cryptocurrencies from "@pages/Trading/Subpages/Cryptocurrencies";
+import SignUp from "./pages/Authentication/SignUp";
 
 const Router = () => {
   return (
@@ -69,6 +70,9 @@ const Router = () => {
         <Route path="/energies" element={<Energies />} />
         <Route path="/commodities" element={<Commodities />} />
         <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+
+        {/* Authentication */}
+        <Route path="/sign-up" element={<SignUp />} />
 
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
