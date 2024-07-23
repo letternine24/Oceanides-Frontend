@@ -4,13 +4,23 @@ import "./App.css";
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import Router from "./Router";
+import Dashboard from "@pages/Dashboard/Index";
 
 const App = () => {
+  const isAuthenticated = true;
   return (
     <>
-      <Header />
-      <Router />
-      <Footer />
+      {isAuthenticated ? (
+        <>
+          <Dashboard />
+        </>
+      ) : (
+        <>
+          <Header />
+          <Router />
+          <Footer />
+        </>
+      )}
     </>
   );
 };

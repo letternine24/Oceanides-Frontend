@@ -26,7 +26,9 @@ import PreciousMetals from "@pages/Trading/Subpages/PreciousMetals";
 import Energies from "@pages/Trading/Subpages/Energies";
 import Commodities from "@pages/Trading/Subpages/Commodities";
 import Cryptocurrencies from "@pages/Trading/Subpages/Cryptocurrencies";
-import SignUp from "./pages/Authentication/SignUp";
+import SignUp from "@pages/Dashboard/Authentication/SignUp";
+
+import Dashboard from "@pages/Dashboard/Index";
 
 const Router = () => {
   return (
@@ -73,6 +75,9 @@ const Router = () => {
 
         {/* Authentication */}
         <Route path="/sign-up" element={<SignUp />} />
+
+        {/* Dashboard */}
+        <Route path="/dashboard" elemenent={<Dashboard />} />
 
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
