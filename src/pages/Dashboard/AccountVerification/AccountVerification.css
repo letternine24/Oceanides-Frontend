@@ -1,4 +1,4 @@
-.main-content {
+.account-verification-content {
   margin-left: 250px; /* Adjust based on sidebar width */
   padding: 20px;
 }
@@ -7,4 +7,19 @@
   background-color: #ecf0f1;
   padding: 20px;
   min-height: calc(100vh - 70px); /* Adjust based on header height */
+}
+
+.banner-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.banner-container div {
+  flex: 1;
+}
+
+.watchlist-content {
+  display: flex;
+  gap: 1rem;
+  overflow-y: auto;
 }
