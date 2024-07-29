@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@styles/Components/TextBox.css';
 
-function TextBox({ fieldName, value, onChange }) {
+function TextBox({ fieldName, labelName, fieldType, required, value, onChange, leftIcon }) {
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
@@ -22,15 +22,19 @@ function TextBox({ fieldName, value, onChange }) {
   };
 
   return (
-    <div className='input-container'>
-      <label htmlFor={fieldName}>{fieldName}:</label>
+    <div className='textbox-input-container'>
+      <label htmlFor={labelName}>
+        {required === "required" ? <span className="required-field">* </span> : ""}
+        {labelName}:
+      </label>
       <input
-        type="text"
+        type= {fieldType} 
         id={fieldName}
         name={fieldName}
         value={value !== undefined ? value : inputValue}
-        onChange={handleInputChange} 
+        onChange={handleInputChange}
       />
+      
     </div>
   );
 }

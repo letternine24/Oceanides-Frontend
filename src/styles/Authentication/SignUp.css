@@ -37,6 +37,10 @@
     padding: 5rem;
     background-color: white;
     height: 100%;
+
+    h1 {
+        text-align: center;
+    }
 }
 
 .signup-content-left {
@@ -76,18 +80,16 @@
 
 .create-account-content-left {
     width: 50%;
-
-    div {
-        color: red;
-        font-size: 12px;
-        margin-top: 5px;
-    }
 }
 
 .error-message {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+.textbox-spacing {
+    padding-top: 2rem;
 }
 
 .flex-placeholder {

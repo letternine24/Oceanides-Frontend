@@ -12,25 +12,25 @@ const Sidebar = () => {
       <ul className="menu">
         <li>
           <a href="/">
-            <img src="/icon-home.png" alt="Home" className="menu-icon" /> Home
-          </a>
-        </li>
-        <li>
-          <a href="/profile">
-            <img src="/icon-profile.png" alt="Profile" className="menu-icon" />{" "}
-            Profile
+            <img src="/assets/icons/dashboard-ic.png" alt="Home" className="menu-icon" /> Dashboard
           </a>
         </li>
         <li>
           <a href="/account">
-            <img src="/icon-account.png" alt="Account" className="menu-icon" />{" "}
+            <img src="/assets/icons/myaccount-ic.png" alt="Account" className="menu-icon" />{" "}
             My Account
+          </a>
+        </li>
+        <li>
+          <a href="/profile">
+            <img src="/assets/icons/db-profile-ic.png" alt="Profile" className="menu-icon" />{" "}
+            Profile
           </a>
         </li>
         <li>
           <a href="/deposit-withdraw">
             <img
-              src="/icon-money.png"
+              src="/assets/icons/depwith-ic.png"
               alt="Deposit & Withdraw"
               className="menu-icon"
             />{" "}
@@ -40,7 +40,7 @@ const Sidebar = () => {
         <li>
           <a href="/trade-signals">
             <img
-              src="/icon-signals.png"
+              src="/assets/icons/tradesignal-ic.png"
               alt="Trade Signals"
               className="menu-icon"
             />
@@ -50,7 +50,7 @@ const Sidebar = () => {
         <li>
           <a href="/referrals">
             <img
-              src="/icon-referrals.png"
+              src="/assets/icons/referrals-ic.png"
               alt="Referrals"
               className="menu-icon"
             />
@@ -59,7 +59,7 @@ const Sidebar = () => {
         </li>
         <li>
           <a href="/help">
-            <img src="/icon-help.png" alt="Help" className="menu-icon" /> Help
+            <img src="/assets/icons/help-ic.png" alt="Help" className="menu-icon" /> Help
           </a>
         </li>
       </ul>
