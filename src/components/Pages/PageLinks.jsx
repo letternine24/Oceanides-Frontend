@@ -7,7 +7,7 @@ const PageLinks = ({ links, additionalStyles }) => {
     <li key={link.id} className="page-links-content">
       <NavLink
         className="page-links-item"
-        activeClassName="active"
+        activeClassName="link-active"
         exact
         to={link.url}
         style={{ ...additionalStyles }}

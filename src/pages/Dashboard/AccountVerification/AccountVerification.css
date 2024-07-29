@@ -4,7 +4,6 @@
 }
 
 .content {
-  background-color: #ecf0f1;
   padding: 20px;
   min-height: calc(100vh - 70px); /* Adjust based on header height */
 }

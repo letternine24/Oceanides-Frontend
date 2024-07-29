@@ -30,7 +30,7 @@
   font-weight: 600;
 }
 
-.active {
+.link-active {
   background-color: gold;
   color: black;
   border: 2px solid darkblue;
