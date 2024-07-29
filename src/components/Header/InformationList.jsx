@@ -227,8 +227,8 @@ const InformationList = () => {
           </li>
 
           <li className="nav-item">
-            <a className="nav-link text-light" href="/sign-up">
-              SIGNUP
+            <a className="nav-link text-light" href="/login">
+              LOGIN
             </a>
           </li>
         </ul>

@@ -1,0 +1,85 @@
+.login-container {
+    height: 100%;
+}
+
+.login-content-container {
+    width: 100%;
+    height: 1200px;
+    align-content: center;
+}
+
+.login-content-container input[type="text"],
+.login-content-container input[type="password"] {
+    border: 3px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+.login-content-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.login-content-field-container {
+    padding: 10rem 20rem 20rem;
+    font-size: 15px;
+}
+
+.login-content-textbox-container {
+    border: 3px solid gold;
+    padding: 10rem 5rem 10rem;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+
+    h1 {
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+}
+
+.textbox-input-container input[type="text"]:focus,
+.textbox-input-container input[type="password"]:focus {
+    border-color: gold;
+    outline: none;
+}
+
+.login-content-field-container input[type="checkbox"] {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.login-button {
+    text-align: center;
+    padding: 7px;
+    width: 100%;
+    font-weight: 500;
+    color: darkblue;
+    background-color: gold;
+    
+}
+
+.login-content-link {
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+    font-size: 18px;
+
+    a {
+        color: white;
+    }
+
+    a:hover{
+        color:gold;
+    }
+}

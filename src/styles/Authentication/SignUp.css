@@ -37,6 +37,10 @@
     padding: 5rem;
     background-color: white;
     height: 100%;
+
+    h1 {
+        text-align: center;
+    }
 }
 
 .signup-content-left {
@@ -78,12 +82,40 @@
     width: 50%;
 }
 
-.required-marker {
+.error-message {
     color: red;
-    margin-right: 5px; 
-  }
+    font-size: 12px;
+    margin-top: 5px;
+}
 
 .textbox-spacing {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 2rem;
+}
+
+.flex-placeholder {
+    display: flex;
+    width: 15%;
+}
+
+.signup-content-right input[type="checkbox"] {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.register-button {
+    text-align: center;
+    padding: 7px;
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    background-image: url('/assets/images/register-bg.png');
+
+    img {
+        padding-right: 10px;
+    }
+}
+
+.content-spacing {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

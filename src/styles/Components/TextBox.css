@@ -1,0 +1,29 @@
+.textbox-input-container {
+    margin: 20px 0;
+}
+
+.textbox-input-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.textbox-input-container input[type="text"],
+.textbox-input-container input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.textbox-input-container input[type="text"]:focus,
+.textbox-input-container input[type="password"]:focus {
+    border-color: black;
+    outline: none;
+}
+
+.required-field {
+    color: red;
+    margin-left: 5px;
+}

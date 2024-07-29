@@ -27,9 +27,10 @@ import Energies from "@pages/Trading/Subpages/Energies";
 import Commodities from "@pages/Trading/Subpages/Commodities";
 import Cryptocurrencies from "@pages/Trading/Subpages/Cryptocurrencies";
 import SignUp from "@pages/Dashboard/Authentication/SignUp";
+import Login from "@pages/Dashboard/Authentication/Login";
 
 import Dashboard from "@pages/Dashboard/Home/Home";
-import AccountVerification from "./pages/Dashboard/AccountVerification/AccountVerification";
+import AccountVerification from "@pages/Dashboard/AccountVerification/AccountVerification";
 
 const Router = () => {
   return (
@@ -76,6 +77,7 @@ const Router = () => {
 
         {/* Authentication */}
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
