@@ -28,7 +28,8 @@ import Commodities from "@pages/Trading/Subpages/Commodities";
 import Cryptocurrencies from "@pages/Trading/Subpages/Cryptocurrencies";
 import SignUp from "@pages/Dashboard/Authentication/SignUp";
 
-import Dashboard from "@pages/Dashboard/Index";
+import Dashboard from "@pages/Dashboard/Home/Home";
+import AccountVerification from "./pages/Dashboard/AccountVerification/AccountVerification";
 
 const Router = () => {
   return (
@@ -77,7 +78,8 @@ const Router = () => {
         <Route path="/sign-up" element={<SignUp />} />
 
         {/* Dashboard */}
-        <Route path="/dashboard" elemenent={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/my-account" element={<AccountVerification />} />
 
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>

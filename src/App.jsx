@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import Router from "./Router";
-import Dashboard from "@pages/Dashboard/Index";
+import Dashboard from "@pages/Dashboard/Home/Home";
 
 const App = () => {
   const isAuthenticated = true;
