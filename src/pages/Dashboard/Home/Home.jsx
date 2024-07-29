@@ -13,7 +13,7 @@ const Dashboard = () => {
       <>
         <Sidebar />
         {/* Routes? */}
-        {/* <MainContent /> */}
+        <MainContent />
         <AccountVerification />
         <Footer />
       </>
