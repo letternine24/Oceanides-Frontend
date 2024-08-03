@@ -1,12 +1,21 @@
+// Sidebar.jsx
 import React from "react";
 import "./Sidebar.css";
+import UserProfile from "./modules/UserProfile/UserProfile";
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <img src="/icon.png" alt="Icon" className="sidebar-icon" />
-        <span className="sidebar-title">Dashboard</span>
+        <img
+          src="/assets/images/corsa-logo-transparent.png"
+          alt="Icon"
+          className="header-icon"
+        />
+      </div>
+
+      <div className="sidebar-user-info">
+        <UserProfile />
       </div>
       <ul className="menu">
         <li>

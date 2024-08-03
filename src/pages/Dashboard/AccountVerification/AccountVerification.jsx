@@ -2,6 +2,9 @@ import React from "react";
 import "./AccountVerification.css";
 import PersonalDetails from "./modules/PersonalDetails/PersonalDetails";
 import Address from "./modules/Address/Address";
+import StartVerification from "./modules/DocumentVerification/StartVerification";
+import DocumentVerification from "./modules/DocumentVerification/DocumentVerification";
+import IDTypeVerification from "./modules/DocumentVerification/IDTypeVerification";
 
 const AccountVerification = () => {
   return (
@@ -16,6 +19,9 @@ const AccountVerification = () => {
         <div className="account-verification-form">
           <PersonalDetails />
           <Address />
+          <DocumentVerification />
+          <StartVerification />
+          <IDTypeVerification />
         </div>
       </div>
     </main>

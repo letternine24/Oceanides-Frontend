@@ -1,0 +1,82 @@
+.withdrawal-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.withdrawal-methods {
+  width: 65%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.method-button {
+  padding: 10px;
+  border: 1px solid #007bff;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.method-button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.amount-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.amount-section label {
+  margin-right: 10px;
+}
+
+.amount-section input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.amount-section button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.withdrawal-notes {
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.withdrawal-notes h2 {
+  margin-top: 0;
+}
+
+.withdrawal-notes ul {
+  list-style: square inside;
+}
+
+p {
+  font-size: 14px;
+}

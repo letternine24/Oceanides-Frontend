@@ -1,0 +1,48 @@
+.verification-container {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.verification-header {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.verification-header h1 {
+  font-size: 1.8rem;
+  color: #333333;
+  margin: 0 0 5px 0;
+}
+
+.verification-header p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.verification-content p {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.start-verification-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.start-verification-btn:hover {
+  background-color: #45a049;
+}

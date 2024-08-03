@@ -3,6 +3,7 @@ import ProfileTab from "./modules/Tabs/ProfileTab";
 import FinancialInformationTab from "./modules/Tabs/FinancialInformationTab";
 import SettingsSecurityTab from "./modules/Tabs/SettingsSecurityTab";
 import LegalTab from "./modules/Tabs/LegalTab";
+import ReferralForm from "./modules/ReferralForm/ReferralForm";
 
 const Profile = () => {
   return (
@@ -108,6 +109,8 @@ const Profile = () => {
             <LegalTab />
           </div>
         </div>
+
+        <ReferralForm />
       </div>
     </main>
   );

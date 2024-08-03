@@ -1,0 +1,41 @@
+.user-profile {
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.user-profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-image: url("/path_to_user_icon.png"); /* Update path to your user icon */
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.user-info .status {
+  font-size: 0.9rem;
+  color: #ffc107; /* Yellow color for the 'Not Verified' status */
+}
+
+.user-details {
+  border-bottom: 6px solid #cccccc;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.user-details p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}

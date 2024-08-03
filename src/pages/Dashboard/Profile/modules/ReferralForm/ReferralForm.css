@@ -1,0 +1,55 @@
+.referral-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.referral-form h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.referral-form p {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.input-group button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.input-group button img {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.copy-status {
+  color: green;
+  margin-top: 10px;
+}
