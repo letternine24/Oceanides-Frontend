@@ -5,25 +5,20 @@ import AccountVerification from "@pages/Dashboard/AccountVerification/AccountVer
 import MainContent from "@pages/Dashboard/Home/modules/MainContent/MainContent";
 import Profile from "@pages/Dashboard/Profile/Profile";
 import DepositWithdrawals from "@pages/Dashboard/DepositWithdrawals/DepositWithdrawals";
+import Dashboard from "./pages/Dashboard/Index";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Authentication */}
         <Route path="/sign-up" element={<SignUp />} />
 
-        {/* Dashboard */}
-
-        <Route path="/dashboard" element={<MainContent />} />
-        <Route path="/dashboard/my-account" element={<AccountVerification />} />
-        <Route path="/dashboard/profile" element={<Profile />} />
-        <Route
-          path="/dashboard/deposit-withdraw"
-          element={<DepositWithdrawals />}
-        />
-
-        {/* <Route path="*" element={<NoPage />} /> */}
+        <Route path="/" element={<Dashboard />}>
+          <Route index path="dashboard" element={<MainContent />} />
+          <Route path="my-account" element={<AccountVerification />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="deposit-withdraw" element={<DepositWithdrawals />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

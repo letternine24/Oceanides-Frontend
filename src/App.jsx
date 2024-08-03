@@ -5,6 +5,7 @@ import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import Router from "./Router";
 import Dashboard from "@pages/Dashboard/Index";
+import UserRouter from "./UserRouter";
 
 const App = () => {
   const isAuthenticated = true;
@@ -12,7 +13,8 @@ const App = () => {
     <>
       {isAuthenticated ? (
         <>
-          <Dashboard />
+          <UserRouter />
+          {/* <Dashboard /> */}
         </>
       ) : (
         <>

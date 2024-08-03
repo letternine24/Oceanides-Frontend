@@ -1,9 +1,46 @@
-// Sidebar.jsx
 import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 import UserProfile from "./modules/UserProfile/UserProfile";
 
+// Array of menu items with path, label, and icon
+const menuItems = [
+  {
+    path: "/dashboard",
+    label: "Dashboard",
+    icon: "/assets/icons/dashboard-ic.png",
+  },
+  {
+    path: "/my-account",
+    label: "My Account",
+    icon: "/assets/icons/myaccount-ic.png",
+  },
+  {
+    path: "/profile",
+    label: "Profile",
+    icon: "/assets/icons/db-profile-ic.png",
+  },
+  {
+    path: "/deposit-withdraw",
+    label: "Deposit & Withdraw",
+    icon: "/assets/icons/depwith-ic.png",
+  },
+  {
+    path: "/trade-signals",
+    label: "Trade Signals",
+    icon: "/assets/icons/tradesignal-ic.png",
+  },
+  {
+    path: "/referrals",
+    label: "Referrals",
+    icon: "/assets/icons/referrals-ic.png",
+  },
+  { path: "/help", label: "Help", icon: "/assets/icons/help-ic.png" },
+];
+
 const Sidebar = () => {
+  const location = useLocation(); // Get the current location from the router
+
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -18,76 +55,18 @@ const Sidebar = () => {
         <UserProfile />
       </div>
       <ul className="menu">
-        <li>
-          <a href="/dashboard">
-            <img
-              src="/assets/icons/dashboard-ic.png"
-              alt="Home"
-              className="menu-icon"
-            />
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard/my-account">
-            <img
-              src="/assets/icons/myaccount-ic.png"
-              alt="Account"
-              className="menu-icon"
-            />
-            My Account
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard/profile">
-            <img
-              src="/assets/icons/db-profile-ic.png"
-              alt="Profile"
-              className="menu-icon"
-            />
-            Profile
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard/deposit-withdraw">
-            <img
-              src="/assets/icons/depwith-ic.png"
-              alt="Deposit & Withdraw"
-              className="menu-icon"
-            />
-            Deposit & Withdraw
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard/trade-signals">
-            <img
-              src="/assets/icons/tradesignal-ic.png"
-              alt="Trade Signals"
-              className="menu-icon"
-            />
-            Trade Signals
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard/referrals">
-            <img
-              src="/assets/icons/referrals-ic.png"
-              alt="Referrals"
-              className="menu-icon"
-            />
-            Referrals
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard/help">
-            <img
-              src="/assets/icons/help-ic.png"
-              alt="Help"
-              className="menu-icon"
-            />
-            Help
-          </a>
-        </li>
+        {menuItems.map((item) => (
+          <li key={item.path}>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) => (isActive ? "active" : "")} // Use the className prop for better readability
+              exact
+            >
+              <img src={item.icon} alt={item.label} className="menu-icon" />
+              {item.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </aside>
   );

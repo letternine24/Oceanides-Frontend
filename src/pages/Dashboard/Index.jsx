@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Navigation/Header";
 import Footer from "./Navigation/Footer";
 import Sidebar from "./Navigation/Sidebar";
-import UserRouter from "../../UserRouter";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -10,7 +10,7 @@ const Dashboard = () => {
       <Header />
       <>
         <Sidebar />
-        <UserRouter />
+        <Outlet />
         <Footer />
       </>
     </>

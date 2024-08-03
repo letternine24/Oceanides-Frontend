@@ -1,6 +1,7 @@
-html {
+html * {
   font-size: clamp(14px, 2vw, 16px);
   font-family: "Lato", sans-serif;
+  font-style: normal;
 }
 
 body {
