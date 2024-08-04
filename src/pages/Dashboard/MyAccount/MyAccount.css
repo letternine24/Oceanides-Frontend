@@ -1,0 +1,66 @@
+.my-account {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-balance {
+  text-align: left;
+}
+
+.account-balance label,
+.summary-item label {
+  display: block;
+  color: #888;
+}
+
+.verified {
+  color: green;
+  font-weight: bold;
+}
+
+.buttons button {
+  margin-right: 10px;
+}
+
+.search-box input {
+  padding: 8px;
+}
+
+.account-summary {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.link-ctrader button {
+  margin-right: 10px;
+}
+
+.recent-transactions h3,
+.recent-transactions p {
+  text-align: left;
+}
+
+.refer-and-earn {
+  margin-top: 20px;
+}
+
+.refer-and-earn input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}

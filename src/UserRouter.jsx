@@ -5,8 +5,8 @@ import AccountVerification from "@pages/Dashboard/AccountVerification/AccountVer
 import MainContent from "@pages/Dashboard/Home/modules/MainContent/MainContent";
 import Profile from "@pages/Dashboard/Profile/Profile";
 import DepositWithdrawals from "@pages/Dashboard/DepositWithdrawals/DepositWithdrawals";
-import Dashboard from "./pages/Dashboard/Index";
-
+import Dashboard from "@pages/Dashboard/Index";
+import Referrals from "@pages/Dashboard/Referral/Index";
 const Router = () => {
   return (
     <BrowserRouter>
@@ -18,6 +18,7 @@ const Router = () => {
           <Route path="my-account" element={<AccountVerification />} />
           <Route path="profile" element={<Profile />} />
           <Route path="deposit-withdraw" element={<DepositWithdrawals />} />
+          <Route path="referrals" element={<Referrals />} />
         </Route>
       </Routes>
     </BrowserRouter>

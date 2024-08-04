@@ -1,11 +1,44 @@
 import React, { useState } from "react";
 import "./IDTypeVerification.css";
 
-const IDTypeVerification = () => {
+const IDTypeVerification = ({ setVerificationComplete }) => {
   const [selectedID, setSelectedID] = useState("");
+  const [frontFile, setFrontFile] = useState(null);
+  const [backFile, setBackFile] = useState(null);
+  const [isInfoCorrect, setIsInfoCorrect] = useState(false);
 
   const handleIDSelection = (idType) => {
     setSelectedID(idType);
+  };
+
+  const handleFileChange = (event, side) => {
+    const file = event.target.files[0];
+    if (side === "front") {
+      setFrontFile(file);
+    } else {
+      setBackFile(file);
+    }
+  };
+
+  const handleCheckboxChange = (event) => {
+    setIsInfoCorrect(event.target.checked);
+  };
+
+  const handleSubmit = () => {
+    if (!selectedID || !frontFile || !backFile || !isInfoCorrect) {
+      alert("Please complete all fields and ensure information is correct.");
+      return;
+    }
+
+    // Handle file upload and form submission logic here
+    const formData = new FormData();
+    formData.append("selectedID", selectedID);
+    formData.append("frontFile", frontFile);
+    formData.append("backFile", backFile);
+
+    // Simulate a file upload
+    console.log("Submitting form with data:", formData);
+    setVerificationComplete(true);
   };
 
   return (
@@ -48,8 +81,8 @@ const IDTypeVerification = () => {
 
       <div className="verification-instructions">
         <p>
-          To avoid delays when verifying account, Please make sure your document
-          meets the criteria below:
+          To avoid delays when verifying your account, please make sure your
+          document meets the criteria below:
         </p>
         <ul>
           <li>Chosen credential must not have expired.</li>
@@ -59,18 +92,28 @@ const IDTypeVerification = () => {
       </div>
 
       <div className="document-upload">
-        <label>Upload Front and Back Side</label>
-        <input type="file" />
+        <label>Upload Front Side</label>
+        <input type="file" onChange={(e) => handleFileChange(e, "front")} />
+        <label>Upload Back Side</label>
+        <input type="file" onChange={(e) => handleFileChange(e, "back")} />
       </div>
 
       <div className="confirmation">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={isInfoCorrect}
+            onChange={handleCheckboxChange}
+          />
           All The Information I Have Entered Is Correct.
         </label>
       </div>
 
-      <button className="submit-button">Submit Application</button>
+      <div className="button-row">
+        <button className="submit-button" onClick={handleSubmit}>
+          Submit Application
+        </button>
+      </div>
     </div>
   );
 };

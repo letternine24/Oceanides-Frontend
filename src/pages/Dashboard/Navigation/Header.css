@@ -10,7 +10,6 @@
   left: 250px; /* Aligns header with sidebar width */
   right: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .user-header .logo {
