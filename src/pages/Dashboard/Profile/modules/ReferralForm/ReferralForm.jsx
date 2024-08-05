@@ -19,7 +19,7 @@ const ReferralForm = () => {
       <div className="input-group">
         <input type="text" value={referralLink} readOnly />
         <button onClick={handleCopyClick}>
-          <img src="/path_to_copy_icon/copy-icon.png" alt="Copy" />
+          <img src="/assets/icons/copy-ic.png" alt="Copy" />
         </button>
       </div>
       {copySuccess && <span className="copy-status">{copySuccess}</span>}

@@ -25,7 +25,7 @@ const Deposit = () => {
       <div className="deposit-methods">
         <h1>Deposit Methods</h1>
         <div className="methods-grid">
-          {["FPX", "VISA", "Tether", "GPay", "Bitcoin", "Skrill"].map(
+          {["FPX", "VISA", "Crypto"].map(
             (method) => (
               <button
                 key={method}

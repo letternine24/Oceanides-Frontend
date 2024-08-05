@@ -34,12 +34,11 @@
   padding: 8px;
 }
 
-.account-summary {
+.my-account-summary {
   display: flex;
   justify-content: space-between;
   background: white;
   padding: 20px;
-  margin-top: 20px;
 }
 
 .summary-item {

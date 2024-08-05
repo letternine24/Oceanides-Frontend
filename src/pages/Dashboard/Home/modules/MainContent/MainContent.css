@@ -22,3 +22,85 @@
   gap: 1rem;
   overflow-y: auto;
 }
+
+.trading-view-custom {
+  height: 1000px;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-bottom 0.3s;
+  outline: none;
+}
+
+.toggle-button:hover {
+  border-bottom: 2px solid #000;
+}
+
+.toggle-button.active {
+  background-color: lightgrey;
+}
+
+.account-summary {
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.account-cards {
+  display: flex;
+  flex-wrap: wrap;  /* Allows cards to wrap onto the next line on smaller screens */
+  gap: 20px;  /* Provides spacing between cards */
+  justify-content: space-around; /* Distributes space around items for a balanced look */
+}
+
+.account-card {
+  flex: 1 1 240px; /* Allows cards to grow and shrink but not smaller than 240px */
+  background: #FFF;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds shadow for better visual separation */
+}
+
+.account-card-header {
+  margin-bottom: 20px;
+}
+
+.account-card-body p {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.account-card button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.account-card button:hover {
+  opacity: 0.8; /* Adds interaction feedback */
+}
+
+.account-summary-h1 {
+  padding-left: 1em;
+  font-size: 30px;
+  font-weight: 600;
+}

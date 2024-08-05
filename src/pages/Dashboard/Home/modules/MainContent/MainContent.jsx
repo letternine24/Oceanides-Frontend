@@ -1,77 +1,62 @@
-import React from "react";
+import React, { useState  } from "react";
 import "./MainContent.css";
 import Greetings from "../Greetings/Greetings";
 import Banner from "../Banner/Banner";
 import StockWatchlist from "../StockWatchlist/StockWatchlist";
+import ReferralForm from "../../../Profile/modules/ReferralForm/ReferralForm";
+import CryptoTradeView from '../Widget/CryptoTradeView';
+import ForexTradeView from "../Widget/ForexTradeView";
+import AccountSummary from "../Card/AccountSummary";
 
 const MainContent = () => {
+
+  const [activeView, setActiveView] = useState('crypto'); // Start with CryptoTradeView
+
+    const switchToCrypto = () => setActiveView('crypto');
+    const switchToForex = () => setActiveView('forex');
+
   return (
     <main className="main-content">
       {/* Main content area */}
       <div className="content">
         <Greetings />
-        <div className="banner-container">
-          <Banner
-            title="Banner Title"
-            description="This is a description of the banner."
-            showInputField={false}
-            showImages={true}
-          />
-          <Banner
-            title="Another Banner"
-            description="Another description of the banner."
-            icon="icon.png"
-            showInputField={true}
-            showImages={false}
-          />
-        </div>
-        <div className="watchlist-container">
-          <h2>Watchlist</h2>
-          <div className="watchlist-content">
-            <StockWatchlist
-              icon="stock1.png"
-              stockName="Stock A"
-              stockPrice="100.00"
-              stockPercentage={2.5}
-            />
-            <StockWatchlist
-              icon="stock2.png"
-              stockName="Stock B"
-              stockPrice="50.00"
-              stockPercentage={-1.8}
-            />
-            <StockWatchlist
-              icon="stock2.png"
-              stockName="Stock B"
-              stockPrice="50.00"
-              stockPercentage={-1.8}
-            />
-            <StockWatchlist
-              icon="stock2.png"
-              stockName="Stock B"
-              stockPrice="50.00"
-              stockPercentage={-1.8}
-            />
-            <StockWatchlist
-              icon="stock2.png"
-              stockName="Stock B"
-              stockPrice="50.00"
-              stockPercentage={-1.8}
-            />
-
-            <StockWatchlist
-              icon="stock2.png"
-              stockName="Stock B"
-              stockPrice="50.00"
-              stockPercentage={-1.8}
-            />
-            <StockWatchlist
-              icon="stock2.png"
-              stockName="Stock B"
-              stockPrice="50.00"
-              stockPercentage={-1.8}
-            />
+        {/* <div className="banner-container"> */}
+        <div>
+          <div>
+            <h1 className="account-summary-h1">Account Summary</h1>
+            <AccountSummary />
           </div>
+          
+          <ReferralForm />
+        </div>
+        <div className="trading-view-custom">
+            <div>
+                <button
+                    onClick={switchToForex}
+                    className={`toggle-button ${activeView === 'forex' ? 'active' : ''}`}
+                >
+                    Track Forex Information
+                </button>
+                <button
+                    onClick={switchToCrypto}
+                    className={`toggle-button ${activeView === 'crypto' ? 'active' : ''}`}
+                >
+                    Track Cryptocurrency Information
+                </button>
+            </div>
+            
+            <div className="component-container">
+                {activeView === 'crypto' && (
+                    <div className="fade-in">
+                        <CryptoTradeView />
+                    </div>
+                )}
+                {activeView === 'forex' && (
+                    <div className="fade-in">
+                        <ForexTradeView />
+                    </div>
+                )}
+            </div>
         </div>
       </div>
     </main>
