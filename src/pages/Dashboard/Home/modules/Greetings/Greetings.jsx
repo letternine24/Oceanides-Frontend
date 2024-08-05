@@ -6,7 +6,7 @@ const Greetings = () => {
     <>
       <div className="greetings">
         <div className="left-column">
-          <div className="user-icon"></div>
+          <div className="profile-icon"></div>
           <div className="welcome-text">Welcome, Lau</div>
         </div>
         <div className="right-column">

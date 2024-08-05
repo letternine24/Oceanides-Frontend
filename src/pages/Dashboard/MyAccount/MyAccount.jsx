@@ -18,7 +18,7 @@ const MyAccount = () => {
         </div>
       </header>
 
-      <section className="account-summary">
+      <section className="my-account-summary">
         <div className="summary-item">
           <label>Bonus</label>
           <p>$0.00</p>

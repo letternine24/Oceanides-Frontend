@@ -4,6 +4,7 @@ import FinancialInformationTab from "./modules/Tabs/FinancialInformationTab";
 import SettingsSecurityTab from "./modules/Tabs/SettingsSecurityTab";
 import LegalTab from "./modules/Tabs/LegalTab";
 import ReferralForm from "./modules/ReferralForm/ReferralForm";
+import "./Profile.css"; 
 
 const Profile = () => {
   return (
@@ -11,6 +12,10 @@ const Profile = () => {
       {/* Main content area */}
       <div className="content">
         {/* <ProfileDetails /> */}
+
+        <div className="profile-footer">
+            <hr />
+        </div>
 
         {/* Tabs */}
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -110,7 +115,9 @@ const Profile = () => {
           </div>
         </div>
 
-        <ReferralForm />
+        <div className="">
+          <ReferralForm />
+        </div>
       </div>
     </main>
   );

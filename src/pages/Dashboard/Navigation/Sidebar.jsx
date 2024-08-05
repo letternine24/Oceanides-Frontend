@@ -26,8 +26,8 @@ const menuItems = [
     icon: "/assets/icons/depwith-ic.png",
   },
   {
-    path: "/trade-signals",
-    label: "Trade Signals",
+    path: "https://app.corsafutures.com/",
+    label: "cTrader",
     icon: "/assets/icons/tradesignal-ic.png",
   },
   {

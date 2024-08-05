@@ -1,0 +1,105 @@
+.account-summary {
+    padding: 20px;
+}
+
+.account-card {
+    background: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.account-card-header {
+    margin-bottom: 20px;
+
+    h4 {
+        padding-top: 1em;
+    }
+}
+
+.account-card-body p {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.account-card button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icon-wallet {
+    background-image: url("/assets/icons/sack-dollar-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-trading-balance,
+.icon-bonus {
+    background-image: url("/assets/icons/gifts-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-cash-equity {
+    background-image: url("/assets/icons/coins-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-total-deposit {
+    background-image: url("/assets/icons/up-arrow-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-total-withdrawal {
+    background-image: url("/assets/icons/arrow-down-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-total-withdrawal {
+    background-image: url("/assets/icons/arrow-down-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-available-balance,
+.icon-used-margin {
+    background-image: url("/assets/icons/money-check-ic.png");
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
