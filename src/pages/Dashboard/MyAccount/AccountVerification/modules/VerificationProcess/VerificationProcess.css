@@ -1,9 +1,20 @@
+.verification-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-column,
+.right-column {
+  width: 48%;
+}
+
 .personal-details {
   margin-bottom: 1rem;
 }
 
 .form-box {
-  max-width: 600px;
+  max-width: 100%;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
