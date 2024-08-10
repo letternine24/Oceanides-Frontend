@@ -1,5 +1,5 @@
 import React from "react";
-import "@styles/Components/Accordion.css";
+import "./Accordion.css";
 
 const Accordion = ({ accordions }) => {
   const accordionItems = accordions.map((item) => (

@@ -1,20 +1,20 @@
-.referral-form {
-  margin: 20px auto;
+.link-trader {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 30%;
 }
 
-.referral-form h1 {
+.link-trader h1 {
   color: #333;
   margin-bottom: 10px;
 }
 
-.referral-form p {
+.link-trader p {
   margin-bottom: 20px;
 }
 
-.referral-form-field {
+.link-trader-field {
   flex-wrap: nowrap;
 }
 

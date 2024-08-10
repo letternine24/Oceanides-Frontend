@@ -1,0 +1,10 @@
+.content-wrapper {
+  margin-left: 15%;
+  width: 80%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 6rem;
+}

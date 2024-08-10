@@ -75,8 +75,6 @@ const Router = () => {
         {/* Authentication */}
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-
-        {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </BrowserRouter>
   );

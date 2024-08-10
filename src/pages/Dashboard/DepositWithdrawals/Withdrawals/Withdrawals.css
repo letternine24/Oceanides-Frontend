@@ -10,7 +10,6 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f9f9f9;
   font-family: Arial, sans-serif;
 }
 
@@ -24,7 +23,6 @@
 .method-button {
   padding: 10px;
   border: 1px solid #007bff;
-  background-color: white;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -65,8 +63,6 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
   font-size: 14px;
 }
 

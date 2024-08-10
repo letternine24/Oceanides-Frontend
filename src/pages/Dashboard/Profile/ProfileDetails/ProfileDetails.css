@@ -1,0 +1,19 @@
+.profile-details,
+.profile-details-info {
+  display: flex;
+}
+
+.profile-details {
+  gap: 1rem;
+  width: 50%;
+}
+
+.profile-details-info-items p,
+.profile-details-info-items h6 {
+  margin: 0;
+}
+
+.vertical-separator {
+  height: 70px;
+  border-left: 4px solid yellow;
+}

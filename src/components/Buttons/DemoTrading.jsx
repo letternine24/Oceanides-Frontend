@@ -1,5 +1,5 @@
 import React from "react";
-import "@styles/Components/DemoTrading.css";
+import "./DemoTrading.css";
 
 const DemoBtn = () => {
   return (

@@ -5,9 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Change from sticky to fixed to work with sidebar */
+  position: fixed;
   top: 0;
-  left: 250px; /* Aligns header with sidebar width */
+  left: 15%;
   right: 0;
   z-index: 100;
 }

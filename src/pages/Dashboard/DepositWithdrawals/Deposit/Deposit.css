@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 3em;
+  padding-top: 1rem;
 }
 
 .deposit-methods {
@@ -10,8 +10,6 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
 }
 
 .methods-grid {
@@ -66,8 +64,6 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -77,8 +73,4 @@
 
 .deposit-notes ul {
   list-style: square inside;
-}
-
-p {
-  font-size: 14px;
 }

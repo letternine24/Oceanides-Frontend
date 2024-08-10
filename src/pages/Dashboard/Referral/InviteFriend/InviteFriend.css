@@ -1,0 +1,21 @@
+.invite-friend-total-earnings {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.invite-friend-total-earnings-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.invite-friend-earnings {
+  display: flex;
+  gap: 1rem;
+}
+
+.invite-friend-earnings div {
+  border: 1px solid #ccc;
+  text-align: center;
+}

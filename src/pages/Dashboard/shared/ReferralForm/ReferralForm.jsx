@@ -14,9 +14,9 @@ const ReferralForm = () => {
 
   return (
     <div className="referral-form">
-      <h1>Refer Us & Earn</h1>
+      <h2>Refer Us & Earn</h2>
       <p>Use the below link to invite your friends.</p>
-      <div className="input-group">
+      <div className="input-group referral-form-field">
         <input type="text" value={referralLink} readOnly />
         <button onClick={handleCopyClick}>
           <img src="/assets/icons/copy-ic.png" alt="Copy" />

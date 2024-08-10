@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AccountVerification.css";
-import PersonalDetails from "./modules/PersonalDetails/PersonalDetails";
-import VerificationProcess from "./modules/VerificationProcess/VerificationProcess";
+import PersonalDetails from "./PersonalDetails";
+import VerificationProcess from "./VerificationProcess";
 
 const AccountVerification = ({ setVerificationComplete }) => {
   const handleSubmit = (personalData, verificationData) => {
@@ -13,7 +13,7 @@ const AccountVerification = ({ setVerificationComplete }) => {
   };
 
   return (
-    <main className="verification-main-content container">
+    <>
       <h1>Account Verification</h1>
       <p>
         To comply with regulation, each participant will have to go through
@@ -35,7 +35,7 @@ const AccountVerification = ({ setVerificationComplete }) => {
           </button>
         </div>
       </div>
-    </main>
+    </>
   );
 };
 

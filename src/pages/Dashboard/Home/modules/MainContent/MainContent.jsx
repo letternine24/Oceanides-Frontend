@@ -13,54 +13,50 @@ const MainContent = () => {
   const switchToForex = () => setActiveView("forex");
 
   return (
-    <main className="main-content">
-      {/* Main content area */}
-      <div className="content">
-        <Greetings />
-        {/* <div className="banner-container"> */}
+    <>
+      <Greetings />
+      <div>
         <div>
-          <div>
-            <h1 className="account-summary-h1">Account Summary</h1>
-            <AccountSummary />
-          </div>
-
-          <ReferralForm />
+          <h1 className="account-summary-h1">Account Summary</h1>
+          <AccountSummary />
         </div>
-        <div className="trading-view-custom">
-          <div>
-            <button
-              onClick={switchToForex}
-              className={`toggle-button ${
-                activeView === "forex" ? "active" : ""
-              }`}
-            >
-              Track Forex Information
-            </button>
-            <button
-              onClick={switchToCrypto}
-              className={`toggle-button ${
-                activeView === "crypto" ? "active" : ""
-              }`}
-            >
-              Track Cryptocurrency Information
-            </button>
-          </div>
 
-          <div className="component-container">
-            {activeView === "crypto" && (
-              <div className="fade-in">
-                <CryptoTradeView />
-              </div>
-            )}
-            {activeView === "forex" && (
-              <div className="fade-in">
-                <ForexTradeView />
-              </div>
-            )}
-          </div>
+        <ReferralForm />
+      </div>
+      <div className="trading-view-custom">
+        <div>
+          <button
+            onClick={switchToForex}
+            className={`toggle-button ${
+              activeView === "forex" ? "active" : ""
+            }`}
+          >
+            Track Forex Information
+          </button>
+          <button
+            onClick={switchToCrypto}
+            className={`toggle-button ${
+              activeView === "crypto" ? "active" : ""
+            }`}
+          >
+            Track Cryptocurrency Information
+          </button>
+        </div>
+
+        <div className="component-container">
+          {activeView === "crypto" && (
+            <div className="fade-in">
+              <CryptoTradeView />
+            </div>
+          )}
+          {activeView === "forex" && (
+            <div className="fade-in">
+              <ForexTradeView />
+            </div>
+          )}
         </div>
       </div>
-    </main>
+    </>
   );
 };
 

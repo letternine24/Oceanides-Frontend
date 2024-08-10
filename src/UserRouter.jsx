@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from "@pages/Dashboard/Authentication/SignUp";
-import MyAccount from "./pages/Dashboard/MyAccount/Index";
+import MyAccount from "@pages/Dashboard/MyAccount/Index";
 import MainContent from "@pages/Dashboard/Home/modules/MainContent/MainContent";
-import Profile from "@pages/Dashboard/Profile/Profile";
-import DepositWithdrawals from "@pages/Dashboard/DepositWithdrawals/DepositWithdrawals";
+import Profile from "@pages/Dashboard/Profile/Index";
+import DepositWithdrawals from "@pages/Dashboard/DepositWithdrawals/Index";
 import Dashboard from "@pages/Dashboard/Index";
 import Referrals from "@pages/Dashboard/Referral/Index";
 const Router = () => {

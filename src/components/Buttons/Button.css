@@ -1,0 +1,98 @@
+:root {
+  /* Button Font Family */
+  --button-font-family: "Helvetica Neue", Arial, sans-serif;
+
+  /* Button Font Sizes */
+  --button-font-size-small: 0.75rem; /* 12px */
+  --button-font-size-medium: 0.875rem; /* 14px */
+  --button-font-size-large: 1rem; /* 16px */
+
+  /* Button Font Weights */
+  --button-font-weight-normal: 400;
+  --button-font-weight-bold: 700;
+
+  /* Button Padding */
+  --button-padding-small: 5px 10px;
+  --button-padding-medium: 10px 20px;
+  --button-padding-large: 15px 30px;
+
+  /* Button Border Radius */
+  --button-border-radius: 4px;
+
+  /* Button Colors */
+  --button-color-primary: #007bff;
+  --button-color-secondary: #6c757d;
+  --button-color-success: #28a745;
+  --button-color-danger: #dc3545;
+  --button-color-warning: #ffc107;
+  --button-color-info: #17a2b8;
+
+  /* Button Text Colors */
+  --button-text-color-light: #fff;
+  --button-text-color-dark: #000;
+
+  /* Button Border */
+  --button-border-width: 1px;
+  --button-border-style: solid;
+
+  /* Button Hover Effects */
+  --button-hover-opacity: 0.9;
+}
+
+.button {
+  font-family: var(--button-font-family);
+  font-weight: var(--button-font-weight-normal);
+  border-radius: var(--button-border-radius);
+  border: var(--button-border-width) var(--button-border-style) transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.button-small {
+  font-size: var(--button-font-size-small);
+  padding: var(--button-padding-small);
+}
+
+.button-medium {
+  font-size: var(--button-font-size-medium);
+  padding: var(--button-padding-medium);
+}
+
+.button-large {
+  font-size: var(--button-font-size-large);
+  padding: var(--button-padding-large);
+}
+
+.button-primary {
+  background-color: var(--button-color-primary);
+  color: var(--button-text-color-light);
+}
+
+.button-secondary {
+  background-color: var(--button-color-secondary);
+  color: var(--button-text-color-light);
+}
+
+.button-success {
+  background-color: var(--button-color-success);
+  color: var(--button-text-color-light);
+}
+
+.button-danger {
+  background-color: var(--button-color-danger);
+  color: var(--button-text-color-light);
+}
+
+.button-warning {
+  background-color: var(--button-color-warning);
+  color: var(--button-text-color-dark);
+}
+
+.button-info {
+  background-color: var(--button-color-info);
+  color: var(--button-text-color-light);
+}
+
+.button:hover {
+  opacity: var(--button-hover-opacity);
+}

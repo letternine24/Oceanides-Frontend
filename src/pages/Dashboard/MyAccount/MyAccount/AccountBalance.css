@@ -1,0 +1,19 @@
+.account-balance {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+.account-balance-detail {
+}
+
+.verified {
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+.account-balance-actions {
+  text-align: right;
+}
