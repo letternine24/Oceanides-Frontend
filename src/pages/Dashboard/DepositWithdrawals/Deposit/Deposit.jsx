@@ -4,7 +4,6 @@ import "./Deposit.css";
 const Deposit = () => {
   const [selectedMethod, setSelectedMethod] = useState("");
   const [amount, setAmount] = useState("");
-  const [showNotes, setShowNotes] = useState(false);
 
   const handleMethodClick = (method) => {
     setSelectedMethod(method);
@@ -12,7 +11,6 @@ const Deposit = () => {
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value);
-    setShowNotes(e.target.value !== ""); // Show notes when amount is not empty
   };
 
   const handleConfirm = () => {
@@ -24,20 +22,18 @@ const Deposit = () => {
     <div className="deposit-container">
       <div className="deposit-methods">
         <h1>Deposit Methods</h1>
-      <div className="methods-grid">
-          {["FPX", "VISA", "Crypto"].map(
-            (method) => (
-              <button
-                key={method}
-                className={`method-button ${
-                  selectedMethod === method ? "selected" : ""
-                }`}
-                onClick={() => handleMethodClick(method)}
-              >
-                {method}
-              </button>
-            )
-          )}
+        <div className="methods-grid">
+          {["FPX", "VISA", "Crypto"].map((method) => (
+            <button
+              key={method}
+              className={`method-button ${
+                selectedMethod === method ? "selected" : ""
+              }`}
+              onClick={() => handleMethodClick(method)}
+            >
+              {method}
+            </button>
+          ))}
         </div>
         <div className="amount-section">
           <label htmlFor="amount">Enter Amount</label>
@@ -55,29 +51,27 @@ const Deposit = () => {
           "Confirm" and you will be redirected to the payment page
         </p>
       </div>
-      {showNotes && (
-        <div className="deposit-notes">
-          <h2>Before you proceed with a deposit please note the following:</h2>
-          <ul>
-            <li>
-              Please make sure that all payments are made from an account
-              registered in the same name as your Corsa Futures account.
-            </li>
-            <li>
-              All withdrawals, excluding profits, can only be paid back to the
-              credit/debit card that the deposit was initiated from, up to the
-              deposited amount.
-            </li>
-            <li>
-              By submitting a deposit request, you consent to your data being
-              shared with third parties, including payment service providers,
-              banks, card schemes, regulators, law enforcement, government
-              agencies, credit reference bureaus and other parties we deem
-              necessary to process your payment and/or verify your identity.
-            </li>
-          </ul>
-        </div>
-      )}
+      <div className="deposit-notes">
+        <h2>Before you proceed with a deposit please note the following:</h2>
+        <ul>
+          <li>
+            Please make sure that all payments are made from an account
+            registered in the same name as your Corsa Futures account.
+          </li>
+          <li>
+            All withdrawals, excluding profits, can only be paid back to the
+            credit/debit card that the deposit was initiated from, up to the
+            deposited amount.
+          </li>
+          <li>
+            By submitting a deposit request, you consent to your data being
+            shared with third parties, including payment service providers,
+            banks, card schemes, regulators, law enforcement, government
+            agencies, credit reference bureaus and other parties we deem
+            necessary to process your payment and/or verify your identity.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

@@ -4,7 +4,6 @@ import "./Withdrawals.css";
 const Withdrawals = () => {
   const [selectedMethod, setSelectedMethod] = useState("");
   const [amount, setAmount] = useState("");
-  const [showNotes, setShowNotes] = useState(false);
 
   const handleMethodClick = (method) => {
     setSelectedMethod(method);
@@ -12,7 +11,6 @@ const Withdrawals = () => {
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value);
-    setShowNotes(e.target.value !== ""); // Show notes when amount is not empty
   };
 
   const handleConfirm = () => {
@@ -53,31 +51,27 @@ const Withdrawals = () => {
           on "Confirm" and you will be redirected to the payment page
         </p>
       </div>
-      {showNotes && (
-        <div className="withdrawal-notes">
-          <h2>
-            Before you proceed with a withdrawal please note the following:
-          </h2>
-          <ul>
-            <li>
-              We strongly suggest that you submit withdrawal requests after
-              closing your positions.
-            </li>
-            <li>
-              All withdrawals, excluding profits, can only be paid back to the
-              credit/debit card that the deposit was initiated from, up to the
-              deposited amount.
-            </li>
-            <li>
-              By submitting a withdrawal request, you consent to your data being
-              shared with third parties, including payment service providers,
-              banks, card schemes, regulators, law enforcement, government
-              agencies, credit reference bureaus and other parties we deem
-              necessary to process your payment and/or verify your identity.
-            </li>
-          </ul>
-        </div>
-      )}
+      <div className="withdrawal-notes">
+        <h2>Before you proceed with a withdrawal please note the following:</h2>
+        <ul>
+          <li>
+            We strongly suggest that you submit withdrawal requests after
+            closing your positions.
+          </li>
+          <li>
+            All withdrawals, excluding profits, can only be paid back to the
+            credit/debit card that the deposit was initiated from, up to the
+            deposited amount.
+          </li>
+          <li>
+            By submitting a withdrawal request, you consent to your data being
+            shared with third parties, including payment service providers,
+            banks, card schemes, regulators, law enforcement, government
+            agencies, credit reference bureaus and other parties we deem
+            necessary to process your payment and/or verify your identity.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
