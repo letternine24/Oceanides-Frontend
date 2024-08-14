@@ -1,0 +1,12 @@
+:root {
+  --corsa-membersite-light-blue: #5cb2ff;
+  --corsa-membersite-dark-blue: #2d6aef;
+  --corsa-membersite-yellow: #ffcc00;
+  --corsa-membersite-green: #006a27;
+  --corsa-membersite-black: #000000;
+
+  /* Dashboard-specific colors */
+  --corsa-dashboard-yellow: #ffcc00;
+  --corsa-dashboard-dark-purple: #22175b;
+  --corsa-dashboard-cream: #fffcf5;
+}

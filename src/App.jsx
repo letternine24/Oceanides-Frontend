@@ -1,26 +1,20 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import Router from "./Router";
-import UserRouter from "./UserRouter";
+import useAuth from "./composables/useAuth"; // Import the custom hook
 
 const App = () => {
-  const isAuthenticated = true;
+  const { isAuthenticated } = useAuth(); // Use the composable to get auth state
+
   return (
     <>
-      {isAuthenticated ? (
-        <>
-          <UserRouter />
-        </>
-      ) : (
-        <>
-          <Header />
-          <Router />
-          <Footer />
-        </>
-      )}
+      {!isAuthenticated && <Header />}
+      <Router />
+      {!isAuthenticated && <Footer />}
     </>
   );
 };

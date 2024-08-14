@@ -1,15 +1,15 @@
 .accordion-items-btn {
-  color: #1b1464 !important;
+  color: var(--corsa-dashboard-dark-purple);
 }
 
 .accordion-items div strong {
-  color: #000;
+  color: var(--corsa-membersite-black);
 }
 
 .accordion-items div {
-  color: #1b1464 !important;
+  color: var(--corsa-dashboard-dark-purple);
 }
 
-.accordion-button:not(.collapsed) { 
-  background-color: #fff;
+.accordion-button:not(.collapsed) {
+  background-color: var(--corsa-dashboard-cream);
 }

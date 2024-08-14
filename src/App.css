@@ -1,6 +1,8 @@
+@import "./css/variables.css";
+
 html * {
   font-size: clamp(14px, 2vw, 16px);
-  font-family: "Lato", sans-serif;
+  /* font-family: "Trebuchet MS", sans-serif; */
   font-style: normal;
 }
 
@@ -12,7 +14,7 @@ body {
 
 :root {
   /* Font Family */
-  --font-family-lato: "Lato", sans-serif;
+  --font-family-trebuchet: "Trebuchet MS", sans-serif;
 
   /* Font Sizes */
   --font-size-xx-small: 0.625rem; /* 10px */
@@ -38,15 +40,10 @@ body {
   --letter-spacing-tight: -0.05em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.05em;
-
-  /* Text Colors */
-  /* --text-color-primary: #333;
-  --text-color-secondary: #555;
-  --text-color-muted: #888; */
 }
 
 body {
-  font-family: var(--font-family-lato);
+  font-family: var(--font-family-trebuchet);
   font-size: var(--font-size-medium);
   line-height: var(--line-height-normal);
 }

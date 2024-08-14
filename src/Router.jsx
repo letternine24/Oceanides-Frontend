@@ -1,6 +1,8 @@
-// Router.js
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import useAuth from "./composables/useAuth"; // Import the custom hook for authentication
+
+// Public Pages
 import Home from "@pages/Home/Home";
 import WhoWhyCorsaFutures from "@pages/AboutUs/WhoWhyCorsaFutures";
 import RegulatorySupervision from "@pages/AboutUs/RegulatorySupervision";
@@ -29,10 +31,21 @@ import Cryptocurrencies from "@pages/Trading/Subpages/Cryptocurrencies";
 import SignUp from "@pages/Dashboard/Authentication/SignUp";
 import Login from "@pages/Dashboard/Authentication/Login";
 
+// User Dashboard Pages
+import MyAccount from "@pages/Dashboard/MyAccount/Index";
+import MainContent from "@pages/Dashboard/Home/modules/MainContent/MainContent";
+import Profile from "@pages/Dashboard/Profile/Index";
+import DepositWithdrawals from "@pages/Dashboard/DepositWithdrawals/Index";
+import Dashboard from "@pages/Dashboard/Index";
+import Referrals from "@pages/Dashboard/Referral/Index";
+
 const Router = () => {
+  const { isAuthenticated } = useAuth(); // Use the composable to get the auth state
+
   return (
     <BrowserRouter>
       <Routes>
+        {/* Public Routes */}
         <Route exact path="/" element={<Home />} />
         <Route path="/about-us" element={<WhoWhyCorsaFutures />} />
         <Route
@@ -42,8 +55,6 @@ const Router = () => {
         <Route path="/legal-documents" element={<LegalDocuments />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/contact-us" element={<ContactUs />} />
-
-        {/* Trading Tools */}
         <Route path="/economic-calendar" element={<EconomicCalendar />} />
         <Route path="/market-news" element={<MarketNews />} />
         <Route path="/all-in-one" element={<AllInOne />} />
@@ -52,17 +63,9 @@ const Router = () => {
         <Route path="/margin" element={<Margin />} />
         <Route path="/swaps" element={<Swaps />} />
         <Route path="/profit-loss" element={<ProfitLoss />} />
-
-        {/* Platform */}
         <Route path="/platform" element={<Platform />} />
-
-        {/* Trading */}
         <Route path="/trading-account-type" element={<TradingAccountType />} />
-
-        {/* Deposit & Withdrawal */}
         <Route path="/deposit-withdrawal" element={<DepositWithdrawal />} />
-
-        {/* Instruments */}
         <Route path="/instruments" element={<Instruments />} />
         <Route path="/forex" element={<Forex />} />
         <Route path="/stocks" element={<Stocks />} />
@@ -71,10 +74,22 @@ const Router = () => {
         <Route path="/energies" element={<Energies />} />
         <Route path="/commodities" element={<Commodities />} />
         <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-
-        {/* Authentication */}
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+
+        {/* Protected User Dashboard Routes */}
+        {isAuthenticated ? (
+          <Route path="/" element={<Dashboard />}>
+            <Route index element={<Navigate to="/dashboard" replace />} />
+            <Route path="dashboard" element={<MainContent />} />
+            <Route path="my-account" element={<MyAccount />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="deposit-withdraw" element={<DepositWithdrawals />} />
+            <Route path="referrals" element={<Referrals />} />
+          </Route>
+        ) : (
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        )}
       </Routes>
     </BrowserRouter>
   );

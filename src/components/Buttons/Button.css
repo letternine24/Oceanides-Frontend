@@ -1,7 +1,4 @@
 :root {
-  /* Button Font Family */
-  --button-font-family: "Helvetica Neue", Arial, sans-serif;
-
   /* Button Font Sizes */
   --button-font-size-small: 0.75rem; /* 12px */
   --button-font-size-medium: 0.875rem; /* 14px */
@@ -19,14 +16,6 @@
   /* Button Border Radius */
   --button-border-radius: 4px;
 
-  /* Button Colors */
-  --button-color-primary: #007bff;
-  --button-color-secondary: #6c757d;
-  --button-color-success: #28a745;
-  --button-color-danger: #dc3545;
-  --button-color-warning: #ffc107;
-  --button-color-info: #17a2b8;
-
   /* Button Text Colors */
   --button-text-color-light: #fff;
   --button-text-color-dark: #000;
@@ -40,7 +29,6 @@
 }
 
 .button {
-  font-family: var(--button-font-family);
   font-weight: var(--button-font-weight-normal);
   border-radius: var(--button-border-radius);
   border: var(--button-border-width) var(--button-border-style) transparent;
