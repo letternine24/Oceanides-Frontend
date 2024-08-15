@@ -5,6 +5,7 @@ import { fileURLToPath, URL } from "url";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/Oceanides-Frontend/', // Replace 'your-repository-name' with your actual repo name
   resolve: { 
     alias: [
       { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
