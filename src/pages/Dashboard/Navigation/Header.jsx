@@ -1,8 +1,12 @@
 // Header.jsx
 import React from "react";
 import "./Header.css";
+import useAuth from "../../../composables/useAuth";
 
 const Header = () => {
+
+  const { isAuthenticated, toggleAuth } = useAuth();
+
   return (
     <header className="user-header">
       <div className="logo">
@@ -26,6 +30,11 @@ const Header = () => {
                 alt="Profile"
                 className="nav-icon"
               />
+            </a>
+          </li>
+          <li>
+            <a href="/" onClick={toggleAuth}>
+              LOGOUT
             </a>
           </li>
         </ul>

@@ -36,7 +36,7 @@ const Login = () => {
     toggleAuth();
     console.log(navigate);
     if (isAuthenticated) {
-      navigate("/");
+      navigate("/dashboard");
       window.location.reload();
     }
   };
