@@ -34,7 +34,7 @@ const Header = () => {
           </li>
           <li>
             <a href="/" onClick={toggleAuth}>
-              LOGOUT
+              Logout
             </a>
           </li>
         </ul>

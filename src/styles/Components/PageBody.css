@@ -19,7 +19,7 @@
 
 .page-body-hr {
   width: 60%;
-  border: 2px solid gold;
+  border: 2px solid var(--corsa-dashboard-yellow);
 }
 
 .page-body-header {

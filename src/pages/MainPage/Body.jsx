@@ -32,9 +32,11 @@ const Body = () => {
               <div className="navigating-section">
 
                 <h1>
-                  <p>Navigating</p>
-                  <p>Opportunities,</p>
-                  <p>Mastering Markets:</p>
+                  Navigating
+                  <br></br>
+                  Opportunities
+                  <br></br>
+                  Mastering Markets:
                 </h1>
 
                 <h2>Your Trusted Investment Partner</h2>
@@ -61,8 +63,9 @@ const Body = () => {
             <div className="empowering-section">
 
               <h1>
-                <p>Empowering Your Financial Journey</p>
-                <p>with Precision and Performance.</p>
+                Empowering Your Financial Journey
+                <br></br>
+                with Precision and Performance.
               </h1>
 
               <div className="empowering-icon-container">
@@ -80,15 +83,16 @@ const Body = () => {
 
               <div className="main-page-hr"></div>
               <h1>
-                <p>Trading Anywhere,</p>
-                <p>at Any Time</p>
+                Trading Anywhere,
+                <br></br>
+                at Any Time
               </h1>
 
               <div>
                   <div className="trading-content-container">
                       <div className="trading-content-left">
                           
-                          <p>Trade Global Stocks, Forex, Metals, Crypto CFDs and More with our world recognized cTrader App.</p>
+                          <h2>Trade Global Stocks, Forex, Metals, Crypto CFDs and More with our world recognized cTrader App.</h2>
 
                           <img src={tradingTextIC} />
                       </div>
@@ -114,12 +118,12 @@ const Body = () => {
                       <div className="download-content-left">
                           
                       <h1>
-                        <p>Download Now</p>
+                        Download Now
                       </h1>
 
                       <h2>
-                        <p>Now you can download the app through</p>
-                        <p>Apple and Google Store</p>
+                        Now you can download the app through
+                        Apple and Google Store
                       </h2>
 
                       </div>
@@ -145,18 +149,19 @@ const Body = () => {
                       <div className="instant-content-left">
                         <div>
                           <h1>
-                            <p>Instant Deposits,</p>
-                            <p>Fast withdrawals</p>
+                            Instant Deposits,
+                            <br></br>
+                            Fast withdrawals
                           </h1>
 
-                          <h2>
-                            <p>Fund your account easily and securely</p>
-                            <p>through our wide range of payment options</p>
-                          </h2>
+                          <h3>
+                            Fund your account easily and securely
+                            through our wide range of payment options
+                          </h3>
 
-                          <h2>
-                            <p>Your funds are held securely in Tier 1 banks</p>
-                          </h2>
+                          <h3>
+                            Your funds are held securely in Tier 1 banks
+                          </h3>
                         </div>
                       </div>
 

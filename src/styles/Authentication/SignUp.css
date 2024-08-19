@@ -20,9 +20,9 @@
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        width: 10px; /* Adjust the size of the square */
-        height: 10px; /* Adjust the size of the square */
-        background-color: gold; /* Adjust the color of the square */
+        width: 10px;
+        height: 10px;
+        background-color: var(--corsa-dashboard-yellow);
       }
 }
 
@@ -45,7 +45,7 @@
 
 .signup-content-left {
     h1 {
-        color: gold;
+        color: var(--corsa-dashboard-yellow);
         font-size: 60px;
     }
 

@@ -1,6 +1,6 @@
 #footer{
     border-top: solid;
-    border-color: gold;
+    border-color: var(--corsa-dashboard-yellow);
     border-width: 5px;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .footer-custom-text {
-  color: gold !important;
+  color: var(--corsa-dashboard-yellow) !important;
 }
 
 .text-field {
@@ -65,7 +65,7 @@
 }
 
 .submit-button {
-  background-color: gold;
+  background-color: var(--corsa-dashboard-yellow);
   color: black;
   padding: 10px 20px;
   border: none;

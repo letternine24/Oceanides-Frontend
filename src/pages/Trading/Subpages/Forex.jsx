@@ -16,9 +16,9 @@ const Forex = () => {
 
         <PageHeading pageTitle="Instruments" pageHeader="Range of Markets" pageBgImg={imgBg}>
             <div className="page-header-instrument">
-                <p>
+                <h3>
                     Corsa Futures, your access point to the international financial landscape.
-                </p>
+                </h3>
             </div>
 
             <div className="instrument-container">
@@ -42,7 +42,7 @@ const Forex = () => {
                                     <li>Deep Liquidity</li>
                                 </ul>
 
-                                <a href="#" className='page-instrument-button'>
+                                <a href="https://app.corsafutures.com/" className='page-instrument-button'>
                                     <span>
                                         START TRADING
                                         <img src="/assets/icons/arrow-circle.png" className="arrow-icon"/>

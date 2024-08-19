@@ -4,7 +4,7 @@
 
 .main-page-hr {
     width: 50%;
-    border: 3px solid gold;
+    border: 3px solid var(--corsa-dashboard-yellow);
 }
 
 /* navigation css */
@@ -17,7 +17,7 @@
 .navigating-section {
   h1 {
     font-size: 70px;
-    color: gold;
+    color: var(--corsa-dashboard-yellow);
     font-weight: 500;
   }
 

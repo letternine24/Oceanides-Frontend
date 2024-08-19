@@ -31,7 +31,7 @@
 }
 
 .link-active {
-  background-color: gold;
+  background-color: var(--corsa-dashboard-yellow);
   color: black;
   border: 2px solid darkblue;
   font-size: 13px;
