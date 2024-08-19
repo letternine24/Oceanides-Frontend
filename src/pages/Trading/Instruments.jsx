@@ -16,9 +16,9 @@ const Instruments = () => {
 
         <PageHeading pageTitle="Instruments" pageHeader="Range of Markets" pageBgImg={imgBg}>
             <div className="page-header-instrument">
-                <p>
+                <h3>
                     Corsa Futures, your access point to the international financial landscape.
-                </p>
+                </h3>
             </div>
 
             <div>

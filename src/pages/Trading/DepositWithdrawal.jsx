@@ -9,7 +9,7 @@ const DepositWithdrawal = () => {
 
     const imgBg = '/assets/images/common-bg.png'
     const imgPayment = '/assets/images/depositwidthdraw-payment-method.png'
-    const headerMessage = <p>Instant Deposits. Fast Withdrawls. No Commission.</p>
+    const headerMessage = <h1>Instant Deposits. Fast Withdrawls. No Commission.</h1>
 
     return (
       <>
@@ -17,10 +17,10 @@ const DepositWithdrawal = () => {
 
         <PageHeading pageTitle="Deposit & Withdrawal" pageHeader={headerMessage} pageBgImg={imgBg}>
             <div className="page-header-deposit-withdrawal">
-                <p>
+                <h3>
                     Easily and securely fund your account using our extensive range of payment options. Rest assured; your funds are held in utmost 
                     security within Tier 1 banks.
-                </p>
+                </h3>
             </div>
         </PageHeading>
 

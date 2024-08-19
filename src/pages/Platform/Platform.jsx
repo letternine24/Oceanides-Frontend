@@ -13,19 +13,19 @@ const Platform = () => {
     <>
       <main>
         <PageHeading pageHeader="cTrader Trading Platform">
-          <p>
+          <h3>
             Experience our unparalleled cTrader conditions with commissions
             slashed to $35 per $1 million traded. Enjoy our best-ever trading
             environment featuring ultra-low spreads on FX and Metals.
-          </p>
-          <p>
+          </h3>
+          <h3>
             Pairing Corsa Futures’s cutting-edge trading infrastructure,
             competitive pricing, and impeccable order execution without dealing
             desk intervention*, the cTrader platform delivers an
             industry-leading and innovative trading experience.
-          </p>
+          </h3>
 
-          <DemoBtn></DemoBtn>
+          <DemoBtn />
         </PageHeading>
 
         {/* cTrader Desktop Platform */}
@@ -35,37 +35,52 @@ const Platform = () => {
           </h1>
 
           <div className="page-body-text-platform">
-            <p>
+            <h3>
               In addition to its extensive array of advanced technical features,
               the cTrader platform incorporates cTID (cTrader ID) login
               functionality. This unique feature allows seamless access to all
               linked accounts through a single login, ensuring synchronized
               settings. Download for free today and unlock a multitude of
               benefits when paired with the Corsa Futures cTrader account.
-            </p>
+            </h3>
 
             <div className="platform-content-container">
               <div className="platform-content-left">
                 <div className="border">
-                  <p>+ 55+ pre – installed technical indicators</p>
-                  <p>+ 6 chart types & 28 timeframes</p>
-                  <p>+ Level 2 Depth of Market (DoM)</p>
-                  <p>+ No restrictions on stop / limit levels</p>
-                  <p>+ Additional pending order types</p>
-                  <p>+ Detachable charts & linked charts</p>
-                  <p>+ 1-click trading & trade from charts</p>
-                  <p>
-                    + Advanced Order Protection (sell stop limit & buy stop
-                    limit)
-                  </p>
-                  <p>+ Trailing stop</p>
-                  <p>+ Fully customizable charts and interface</p>
-                  <p>+ Add custom cBots & indicators</p>
-                  <p>+ News feed</p>
-                  <p>+ Integrated Economic Calendar</p>
-                  <p>+ Market Sentiment</p>
-                  <p>+ Custom time zone</p>
-                  <p>+ Analyze trade statistic</p>
+                  <h3>
+                    + 55+ pre – installed technical indicators
+                    <br/>
+                    + 6 chart types & 28 Timeframes
+                    <br/>
+                    + Level 2 Depth of Market (DoM)
+                    <br/>
+                    + No restrictions on stop / limit levels
+                    <br/>
+                    + Additional pending order types
+                    <br/>
+                    + Detachable charts & linked charts
+                    <br/>
+                    + 1-click trading & trade from charts
+                    <br/>
+                    + Advanced Order Protection (sell stop limit & buy stop limit)
+                    <br/>
+                    + Trailing stop
+                    <br/>
+                    + Fully customizable charts and interface
+                    <br/>
+                    + Add custom cBots & indicators
+                    <br/>
+                    + News feed
+                    <br/>
+                    + Integrated Economic Calendar
+                    <br/>
+                    + Market Sentiment
+                    <br/>
+                    + Custom time zone
+                    <br/>
+                    + Analyze trade statistic
+                    <br/>
+                  </h3>
                 </div>
               </div>
 
@@ -82,10 +97,8 @@ const Platform = () => {
                     <h1>Download Now</h1>
 
                     <h2>
-                      <p>
                         Now you can download the app through Apple and Google
                         Store
-                      </p>
                     </h2>
                     
                     <img src="/assets/icons/download.png" className="img-size" />
@@ -110,11 +123,11 @@ const Platform = () => {
           <div className="platform-content-container">
             <div className="platform-content-left">
               <div className="container page-body-text-platform white-text">
-                <p className="custom-padding">
+                <h3 className="custom-padding">
                   Get your complimentary download today and leverage the full
                   range of advantages it brings when used alongside the Corsa
                   Futures cTrader account.
-                </p>
+                </h3>
                 
                 <div className="overlay-wrap">
                   <a href="https://getctrader.com/corsafutures/ctrader-corsafutures-setup.exe">
@@ -123,10 +136,10 @@ const Platform = () => {
                   </a>
                 </div>
 
-                <p className="custom-padding">
+                <h3 className="custom-padding">
                   Supports Microsoft Windows 2008/7/8/10 operating systems.
                   Requires internet speed of 56kbps or higher.
-                </p>
+                </h3>
               </div>
             </div>
 
@@ -151,12 +164,12 @@ const Platform = () => {
           <div className="platform-content-container">
             <div className="platform-content-left">
               <div className="container">
-                <p className="page-body-section-header-platform">
+                <h1 className="page-body-section-header-platform">
                   DOWNLOAD CTRADER FOR MOBILE & TABLETS
-                </p>
+                </h1>
 
                 <div className="page-body-section-platform">
-                  <p>
+                  <h3>
                     Incorporating an extensive array of advanced technical
                     features, the cTrader platform employs cTID (cTrader ID)
                     login functionality. This innovative feature enables access
@@ -164,14 +177,22 @@ const Platform = () => {
                     synchronized settings. Avail yourself of the myriad benefits
                     by downloading for free today and harness the power of the
                     Corsa Futures cTrader account.
-                  </p>
-                  <br></br>
-                  <p>+ 50+ Technical Indicators</p>
-                  <p>+ 6 Timeframes</p>
-                  <p>+ Quick Trade Options</p>
-                  <p>+ No Restrictions on Stop/Limit Levels</p>
-                  <p>+ Depth of Markets (DoM)</p>
-                  <p>+ Notifications for Execution and Price Alerts</p>
+                  </h3>
+                  <br/>
+                  <h3>
+                    + 50+ Technical Indicators
+                    <br/>
+                    + 6 Timeframes
+                    <br/>
+                    + Quick Trade Options
+                    <br/>
+                    + No Restrictions on Stop/Limit Levels
+                    <br/>
+                    + Depth of Markets (DoM)
+                    <br/>
+                    + Notifications for Execution and Price Alerts
+                  </h3>
+                  
                 </div>
               </div>
             </div>
@@ -197,12 +218,12 @@ const Platform = () => {
             <div className="platform-content-left">
               <div className="container">
                 <div className="page-body-hr"></div>
-                <p className="page-body-section-header-platform">
+                <h1 className="page-body-section-header-platform">
                   DOWNLOAD CTRADER WEB PLATFORM
-                </p>
+                </h1>
 
                 <div className="page-body-section-platform">
-                  <p>
+                  <h3>
                     The cTrader web platform stands as a robust solution for
                     browser and Mac users, delivering equivalent advanced
                     functionalities to the desktop platform (excluding cTrader
@@ -211,7 +232,7 @@ const Platform = () => {
                     installation. System Requirements: Access from any device
                     through your internet browser (recommended to have the
                     latest updated version of browser).
-                  </p>
+                  </h3>
                   <br></br>
 
                   <a href="#">
@@ -232,12 +253,11 @@ const Platform = () => {
           </h1>
 
           <div className="page-body-text-platform">
-            <p>
-              {" "}
+            <h2>
               Contact our 24/7 support team via chat or email for direct
               assistance.
-            </p>
-            <p>Download cTrader for free and start trading with us today!</p>
+            </h2>
+            <h3>Download cTrader for free and start trading with us today!</h3>
 
             <DemoBtn />
           </div>

@@ -4,7 +4,7 @@
 
 .page-instrument-content {
   h1 {
-    color: gold;
+    color: var(--corsa-dashboard-yellow);
   }
 
   p {
@@ -17,7 +17,7 @@
 .page-instrument-button {
   color: black;
   text-decoration: none;
-  background-color: gold;
+  background-color: var(--corsa-dashboard-yellow);
   border-color: #22175b;
   margin-bottom: 3px;
   margin-right: 3px;
@@ -28,7 +28,7 @@
 }
 
 .page-instrument-button:hover {
-  background-color: gold;
+  background-color: var(--corsa-dashboard-yellow);
   color: white;
   font-weight: 600;
   transition: 0.4s;
@@ -58,12 +58,12 @@
 
 .page-instrument-hr {
   width: 25%;
-  border: 3px solid gold;
+  border: 3px solid var(--corsa-dashboard-yellow);
 }
 
 .page-instrument-hr-custom {
   width: 90%;
-  border: 3px solid gold;
+  border: 3px solid var(--corsa-dashboard-yellow);
 }
 
 ul {
