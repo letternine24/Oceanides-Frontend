@@ -1,6 +1,6 @@
 .user-header {
   background-color: var(--corsa-membersite-dark-blue);
-  color: #fff;
+  color: var(--corsa-white-color);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -35,7 +35,7 @@
 }
 
 .user-navbar ul li a {
-  color: #fff;
+  color: var(--corsa-white-color);
   text-decoration: none;
   display: flex;
   align-items: center;

@@ -19,7 +19,7 @@
 
 .textbox-input-container input[type="text"]:focus,
 .textbox-input-container input[type="password"]:focus {
-    border-color: black;
+    border-color: var(--corsa-black-color);
     outline: none;
 }
 

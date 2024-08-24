@@ -1,3 +1,6 @@
+@import "./media-queries/media-queries.css";
+@import "./elements/_base.css";
+
 :root {
   --corsa-membersite-light-blue: #5cb2ff;
   --corsa-membersite-dark-blue: #2d6aef;
@@ -9,4 +12,8 @@
   --corsa-dashboard-yellow: #ffcc00;
   --corsa-dashboard-dark-purple: #22175b;
   --corsa-dashboard-cream: #fffcf5;
+
+  /* Colors */
+  --corsa-white-color: #ffffff;
+  --corsa-black-color: #000000;
 }

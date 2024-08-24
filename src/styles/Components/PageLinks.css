@@ -22,7 +22,7 @@
   max-width: 100%;
   background-color: #555;
   border-color: #333333;
-  color: #fff;
+  color: var(--corsa-white-color);
   text-decoration: none;
   padding: 12px 16px 10px;
   font-size: 13px;
@@ -32,7 +32,7 @@
 
 .link-active {
   background-color: var(--corsa-dashboard-yellow);
-  color: black;
+  color: var(--corsa-black-color);
   border: 2px solid darkblue;
   font-size: 13px;
   font-weight: 600;

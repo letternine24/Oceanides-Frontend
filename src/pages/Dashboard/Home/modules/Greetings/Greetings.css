@@ -49,7 +49,7 @@
 .action-button {
   padding: 8px 16px;
   background-color: #007bff;
-  color: #fff;
+  color: var(--corsa-white-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -61,8 +61,7 @@
 }
 
 .action-button:hover {
-  background-color: var(--corsa-membersite-green);;
-
+  background-color: var(--corsa-membersite-green);
 }
 
 hr {

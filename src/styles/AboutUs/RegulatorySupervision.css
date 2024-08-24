@@ -4,7 +4,7 @@
 }
 
 .regulatory-supervision-title {
-  color: #ffcb00;
+  color: var(--corsa-dashboard-yellow);
 }
 
 .regulatory-supervision-description {

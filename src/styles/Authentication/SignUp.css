@@ -1,121 +1,120 @@
 .signup-container {
-    height: 100%;
+  height: 100%;
 
-    ul {
-        list-style-type: none; /* Remove default list styles */
-        padding: 0; /* Remove default padding */
-      }
-      
-      li {
-        position: relative;
-        padding-left: 30px; /* Adjust as needed */
-        margin-bottom: 8px; /* Adjust spacing between items */
-        line-height: 1.5; /* Adjust line height */
-        color: white;
-      }
-      
-      li:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 10px;
-        height: 10px;
-        background-color: var(--corsa-dashboard-yellow);
-      }
+  ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+
+  li {
+    position: relative;
+    padding-left: 30px; /* Adjust as needed */
+    margin-bottom: 8px; /* Adjust spacing between items */
+    line-height: 1.5; /* Adjust line height */
+    color: var(--corsa-white-color);
+  }
+
+  li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--corsa-dashboard-yellow);
+  }
 }
 
 .signup-content-container {
-    width: 100%;
-    display: flex;
-    height: 1500px;
+  width: 100%;
+  display: flex;
+  height: 1500px;
 }
 
 .signup-content-right {
-    width: 50%;
-    padding: 5rem;
-    background-color: white;
-    height: 100%;
+  width: 50%;
+  padding: 5rem;
+  background-color: var(--corsa-white-color);
+  height: 100%;
 
-    h1 {
-        text-align: center;
-    }
+  h1 {
+    text-align: center;
+  }
 }
 
 .signup-content-left {
-    h1 {
-        color: var(--corsa-dashboard-yellow);
-        font-size: 60px;
-    }
+  h1 {
+    color: var(--corsa-dashboard-yellow);
+    font-size: 60px;
+  }
 
-    p {
-        color: white;
-        font-size: 25px;
-    }
-    
-    width: 50%;
-    padding-top: 400px;
+  p {
+    color: var(--corsa-white-color);
+    font-size: 25px;
+  }
+
+  width: 50%;
+  padding-top: 400px;
 }
 
 .create-account-container {
+  h1 {
+    padding: 5rem;
+    color: navy;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+  }
 
-    h1 {
-        padding: 5rem;
-        color: navy;
-        font-size: 30px;
-        text-align: center;
-        font-weight: 700;
-    }
+  p {
+    color: navy;
+    font-size: 15px;
+    font-weight: 500;
+  }
 
-    p {
-        color: navy;
-        font-size: 15px;
-        font-weight: 500;
-    }
-
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .create-account-content-left {
-    width: 50%;
+  width: 50%;
 }
 
 .error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .textbox-spacing {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 .flex-placeholder {
-    display: flex;
-    width: 15%;
+  display: flex;
+  width: 15%;
 }
 
 .signup-content-right input[type="checkbox"] {
-    margin-right: 10px;
-    padding: 10px;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .register-button {
-    text-align: center;
-    padding: 7px;
-    width: 100%;
-    font-weight: 500;
-    color: white;
-    background-image: url('/assets/images/register-bg.png');
+  text-align: center;
+  padding: 7px;
+  width: 100%;
+  font-weight: 500;
+  color: var(--corsa-white-color);
+  background-image: url("/assets/images/register-bg.png");
 
-    img {
-        padding-right: 10px;
-    }
+  img {
+    padding-right: 10px;
+  }
 }
 
 .content-spacing {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

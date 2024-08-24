@@ -1,10 +1,10 @@
 .mainpage-body-container {
-  padding-top: 250px;
+  padding-top: 6rem
 }
 
 .main-page-hr {
-    width: 50%;
-    border: 3px solid var(--corsa-dashboard-yellow);
+  width: 50%;
+  border: 3px solid var(--corsa-dashboard-yellow);
 }
 
 /* navigation css */
@@ -16,6 +16,7 @@
 
 .navigating-section {
   h1 {
+    text-transform: uppercase;
     font-size: 70px;
     color: var(--corsa-dashboard-yellow);
     font-weight: 500;
@@ -23,7 +24,7 @@
 
   h2 {
     font-size: 40px;
-    color: white;
+    color: var(--corsa-white-color);
     font-weight: 500;
   }
 }
@@ -31,7 +32,7 @@
 .navigating-section-risk {
   p {
     font-size: 22px;
-    color:white;
+    color: var(--corsa-white-color);
   }
 
   padding-top: 1rem;
@@ -40,18 +41,18 @@
 
 /* empowering css */
 .empowering-section {
-  h1 {
-    font-size: 70px;
-    color: black;
-    font-weight: 500;
-  }
-
   padding: 1rem 2rem 1.5rem;
   height: 100%;
   width: 100%;
+
+  h1 {
+    font-size: 70px;
+    color: var(--corsa-black-color);
+    font-weight: 500;
+  }
 }
 
-.empowering-icon-container{
+.empowering-icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,15 +63,15 @@
 
 /* trading css */
 .trading-section {
-  h1 {
-    font-size: 70px;
-    color: white;
-    font-weight: 500;
-  }
-
   padding: 1rem 2rem 1.5rem;
   height: 100%;
   width: 100%;
+
+  h1 {
+    font-size: 70px;
+    color: var(--corsa-white-color);
+    font-weight: 500;
+  }
 }
 
 .trading-content-container {
@@ -79,7 +80,7 @@
 }
 
 .trading-content-left {
-  color: white;
+  color: var(--corsa-white-color);
   font-size: 22px;
   display: block;
   padding-top: 5rem;
@@ -94,16 +95,16 @@
 /* trading css */
 
 /* download css */
-.mainpage-download-section{
-  h1 {
-    font-size: 70px;
-    color: black;
-    font-weight: 500;
-  }
-
+.mainpage-download-section {
   padding: 1rem 2rem 1.5rem;
   height: 100%;
   width: 100%;
+
+  h1 {
+    font-size: 70px;
+    color: var(--corsa-black-color);
+    font-weight: 500;
+  }
 }
 
 .mainpage-download-content-container {
@@ -120,26 +121,26 @@
 }
 
 .mainpage-insant-section {
+  padding: 1rem 2rem 1.5rem;
+  height: 100%;
+
   h1 {
     font-size: 70px;
-    color: black;
+    color: var(--corsa-black-color);
     font-weight: 500;
   }
 
   h2 {
     font-size: 30px;
-    color: black;
+    color: var(--corsa-black-color);
     font-weight: 500;
   }
 
   h3 {
     font-size: 22px;
-    color: black;
+    color: var(--corsa-black-color);
     font-weight: 500;
   }
-
-  padding: 1rem 2rem 1.5rem;
-  height: 100%
 }
 
 .instant-content-left,
@@ -154,13 +155,13 @@
 .seize-section {
   h1 {
     font-size: 70px;
-    color: black;
+    color: var(--corsa-black-color);
     font-weight: 500;
   }
 
   p {
     font-size: 35px;
-    color: black;
+    color: var(--corsa-black-color);
     font-weight: 500;
   }
 
@@ -169,7 +170,7 @@
   width: 100%;
 }
 
-.seize-icon-container{
+.seize-icon-container {
   display: flex;
   justify-content: start;
   align-items: start;
@@ -188,13 +189,13 @@
 .embark-section {
   h1 > p {
     font-size: 70px;
-    color: white;
+    color: var(--corsa-white-color);
     font-weight: 500;
   }
 
   p {
     font-size: 30px;
-    color: white;
+    color: var(--corsa-white-color);
     font-weight: 400;
   }
 }

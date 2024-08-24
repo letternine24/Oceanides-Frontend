@@ -52,19 +52,19 @@
 
 .account-cards {
   display: flex;
-  flex-wrap: wrap;  /* Allows cards to wrap onto the next line on smaller screens */
-  gap: 20px;  /* Provides spacing between cards */
+  flex-wrap: wrap; /* Allows cards to wrap onto the next line on smaller screens */
+  gap: 20px; /* Provides spacing between cards */
   justify-content: space-around; /* Distributes space around items for a balanced look */
 }
 
 .account-card {
   flex: 1 1 240px; /* Allows cards to grow and shrink but not smaller than 240px */
-  background: #FFF;
+  background: var(--corsa-white-color);
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds shadow for better visual separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visual separation */
 }
 
 .account-card-header {
@@ -79,7 +79,7 @@
 .account-card button {
   padding: 10px 20px;
   background-color: blue;
-  color: white;
+  color: var(--corsa-white-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;

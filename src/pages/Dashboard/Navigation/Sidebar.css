@@ -39,7 +39,7 @@
 }
 
 .menu li a {
-  color: #fff;
+  color: var(--corsa-white-color);
   text-decoration: none;
   display: flex;
   align-items: center;

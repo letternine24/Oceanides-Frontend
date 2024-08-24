@@ -23,5 +23,5 @@
 
 .legal-documents-links a {
   font-size: 20px;
-  color: #0a0a0a;
+  color: var(--corsa-black-color);
 }

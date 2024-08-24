@@ -11,7 +11,7 @@
 .why-us-start-today {
   background-repeat: no-repeat;
   background-image: url(https://corsafutures.com/wp-content/uploads/2024/01/00bg.png);
-  color: #fff;
+  color: var(--corsa-white-color);
   height: 100%;
   padding: 2.5rem;
   margin-top: 2rem;
@@ -20,7 +20,7 @@
   p {
     font-size: 1rem;
     font-weight: 400;
-    color: #fff;
+    color: var(--corsa-white-color);
   }
 }
 
@@ -33,9 +33,9 @@
 .why-us-heading .hr {
   height: 1px;
   width: 50%;
-  border-color: #1b1464;
+  border-color: var(--corsa-dashboard-dark-purple);
 }
 
 .why-us-start-today-title {
-  color: #ffcb00;
+  color: var(--corsa-dashboard-yellow);
 }

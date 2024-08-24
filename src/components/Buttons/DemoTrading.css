@@ -1,46 +1,46 @@
 .demo-container {
-    padding: 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem;
 }
 
 .demo-button {
-    color: var(--corsa-dashboard-yellow);
-    text-decoration: none;
-    background-color: #22175b;
-    border-color: var(--corsa-dashboard-yellow);
-    margin-bottom: 5px;
-    margin-right: 5px;
-    padding: 10px 14px 8px;
-    border-style: solid;
-    font-weight: 500;
-  }
-  
-  .demo-button:hover {
-    background-color: var(--corsa-dashboard-yellow);
-    color: black;
-    font-weight: 600;
-    transition: 0.4s;
-  }
+  color: var(--corsa-dashboard-yellow);
+  text-decoration: none;
+  background-color: #22175b;
+  border-color: var(--corsa-dashboard-yellow);
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 10px 14px 8px;
+  border-style: solid;
+  font-weight: 500;
+}
 
-  .trading-button {
-    color: black;
-    text-decoration: none;
-    background-color: var(--corsa-dashboard-yellow);
-    border-color: #22175b;
-    margin-bottom: 3px;
-    margin-right: 3px;
-    padding: 10px 14px 8px;
-    font-weight: 600;
-    border-style: solid;
-  }
+.demo-button:hover {
+  background-color: var(--corsa-dashboard-yellow);
+  color: var(--corsa-black-color);
+  font-weight: 600;
+  transition: 0.4s;
+}
 
-  .trading-button:hover {
-    background-color: var(--corsa-dashboard-yellow);
-    color: red;
-    font-weight: 600;
-    transition: 0.4s;
-  }
+.trading-button {
+  color: var(--corsa-black-color);
+  text-decoration: none;
+  background-color: var(--corsa-dashboard-yellow);
+  border-color: #22175b;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  padding: 10px 14px 8px;
+  font-weight: 600;
+  border-style: solid;
+}
 
-  .arrow-icon {
-    width: 2%;
-    padding-left: 0.3em;
-  }
+.trading-button:hover {
+  background-color: var(--corsa-dashboard-yellow);
+  color: red;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.arrow-icon {
+  width: 2%;
+  padding-left: 0.3em;
+}

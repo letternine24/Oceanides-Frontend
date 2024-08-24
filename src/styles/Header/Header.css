@@ -39,7 +39,7 @@
   font-size: 14px;
 }
 .navbar.scrolled .nav-link {
-  color: white;
+  color: var(--corsa-white-color);
 }
 
 /* CLEAN UP MULTI LEVEL DROPDOWN CSS */
@@ -47,11 +47,11 @@
 .multi-level-dropdown-menu {
   background-color: #2b2b2b;
   /* margin-top: 2rem; */
-  border: 1px solid #fff;
+  border: 1px solid var(--corsa-white-color);
 }
 
 .multi-level-dropdown * {
-  color: #fff;
+  color: var(--corsa-white-color);
 }
 
 .multi-level-dropdown-container {

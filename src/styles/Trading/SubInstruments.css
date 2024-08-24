@@ -11,11 +11,10 @@
     font-size: 22px;
     padding-top: 1rem;
   }
-  
 }
 
 .page-instrument-button {
-  color: black;
+  color: var(--corsa-black-color);
   text-decoration: none;
   background-color: var(--corsa-dashboard-yellow);
   border-color: #22175b;
@@ -24,12 +23,11 @@
   padding: 10px 14px 8px;
   font-weight: 600;
   border-style: solid;
-  
 }
 
 .page-instrument-button:hover {
   background-color: var(--corsa-dashboard-yellow);
-  color: white;
+  color: var(--corsa-white-color);
   font-weight: 600;
   transition: 0.4s;
 }
@@ -49,11 +47,10 @@
   width: 100%;
 }
 
-.content-paragraph > p { 
+.content-paragraph > p {
   font-weight: 400;
   font-size: 16px;
   padding: 0% !important;
-
 }
 
 .page-instrument-hr {
