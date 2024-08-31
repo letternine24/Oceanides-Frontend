@@ -13,6 +13,7 @@ const App = () => {
   return (
     <>
       {!isAuthenticated && <Header />}
+      {/* Add Sample call to API */}
       <CompaniesList />
       <Router />
       {!isAuthenticated && <Footer />}

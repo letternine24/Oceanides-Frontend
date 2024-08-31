@@ -5,7 +5,6 @@ import { ApiEndpoints } from "@enum/apiEndpoints";
 interface Company {
   id: number;
   name: string;
-  // Define other properties as needed
 }
 
 const CompaniesList: React.FC = () => {
