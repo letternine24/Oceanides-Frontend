@@ -4,17 +4,14 @@ import "./App.css";
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import Router from "./Router";
-import useAuth from "./composables/useAuth"; // Import the custom hook
-import CompaniesList from "./CompaniesList";
+import useAuth from "./composables/useAuth";
 
 const App = () => {
-  const { isAuthenticated } = useAuth(); // Use the composable to get auth state
+  const { isAuthenticated } = useAuth();
 
   return (
     <>
       {!isAuthenticated && <Header />}
-      {/* Add Sample call to API */}
-      <CompaniesList />
       <Router />
       {!isAuthenticated && <Footer />}
     </>

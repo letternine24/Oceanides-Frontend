@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ApiEndpoints } from "@enum/apiEndpoints";
 
-const BASE_URL = "http://34.143.129.236";
+const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
 interface FetchState<T> {
   data: T | null;
@@ -9,7 +9,13 @@ interface FetchState<T> {
   error: string | null;
 }
 
-export const useFetch = <T>(endpoint: ApiEndpoints): FetchState<T> => {
+const serializeQueryParams = (params: Record<string, any>): string => {
+  return Object.entries(params)
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    .join("&");
+};
+
+export const useFetch = <T>(endpoint: ApiEndpoints, queryParams?: Record<string, any>): FetchState<T> => {
   const [state, setState] = useState<FetchState<T>>({
     data: null,
     loading: true,
@@ -19,7 +25,8 @@ export const useFetch = <T>(endpoint: ApiEndpoints): FetchState<T> => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${BASE_URL}${endpoint}`);
+        const queryString = queryParams ? `?${serializeQueryParams(queryParams)}` : "";
+        const response = await fetch(`${BASE_URL}${endpoint}${queryString}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -35,7 +42,7 @@ export const useFetch = <T>(endpoint: ApiEndpoints): FetchState<T> => {
     };
 
     fetchData();
-  }, [endpoint]);
+  }, [endpoint, queryParams]);
 
   return state;
 };
