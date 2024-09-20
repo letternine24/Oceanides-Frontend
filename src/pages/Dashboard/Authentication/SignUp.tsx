@@ -3,6 +3,7 @@ import "@styles/Components/PageBody.css";
 import "@styles/Authentication/SignUp.css";
 import PageBody from "@components/Pages/PageBody";
 import Textbox from "@components/TextBox/TextBox";
+import CountrySelectionForm from "@components/TextBox/CountryTextbox";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -15,7 +16,7 @@ interface SignUpFormValues {
   fullName: string;
   email: string;
   confirmPassword: string;
-  country: string;
+  country: string; // Changed from textbox to dropdown integration
   nationality: string;
   responsibilityCheckbox: boolean;
   awareCheckbox: boolean;
@@ -26,6 +27,7 @@ const SignUp: React.FC = () => {
   const registerIC = "/assets/icons/register-icon.png";
   const mobilenumberRegEx = /^(\+\d{1,3}[- ]?)?\d{10}$/;
 
+  // Initialize form values
   const [inputValue, setInputValue] = useState<SignUpFormValues>({
     affiliateCode: "",
     username: "",
@@ -35,12 +37,13 @@ const SignUp: React.FC = () => {
     fullName: "",
     email: "",
     confirmPassword: "",
-    country: "",
+    country: "", // This will be updated from CountrySelectionForm
     nationality: "",
     responsibilityCheckbox: false,
     awareCheckbox: false,
   });
 
+  // Handle input change for textboxes
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = event.target;
 
@@ -50,13 +53,21 @@ const SignUp: React.FC = () => {
     }));
   };
 
+  // Handle country selection from CountrySelectionForm
+  const handleCountryChange = (selectedCountry: string) => {
+    setInputValue((prevValue) => ({
+      ...prevValue,
+      country: selectedCountry,
+    }));
+  };
+
   const handleSubmit = (values: SignUpFormValues) => {
     console.log(values);
     setInputValue(values);
     // call API here
   };
 
-  // schema for validation
+  // Schema for validation
   const SignupSchema = Yup.object().shape({
     affiliateCode: Yup.string()
       .min(2, "Affiliate Code is too Short!")
@@ -77,7 +88,7 @@ const SignUp: React.FC = () => {
     fullName: Yup.string()
       .min(2, "FullName is too Short!")
       .max(100, "FullName is too Long!")
-      .required("FullName Code is Required"),
+      .required("FullName is Required"),
     email: Yup.string().email("Invalid email").required("Required"),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), undefined], "Password must match")
@@ -232,13 +243,9 @@ const SignUp: React.FC = () => {
                         </div>
 
                         <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.country}
-                            labelName="Country"
-                            fieldName="country"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
+                          <CountrySelectionForm
+                            selectedCountry={inputValue.country}
+                            onCountrySelect={handleCountryChange}
                           />
                           <ErrorMessage name="country" component="div" />
                         </div>
@@ -265,11 +272,7 @@ const SignUp: React.FC = () => {
                           checked={inputValue.responsibilityCheckbox}
                           onChange={handleInputChange}
                         />
-                        I understand and accept that as an Corsa Future
-                        Intervest Group Ltd. customer, it is my responsibility
-                        to review all Terms of Business, Risk Disclosure, and
-                        Order Execution Policy set forth, and they can be
-                        amended from time to time without prior notice.
+                        I understand and accept that as a customer, it is my responsibility to review all Terms of Business, Risk Disclosure, and Order Execution Policy.
                       </p>
                     </label>
 
@@ -281,10 +284,7 @@ const SignUp: React.FC = () => {
                           checked={inputValue.awareCheckbox}
                           onChange={handleInputChange}
                         />
-                        I understand and accept that when opening an Corsa
-                        Future Intervest Group Ltd. Account I need to be aware
-                        of and abide by the laws of my local country to my best
-                        endeavours.
+                        I understand and accept that I must abide by the laws of my local country.
                       </p>
                     </label>
 
@@ -296,8 +296,7 @@ const SignUp: React.FC = () => {
                     </div>
 
                     <p>
-                      By continuing, you agree to Privacy Policy and Terms of
-                      Service
+                      By continuing, you agree to the Privacy Policy and Terms of Service.
                     </p>
                   </Form>
                 )}
