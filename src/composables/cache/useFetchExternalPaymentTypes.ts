@@ -4,6 +4,13 @@ import { IExternalPaymentType } from "@interface/cache/IExternalPaymentType";
 import { useFetch } from "@composables/useFetch";
 
 export const useFetchExternalPaymentTypes = () => {
+  // Call useFetch at the top level
+  const {
+    data,
+    loading: fetchLoading,
+    error: fetchError,
+  } = useFetch<IExternalPaymentType[]>(ApiEndpoints.GetExternalPaymentTypes);
+
   const [externalPaymentTypes, setExternalPaymentTypes] = useState<
     IExternalPaymentType[] | null
   >(null);
@@ -11,17 +18,12 @@ export const useFetchExternalPaymentTypes = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data, loading, error } = useFetch<IExternalPaymentType[]>(
-        ApiEndpoints.GetExternalPaymentTypes
-      );
+    if (data) {
       setExternalPaymentTypes(data);
-      setLoading(loading);
-      setError(error);
-    };
-
-    fetchData();
-  }, []);
+    }
+    setLoading(fetchLoading);
+    setError(fetchError);
+  }, [data, fetchLoading, fetchError]);
 
   return { externalPaymentTypes, loading, error };
 };

@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { useFetchCountries } from "@composables/cache/useFetchCountries";
 import { ICountry } from "@interface/cache/ICountry";
 
@@ -7,7 +7,10 @@ interface CountrySelectionFormProps {
   onCountrySelect: (selectedCountry: string) => void;
 }
 
-const CountrySelectionForm: React.FC<CountrySelectionFormProps> = ({ selectedCountry, onCountrySelect }) => {
+const CountrySelectionForm: React.FC<CountrySelectionFormProps> = ({
+  selectedCountry,
+  onCountrySelect,
+}) => {
   const { countries, loading, error } = useFetchCountries();
 
   const handleCountrySelect = (e: ChangeEvent<HTMLSelectElement>) => {

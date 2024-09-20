@@ -4,22 +4,23 @@ import { ICurrency } from "@interface/cache/ICurrency";
 import { useFetch } from "@composables/useFetch";
 
 export const useFetchCurrencies = () => {
+  const {
+    data,
+    loading: fetchLoading,
+    error: fetchError,
+  } = useFetch<ICurrency[]>(ApiEndpoints.GetCurrencies);
+
   const [currencies, setCurrencies] = useState<ICurrency[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data, loading, error } = useFetch<ICurrency[]>(
-        ApiEndpoints.GetCurrencies
-      );
+    if (data) {
       setCurrencies(data);
-      setLoading(loading);
-      setError(error);
-    };
-
-    fetchData();
-  }, []);
+    }
+    setLoading(fetchLoading);
+    setError(fetchError);
+  }, [data, fetchLoading, fetchError]);
 
   return { currencies, loading, error };
 };

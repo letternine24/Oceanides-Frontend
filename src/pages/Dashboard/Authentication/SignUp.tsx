@@ -1,11 +1,12 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import "@styles/Components/PageBody.css";
 import "@styles/Authentication/SignUp.css";
 import PageBody from "@components/Pages/PageBody";
 import Textbox from "@components/TextBox/TextBox";
-import CountrySelectionForm from "@components/TextBox/CountryTextbox";
+import CountrySelectionForm from "@components/TextBox/CountrySelectionForm";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useFetchCountries } from "@/composables/cache/useFetchCountries";
 
 interface SignUpFormValues {
   affiliateCode: string;
@@ -272,7 +273,9 @@ const SignUp: React.FC = () => {
                           checked={inputValue.responsibilityCheckbox}
                           onChange={handleInputChange}
                         />
-                        I understand and accept that as a customer, it is my responsibility to review all Terms of Business, Risk Disclosure, and Order Execution Policy.
+                        I understand and accept that as a customer, it is my
+                        responsibility to review all Terms of Business, Risk
+                        Disclosure, and Order Execution Policy.
                       </p>
                     </label>
 
@@ -284,7 +287,8 @@ const SignUp: React.FC = () => {
                           checked={inputValue.awareCheckbox}
                           onChange={handleInputChange}
                         />
-                        I understand and accept that I must abide by the laws of my local country.
+                        I understand and accept that I must abide by the laws of
+                        my local country.
                       </p>
                     </label>
 
@@ -296,7 +300,8 @@ const SignUp: React.FC = () => {
                     </div>
 
                     <p>
-                      By continuing, you agree to the Privacy Policy and Terms of Service.
+                      By continuing, you agree to the Privacy Policy and Terms
+                      of Service.
                     </p>
                   </Form>
                 )}

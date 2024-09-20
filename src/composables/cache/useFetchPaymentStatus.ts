@@ -4,24 +4,26 @@ import { IPaymentStatus } from "@interface/cache/IPaymentStatus";
 import { useFetch } from "@composables/useFetch";
 
 export const useFetchPaymentStatus = () => {
-  const [paymentStatus, setPaymentStatus] = useState<
-    IPaymentStatus[] | null
-  >(null);
+  // Call useFetch at the top level
+  const {
+    data,
+    loading: fetchLoading,
+    error: fetchError,
+  } = useFetch<IPaymentStatus[]>(ApiEndpoints.GetPaymentStatuses);
+
+  const [paymentStatus, setPaymentStatus] = useState<IPaymentStatus[] | null>(
+    null
+  );
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data, loading, error } = useFetch<IPaymentStatus[]>(
-        ApiEndpoints.GetPaymentStatuses
-      );
+    if (data) {
       setPaymentStatus(data);
-      setLoading(loading);
-      setError(error);
-    };
-
-    fetchData();
-  }, []);
+    }
+    setLoading(fetchLoading);
+    setError(fetchError);
+  }, [data, fetchLoading, fetchError]);
 
   return { paymentStatuses: paymentStatus, loading, error };
 };
