@@ -7,6 +7,7 @@ import { Formik, Form, ErrorMessage } from "formik";
 import useAuth from "../../../composables/useAuth";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { useLogin } from "@composables/user/useLogin";  // Importing useLogin
 
 interface LoginFormValues {
   loginName: string;
@@ -20,6 +21,9 @@ const Login: React.FC = () => {
 
   const imgBg = "/assets/images/sign-up.png";
   const corsaLogo = "/assets/images/corsa-logo-transparent.png";
+
+  // Hook for calling login API
+  const { data, loading, error, login } = useLogin();
 
   const [inputValue, setInputValue] = useState<LoginFormValues>({
     loginName: "",
@@ -37,15 +41,27 @@ const Login: React.FC = () => {
   };
 
   const handleSubmit = (values: LoginFormValues) => {
-    setInputValue(values);
-    toggleAuth();
+    const loginRequest = {
+      email: values.loginName,
+      password: values.password,
+      companyId: 1, // Example companyId, adjust as needed
+      loginMode: 0, // Example loginMode, adjust as needed
+    };
+
+    console.log(loginRequest)
+    
+    // Call the login function from useLogin hook
+    login(loginRequest);
+
+    // Handle the response if necessary, e.g., after the login completes
     if (isAuthenticated) {
+      toggleAuth();
       navigate("/dashboard");
       window.location.reload();
     }
   };
 
-  // schema for validation
+  // Schema for validation
   const SignupSchema = Yup.object().shape({
     loginName: Yup.string().min(1, "Field cannot be empty"),
     password: Yup.string().min(1, "Field cannot be empty"),
@@ -60,7 +76,7 @@ const Login: React.FC = () => {
               <Formik
                 initialValues={inputValue}
                 validationSchema={SignupSchema}
-                onSubmit={handleSubmit}
+                onSubmit={handleSubmit} // Submit action calls handleSubmit
               >
                 {() => (
                   <Form className="login-content-container">
@@ -80,7 +96,6 @@ const Login: React.FC = () => {
                           fieldType="text"
                           onChange={handleInputChange}
                           required="required"
-                          
                         />
                         <ErrorMessage
                           name="loginName"
@@ -96,7 +111,6 @@ const Login: React.FC = () => {
                           fieldType="password"
                           onChange={handleInputChange}
                           required="required"
-                          className="form-control"
                         />
                         <ErrorMessage
                           name="password"
@@ -121,9 +135,11 @@ const Login: React.FC = () => {
                           backgroundColor: "var(--corsa-dashboard-yellow)",
                           color: "darkblue",
                         }}
+                        disabled={loading}
                       >
-                        Login
+                        {loading ? "Logging in..." : "Login"}
                       </button>
+                      {error && <p className="text-danger">Login failed. Please try again.</p>}
                       <div className="text-center mt-3 login-content-link">
                         <p>
                           Don't have an account?

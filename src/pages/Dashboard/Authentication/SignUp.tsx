@@ -1,12 +1,14 @@
-import React, { useState, ChangeEvent, useEffect } from "react";
+import React, { useState, ChangeEvent } from "react";
 import "@styles/Components/PageBody.css";
 import "@styles/Authentication/SignUp.css";
 import PageBody from "@components/Pages/PageBody";
 import Textbox from "@components/TextBox/TextBox";
 import CountrySelectionForm from "@components/TextBox/CountrySelectionForm";
+import MobileNumberWithCountryCodeTextbox from "@components/TextBox/MobileNumberWithCountryCodeTextBox";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useFetchCountries } from "@/composables/cache/useFetchCountries";
+import { useCreateClient } from "@composables/user/useCreateClient";
+import { ICreateClient } from "@interface/user/ICreateClient";
 
 interface SignUpFormValues {
   affiliateCode: string;
@@ -17,7 +19,7 @@ interface SignUpFormValues {
   fullName: string;
   email: string;
   confirmPassword: string;
-  country: string; // Changed from textbox to dropdown integration
+  countryId: number;
   nationality: string;
   responsibilityCheckbox: boolean;
   awareCheckbox: boolean;
@@ -26,9 +28,9 @@ interface SignUpFormValues {
 const SignUp: React.FC = () => {
   const imgBg = "/assets/images/sign-up.png";
   const registerIC = "/assets/icons/register-icon.png";
-  const mobilenumberRegEx = /^(\+\d{1,3}[- ]?)?\d{10}$/;
 
-  // Initialize form values
+  const { data, loading, error, createClient } = useCreateClient(); // Use your create client hook
+
   const [inputValue, setInputValue] = useState<SignUpFormValues>({
     affiliateCode: "",
     username: "",
@@ -38,13 +40,14 @@ const SignUp: React.FC = () => {
     fullName: "",
     email: "",
     confirmPassword: "",
-    country: "", // This will be updated from CountrySelectionForm
+    countryId: 0,
     nationality: "",
     responsibilityCheckbox: false,
     awareCheckbox: false,
   });
 
-  // Handle input change for textboxes
+  const [countryCode, setCountryCode] = useState<string>("");
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = event.target;
 
@@ -54,21 +57,39 @@ const SignUp: React.FC = () => {
     }));
   };
 
-  // Handle country selection from CountrySelectionForm
-  const handleCountryChange = (selectedCountry: string) => {
+  const handleCountryChange = (selectedCountry: number, selectedCountryCode: string) => {
     setInputValue((prevValue) => ({
       ...prevValue,
-      country: selectedCountry,
+      countryId: selectedCountry,
+    }));
+    setCountryCode(selectedCountryCode);
+  };
+
+  const handleMobileNumberChange = (mobileNumber: string) => {
+    setInputValue((prevValue) => ({
+      ...prevValue,
+      mobileNumber: mobileNumber,
     }));
   };
 
   const handleSubmit = (values: SignUpFormValues) => {
-    console.log(values);
-    setInputValue(values);
-    // call API here
+    const clientRequest: ICreateClient = {
+      companyId: 1,
+      fullname: values.fullName,
+      username: values.username,
+      email: values.email,
+      contactNumber: `${countryCode}${values.mobileNumber}`,
+      password: values.password,
+      countryId: values.countryId,
+      referralCode: values.affiliateCode,
+    };
+
+    console.log(clientRequest);
+
+    createClient(clientRequest);
   };
 
-  // Schema for validation
+  // Validation schema
   const SignupSchema = Yup.object().shape({
     affiliateCode: Yup.string()
       .min(2, "Affiliate Code is too Short!")
@@ -83,21 +104,16 @@ const SignUp: React.FC = () => {
       .max(20, "Password is too Long!")
       .required("Password is Required"),
     city: Yup.string().required("City is Required"),
-    mobileNumber: Yup.string()
-      .matches(mobilenumberRegEx, "Phone number is not valid")
-      .required("Mobile Number is Required"),
+    // mobileNumber: Yup.number().required("Mobile Number is Required"),
     fullName: Yup.string()
-      .min(2, "FullName is too Short!")
-      .max(100, "FullName is too Long!")
-      .required("FullName is Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
+      .min(2, "Full Name is too Short!")
+      .max(100, "Full Name is too Long!")
+      .required("Full Name is Required"),
+    email: Yup.string().email("Invalid email").required("Email is Required"),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), undefined], "Password must match")
       .required("Field cannot be empty!"),
-    country: Yup.string()
-      .min(2, "Country is too Short!")
-      .max(100, "Country is too Long!")
-      .required("Country is Required"),
+    countryId: Yup.number().required("Country is Required"),
     nationality: Yup.string()
       .min(2, "Nationality is too Short!")
       .max(100, "Nationality is too Long!")
@@ -135,13 +151,14 @@ const SignUp: React.FC = () => {
                 initialValues={inputValue}
                 validationSchema={SignupSchema}
                 onSubmit={handleSubmit}
+                enableReinitialize
               >
-                {() => (
+                {({ values }) => (
                   <Form>
                     <div className="create-account-container content-spacing">
                       <div className="create-account-content-left">
                         <Textbox
-                          value={inputValue.affiliateCode}
+                          value={values.affiliateCode}
                           labelName="Affiliate Code"
                           fieldName="affiliateCode"
                           fieldType="text"
@@ -151,7 +168,7 @@ const SignUp: React.FC = () => {
                         <ErrorMessage name="affiliateCode" component="div" />
 
                         <Textbox
-                          value={inputValue.username}
+                          value={values.username}
                           labelName="Username"
                           fieldName="username"
                           fieldType="text"
@@ -161,7 +178,7 @@ const SignUp: React.FC = () => {
                         <ErrorMessage name="username" component="div" />
 
                         <Textbox
-                          value={inputValue.password}
+                          value={values.password}
                           labelName="Password"
                           fieldName="password"
                           fieldType="password"
@@ -171,7 +188,7 @@ const SignUp: React.FC = () => {
                         <ErrorMessage name="password" component="div" />
 
                         <Textbox
-                          value={inputValue.city}
+                          value={values.city}
                           labelName="City"
                           fieldName="city"
                           fieldType="text"
@@ -180,20 +197,17 @@ const SignUp: React.FC = () => {
                         />
                         <ErrorMessage name="city" component="div" />
 
-                        <Textbox
-                          value={inputValue.mobileNumber}
-                          labelName="Mobile number"
-                          fieldName="mobileNumber"
-                          fieldType="text"
-                          onChange={handleInputChange}
-                          required="required"
+                        <MobileNumberWithCountryCodeTextbox
+                          countryCode={countryCode}
+                          mobileNumber={values.mobileNumber}
+                          onMobileNumberChange={handleMobileNumberChange}
                         />
                         <ErrorMessage name="mobileNumber" component="div" />
                       </div>
 
                       <div className="create-account-content-left">
                         <Textbox
-                          value={inputValue.fullName}
+                          value={values.fullName}
                           labelName="Full Name"
                           fieldName="fullName"
                           fieldType="text"
@@ -203,7 +217,7 @@ const SignUp: React.FC = () => {
                         <ErrorMessage name="fullName" component="div" />
 
                         <Textbox
-                          value={inputValue.email}
+                          value={values.email}
                           labelName="Email"
                           fieldName="email"
                           fieldType="text"
@@ -213,7 +227,7 @@ const SignUp: React.FC = () => {
                         <ErrorMessage name="email" component="div" />
 
                         <Textbox
-                          value={inputValue.confirmPassword}
+                          value={values.confirmPassword}
                           labelName="Confirm Password"
                           fieldName="confirmPassword"
                           fieldType="password"
@@ -222,14 +236,18 @@ const SignUp: React.FC = () => {
                         />
                         <ErrorMessage name="confirmPassword" component="div" />
 
+                        {/* Country selection form */}
                         <CountrySelectionForm
-                          selectedCountry={inputValue.country}
+                          labelName="Country"
+                          fieldName="Country"
+                          required="required"
+                          selectedCountry={values.countryId}
                           onCountrySelect={handleCountryChange}
                         />
-                        <ErrorMessage name="country" component="div" />
+                        <ErrorMessage name="countryId" component="div" />
 
                         <Textbox
-                          value={inputValue.nationality}
+                          value={values.nationality}
                           labelName="Nationality"
                           fieldName="nationality"
                           fieldType="text"
@@ -245,7 +263,7 @@ const SignUp: React.FC = () => {
                         <input
                           type="checkbox"
                           name="responsibilityCheckbox"
-                          checked={inputValue.responsibilityCheckbox}
+                          checked={values.responsibilityCheckbox}
                           onChange={handleInputChange}
                         />
                         I understand and accept that as a customer, it is my
@@ -259,7 +277,7 @@ const SignUp: React.FC = () => {
                         <input
                           type="checkbox"
                           name="awareCheckbox"
-                          checked={inputValue.awareCheckbox}
+                          checked={values.awareCheckbox}
                           onChange={handleInputChange}
                         />
                         I understand and accept that I must abide by the laws of
@@ -268,10 +286,11 @@ const SignUp: React.FC = () => {
                     </label>
 
                     <div className="content-spacing">
-                      <button className="register-button" type="submit">
+                      <button className="register-button" type="submit" disabled={loading}>
                         <img src={registerIC} alt="Register Icon" />
-                        Register
+                        {loading ? "Registering..." : "Register"}
                       </button>
+                      {error && <p>Error creating account. Please try again.</p>}
                     </div>
 
                     <p>
