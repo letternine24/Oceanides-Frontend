@@ -4,9 +4,10 @@ export enum ApiEndpoints {
   GetCompanies = "/api/Cache/GetCompanies",
   GetCountries = "/api/Cache/GetCountries",
   GetCurrencies = "/api/Cache/GetCurrencies",
-  GetPaymentStatuses = "/api/Cache/GetPaymentStatuses",
+  GetStatuses = "/api/Cache/GetStatuses",
   GetExternalPaymentTypes = "/api/Cache/GetExternalPaymentTypes",
   GetPaymentPlatforms = "/api/Cache/GetPaymentPlatforms",
+  GetSmilePayzPaymentMethod = "/api/Cache/GetSmilePayzPaymentMethod",
 
   // Deposit
   GenerateDepositUrlEss = "/api/Deposit/GenerateDepositUrlEss",

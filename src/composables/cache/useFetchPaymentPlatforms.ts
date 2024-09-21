@@ -1,21 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ApiEndpoints } from "@enum/apiEndpoints";
 import { IPaymentPlatform } from "@interface/cache/IPaymentPlatform";
 import { useFetch } from "@composables/useFetch";
 
 export const useFetchPaymentPlatforms = (
-  paymentAction: number,
-  companyId: number
+  paymentAction?: number,
+  companyId?: number
 ) => {
+  const queryParams = useMemo(() => {
+    const params: Record<string, any> = {};
+    if (paymentAction) params.paymentAction = paymentAction;
+    if (companyId) params.companyId = companyId;
+    return params;
+  }, [paymentAction, companyId]);
+
   // Call useFetch at the top level
-  const queryParams = { paymentAction, companyId };
   const {
     data,
     loading: fetchLoading,
     error: fetchError,
   } = useFetch<IPaymentPlatform[]>(
     ApiEndpoints.GetPaymentPlatforms,
-    queryParams
+    Object.keys(queryParams).length ? queryParams : undefined
   );
 
   const [paymentPlatforms, setPaymentPlatforms] = useState<

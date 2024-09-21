@@ -15,9 +15,7 @@ const useAuth = () => {
     });
   };
 
-  useEffect(() => {
-    console.log("Authentication status:", isAuthenticated);
-  }, [isAuthenticated]);
+  useEffect(() => {}, [isAuthenticated]);
 
   return { isAuthenticated, toggleAuth };
 };

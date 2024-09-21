@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { ApiEndpoints } from "@enum/apiEndpoints";
 
 const BASEURL = import.meta.env.VITE_APP_BASE_URL;
@@ -19,11 +19,19 @@ export const useFetch = <T>(
     error: null,
   });
 
+  const hasFetched = useRef(false);
+
+  const stableQueryParams = useMemo(
+    () => queryParams,
+    [JSON.stringify(queryParams)]
+  );
+
   useEffect(() => {
     const fetchData = async () => {
+      if (hasFetched.current) return;
       try {
-        const queryString = queryParams
-          ? `?${new URLSearchParams(queryParams).toString()}`
+        const queryString = stableQueryParams
+          ? `?${new URLSearchParams(stableQueryParams).toString()}`
           : "";
         const response = await fetch(`${BASEURL}${endpoint}${queryString}`);
         if (!response.ok) {
@@ -31,17 +39,21 @@ export const useFetch = <T>(
         }
         const result = await response.json();
         setState({ data: result, loading: false, error: null });
+        hasFetched.current = true;
       } catch (error) {
         setState({
           data: null,
           loading: false,
           error: (error as Error).message,
         });
+        hasFetched.current = false; // Reset the flag on error
       }
     };
 
-    fetchData();
-  }, [endpoint, queryParams]);
+    if (!hasFetched.current) {
+      fetchData();
+    }
+  }, [endpoint, stableQueryParams]);
 
   return state;
 };
