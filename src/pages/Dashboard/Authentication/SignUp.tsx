@@ -140,128 +140,103 @@ const SignUp: React.FC = () => {
                   <Form>
                     <div className="create-account-container content-spacing">
                       <div className="create-account-content-left">
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.affiliateCode}
-                            labelName="Affiliate Code"
-                            fieldName="affiliateCode"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="affiliateCode" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.affiliateCode}
+                          labelName="Affiliate Code"
+                          fieldName="affiliateCode"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="affiliateCode" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.username}
-                            labelName="Username"
-                            fieldName="username"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="username" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.username}
+                          labelName="Username"
+                          fieldName="username"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="username" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.password}
-                            labelName="Password"
-                            fieldName="password"
-                            fieldType="password"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="password" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.password}
+                          labelName="Password"
+                          fieldName="password"
+                          fieldType="password"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="password" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.city}
-                            labelName="City"
-                            fieldName="city"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="city" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.city}
+                          labelName="City"
+                          fieldName="city"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="city" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.mobileNumber}
-                            labelName="Mobile number"
-                            fieldName="mobileNumber"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="mobileNumber" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.mobileNumber}
+                          labelName="Mobile number"
+                          fieldName="mobileNumber"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="mobileNumber" component="div" />
                       </div>
 
-                      <div className="flex-placeholder"></div>
-
                       <div className="create-account-content-left">
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.fullName}
-                            labelName="Full Name"
-                            fieldName="fullName"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="fullName" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.fullName}
+                          labelName="Full Name"
+                          fieldName="fullName"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="fullName" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.email}
-                            labelName="Email"
-                            fieldName="email"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="email" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.email}
+                          labelName="Email"
+                          fieldName="email"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="email" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.confirmPassword}
-                            labelName="Confirm Password"
-                            fieldName="confirmPassword"
-                            fieldType="password"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage
-                            name="confirmPassword"
-                            component="div"
-                          />
-                        </div>
+                        <Textbox
+                          value={inputValue.confirmPassword}
+                          labelName="Confirm Password"
+                          fieldName="confirmPassword"
+                          fieldType="password"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="confirmPassword" component="div" />
 
-                        <div className="textbox-spacing">
-                          <CountrySelectionForm
-                            selectedCountry={inputValue.country}
-                            onCountrySelect={handleCountryChange}
-                          />
-                          <ErrorMessage name="country" component="div" />
-                        </div>
+                        <CountrySelectionForm
+                          selectedCountry={inputValue.country}
+                          onCountrySelect={handleCountryChange}
+                        />
+                        <ErrorMessage name="country" component="div" />
 
-                        <div className="textbox-spacing">
-                          <Textbox
-                            value={inputValue.nationality}
-                            labelName="Nationality"
-                            fieldName="nationality"
-                            fieldType="text"
-                            onChange={handleInputChange}
-                            required="required"
-                          />
-                          <ErrorMessage name="nationality" component="div" />
-                        </div>
+                        <Textbox
+                          value={inputValue.nationality}
+                          labelName="Nationality"
+                          fieldName="nationality"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                        />
+                        <ErrorMessage name="nationality" component="div" />
                       </div>
                     </div>
 

@@ -1,6 +1,6 @@
 .signup-container {
   height: 100%;
-
+  max-height: auto;
   ul {
     list-style-type: none; /* Remove default list styles */
     padding: 0; /* Remove default padding */
@@ -55,7 +55,7 @@
   }
 
   width: 50%;
-  padding-top: 400px;
+  padding-top: 4rem;
 }
 
 .create-account-container {

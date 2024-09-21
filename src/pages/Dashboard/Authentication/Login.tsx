@@ -52,76 +52,98 @@ const Login: React.FC = () => {
   });
 
   return (
-    <main>
+    <main className="bg-light">
       <PageBody pageBgImg={imgBg}>
-        <div className="container login-container">
-          <Formik
-            initialValues={inputValue}
-            validationSchema={SignupSchema}
-            onSubmit={handleSubmit}
-          >
-            {() => (
-              <Form className="login-content-container">
-                <div className="login-content-field-container">
-                  <div className="login-content-textbox-container">
-                    <h1>
-                      <img src={corsaLogo} alt="Corsa Logo" />
-                    </h1>
-                    <div className="login-content-textbox">
-                      <Textbox
-                        value={inputValue.loginName}
-                        labelName="Username/Email"
-                        fieldName="loginName"
-                        fieldType="text"
-                        onChange={handleInputChange}
-                        required="required"
-                      />
-                      <ErrorMessage name="loginName" component="div" />
-                    </div>
-                    <div className="login-content-textbox">
-                      <Textbox
-                        value={inputValue.password}
-                        labelName="Password"
-                        fieldName="password"
-                        fieldType="password"
-                        onChange={handleInputChange}
-                        required="required"
-                      />
-                      <ErrorMessage name="password" component="div" />
-                    </div>
-                    <label>
-                      <p>
+        <div className="container login-container d-flex justify-content-center align-items-center">
+          <div className="col-lg-6 col-md-8 col-sm-10">
+            <div className="login-content-field-container">
+              <Formik
+                initialValues={inputValue}
+                validationSchema={SignupSchema}
+                onSubmit={handleSubmit}
+              >
+                {() => (
+                  <Form className="login-content-container">
+                    <div className="login-content-textbox-container">
+                      <h1 className="text-center">
+                        <img
+                          src={corsaLogo}
+                          alt="Corsa Logo"
+                          className="img-fluid"
+                        />
+                      </h1>
+                      <div className="login-content-textbox">
+                        <Textbox
+                          value={inputValue.loginName}
+                          labelName="Username/Email"
+                          fieldName="loginName"
+                          fieldType="text"
+                          onChange={handleInputChange}
+                          required="required"
+                          
+                        />
+                        <ErrorMessage
+                          name="loginName"
+                          component="div"
+                          className="text-danger"
+                        />
+                      </div>
+                      <div className="login-content-textbox">
+                        <Textbox
+                          value={inputValue.password}
+                          labelName="Password"
+                          fieldName="password"
+                          fieldType="password"
+                          onChange={handleInputChange}
+                          required="required"
+                          className="form-control"
+                        />
+                        <ErrorMessage
+                          name="password"
+                          component="div"
+                          className="text-danger"
+                        />
+                      </div>
+                      <label className="form-check mb-3">
                         <input
                           type="checkbox"
                           name="rememberMe"
                           checked={inputValue.rememberMe}
                           onChange={handleInputChange}
+                          className="form-check-input"
                         />
                         Remember Me
-                      </p>
-                    </label>
-                    <button className="login-button" type="submit">
-                      Login
-                    </button>
-                    <div className="login-content-link">
-                      <p>
-                        Don't have an account?
-                        <a href="/sign-up">
-                          <b> Sign up now</b>
-                        </a>
-                      </p>
-                      <p>
-                        Forgot Password?
-                        <a href="/sign-up">
-                          <b> Click Here!</b>
-                        </a>
-                      </p>
+                      </label>
+                      <button
+                        className="btn w-100 login-button"
+                        type="submit"
+                        style={{
+                          backgroundColor: "var(--corsa-dashboard-yellow)",
+                          color: "darkblue",
+                        }}
+                      >
+                        Login
+                      </button>
+                      <div className="text-center mt-3 login-content-link">
+                        <p>
+                          Don't have an account?
+                          <a href="/sign-up">
+                            <b> Sign up now</b>
+                          </a>
+                        </p>
+                        <p>
+                          Forgot Password?
+                          <a href="/sign-up">
+                            <b> Click Here!</b>
+                          </a>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </Form>
-            )}
-          </Formik>
+                  </Form>
+                )}
+              </Formik>
+            </div>
+          </div>
         </div>
       </PageBody>
     </main>
