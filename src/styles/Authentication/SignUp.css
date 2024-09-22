@@ -29,7 +29,7 @@
 .signup-content-container {
   width: 100%;
   display: flex;
-  height: 1500px;
+  height: 100%;
 }
 
 .signup-content-right {
@@ -47,6 +47,7 @@
   h1 {
     color: var(--corsa-dashboard-yellow);
     font-size: 60px;
+    padding-top: 10rem;
   }
 
   p {
@@ -55,7 +56,7 @@
   }
 
   width: 50%;
-  padding-top: 4rem;
+  padding: 5rem;
 }
 
 .create-account-container {
@@ -118,3 +119,60 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+.textbox-input-container-select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 85%;
+}
+
+.textbox-input-container-select label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.required-field {
+  color: red;
+  margin-left: 5px;
+}
+
+.textbox-input-container-mobile {
+  font-size: 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 85%;
+  margin: 20px 0;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+}
+
+.mobile-number-row {
+  display: flex;
+  align-items: center;
+}
+
+.country-code-input {
+  width: 50px;
+  padding: 10px; /* Match padding with the mobile input */
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5; /* Light grey background for country code input */
+}
+
+.mobile-number-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 75%;
+}
+
