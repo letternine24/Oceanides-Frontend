@@ -1,29 +1,68 @@
 import React, { useState, ChangeEvent } from "react";
 import "./Deposit.css";
+import BankTransferForm from "./BankTransferForm";
+import CryptoPaymentForm from "./CryptoPaymentForm";
 
 const Deposit: React.FC = () => {
+  const BANK_TRANSFER = "Bank Transfer";
+  const CRYPTO = "Crypto";
+
+  const conversionRate = 4.5;
+
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
+  const [usdAmount, setUsdAmount] = useState<string>("");
+  const [showForm, setShowForm] = useState<boolean>(false);
 
   const handleMethodClick = (method: string) => {
     setSelectedMethod(method);
+    setAmount("");
+    setUsdAmount("");
+    setShowForm(false);
   };
 
+  // Handle conversion from MYR to USD
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setAmount(e.target.value);
+    const myrValue = e.target.value;
+    setAmount(myrValue);
+
+    if (myrValue) {
+      const convertedUsd = (parseFloat(myrValue) / conversionRate).toFixed(2);
+      setUsdAmount(convertedUsd);
+    } else {
+      setUsdAmount("");
+    }
+  };
+
+  const handleUsdAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const usdValue = e.target.value;
+    setUsdAmount(usdValue);
+
+    if (usdValue) {
+      const convertedMyr = (parseFloat(usdValue) * conversionRate).toFixed(2);
+      setAmount(convertedMyr);
+    } else {
+      setAmount("");
+    }
   };
 
   const handleConfirm = () => {
-    console.log(`Depositing ${amount} using ${selectedMethod}`);
-    // Add your redirect or confirmation logic here
+    if (selectedMethod === BANK_TRANSFER || selectedMethod === CRYPTO) {
+      setShowForm(true);
+    }
+    console.log(
+      `Depositing ${amount} MYR and ${usdAmount} USD using ${selectedMethod}`
+    );
   };
+
+  const isConfirmDisabled = !amount || !usdAmount;
 
   return (
     <div className="deposit-container">
       <div className="deposit-methods">
         <h1>Deposit Methods</h1>
         <div className="methods-grid">
-          {["FPX", "VISA", "Crypto"].map((method) => (
+          {[BANK_TRANSFER, CRYPTO].map((method) => (
             <button
               key={method}
               className={`method-button ${
@@ -35,24 +74,51 @@ const Deposit: React.FC = () => {
             </button>
           ))}
         </div>
-        <div className="amount-section">
-          <label htmlFor="amount">Enter Amount</label>
-          <input
-            type="text"
-            id="amount"
-            value={amount}
-            onChange={handleAmountChange}
-            placeholder="MYR 1000"
-          />
-          <button onClick={handleConfirm}>Confirm</button>
+
+        <div>
+          <p>Conversion Rate: 1 USD = {conversionRate} MYR</p>
         </div>
+
+        <div className="amount-section">
+          <div>
+            <label htmlFor="usdAmount">Amount (USD)</label>
+            <input
+              type="number"
+              id="usdAmount"
+              value={usdAmount}
+              onChange={handleUsdAmountChange}
+              placeholder="USD"
+            />
+          </div>
+          <div>
+            <label htmlFor="amount">Amount (MYR)</label>
+            <input
+              type="number"
+              id="amount"
+              value={amount}
+              onChange={handleAmountChange}
+              placeholder="MYR"
+            />
+          </div>
+
+          <button onClick={handleConfirm} disabled={isConfirmDisabled}>
+            Confirm
+          </button>
+        </div>
+
+        <br />
+
         <p>
           Please enter the amount you wish to deposit to your account. Click on
-          "Confirm" and you will be redirected to the payment page
+          "Confirm" and you will be redirected to the payment page.
         </p>
+
+        {showForm && selectedMethod === BANK_TRANSFER && <BankTransferForm />}
+        {showForm && selectedMethod === CRYPTO && <CryptoPaymentForm />}
       </div>
+
       <div className="deposit-notes">
-        <h2>Before you proceed with a deposit please note the following:</h2>
+        <h2>Before you proceed with a deposit, please note the following:</h2>
         <ul>
           <li>
             Please make sure that all payments are made from an account
@@ -67,7 +133,7 @@ const Deposit: React.FC = () => {
             By submitting a deposit request, you consent to your data being
             shared with third parties, including payment service providers,
             banks, card schemes, regulators, law enforcement, government
-            agencies, credit reference bureaus and other parties we deem
+            agencies, credit reference bureaus, and other parties we deem
             necessary to process your payment and/or verify your identity.
           </li>
         </ul>

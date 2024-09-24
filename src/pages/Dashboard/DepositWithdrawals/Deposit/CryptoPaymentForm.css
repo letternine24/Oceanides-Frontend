@@ -1,0 +1,31 @@
+.crypto-payment-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-payment-form div {
+  margin-bottom: 15px;
+}
+
+.crypto-payment-form input[type="text"],
+.crypto-payment-form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.crypto-payment-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.crypto-payment-form button:hover {
+  background-color: #0056b3;
+}

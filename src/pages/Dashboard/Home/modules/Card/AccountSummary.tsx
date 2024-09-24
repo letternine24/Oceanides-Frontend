@@ -46,43 +46,39 @@ const AccountSummary: React.FC = () => {
   ]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const dataFromAPI = {
-        Ewallet: 1000,
-        TradingBalance: 1500,
-        CashEquity: 2000,
-        Bonus: 300,
-        TotalDeposit: 5000,
-        TotalWithdrawal: 1500,
-        BalanceAvailableWithdrawal: 3500,
-        UsedMargin: 1000,
-      };
-
-      const updatedAccounts = accounts.map((account) => {
-        // Define the mapping from account title to the key in the dataFromAPI object
-        const keyMap: { [key: string]: keyof typeof dataFromAPI } = {
-          "E-Wallet": "Ewallet",
-          "Trading Balance": "TradingBalance",
-          "Cash Equity": "CashEquity",
-          Bonus: "Bonus",
-          "Total Deposit": "TotalDeposit",
-          "Total Withdrawal": "TotalWithdrawal",
-          "Balance Available Withdrawal": "BalanceAvailableWithdrawal",
-          "Used Margin": "UsedMargin",
-        };
-
-        const apiKey = keyMap[account.title];
-        return {
-          ...account,
-          amount: dataFromAPI[apiKey] || account.amount,
-        };
-      });
-
-      setAccounts(updatedAccounts);
+    const dataFromAPI = {
+      Ewallet: 1000,
+      TradingBalance: 1500,
+      CashEquity: 2000,
+      Bonus: 300,
+      TotalDeposit: 5000,
+      TotalWithdrawal: 1500,
+      BalanceAvailableWithdrawal: 3500,
+      UsedMargin: 1000,
     };
 
-    fetchData();
-  }, [accounts]);
+    const updatedAccounts = accounts.map((account) => {
+      // Define the mapping from account title to the key in the dataFromAPI object
+      const keyMap: { [key: string]: keyof typeof dataFromAPI } = {
+        "E-Wallet": "Ewallet",
+        "Trading Balance": "TradingBalance",
+        "Cash Equity": "CashEquity",
+        Bonus: "Bonus",
+        "Total Deposit": "TotalDeposit",
+        "Total Withdrawal": "TotalWithdrawal",
+        "Balance Available Withdrawal": "BalanceAvailableWithdrawal",
+        "Used Margin": "UsedMargin",
+      };
+
+      const apiKey = keyMap[account.title];
+      return {
+        ...account,
+        amount: dataFromAPI[apiKey] || account.amount,
+      };
+    });
+
+    setAccounts(updatedAccounts);
+  }, []);
 
   return (
     <div className="account-summary">

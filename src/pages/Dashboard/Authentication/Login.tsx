@@ -40,22 +40,31 @@ const Login: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (values: LoginFormValues) => {
-    const loginRequest = {
-      email: values.loginName,
-      password: values.password,
-      companyId: 1, // Example companyId, adjust as needed
-      loginMode: 0, // Example loginMode, adjust as needed
-    };
+  // const handleSubmit = (values: LoginFormValues) => {
+  //   const loginRequest = {
+  //     email: values.loginName,
+  //     password: values.password,
+  //     companyId: 1, // Example companyId, adjust as needed
+  //     loginMode: 0, // Example loginMode, adjust as needed
+  //   };
 
-    console.log(loginRequest)
+  //   console.log(loginRequest)
     
-    // Call the login function from useLogin hook
-    login(loginRequest);
+  //   // Call the login function from useLogin hook
+  //   login(loginRequest);
 
-    // Handle the response if necessary, e.g., after the login completes
+  //   // Handle the response if necessary, e.g., after the login completes
+  //   if (isAuthenticated) {
+  //     toggleAuth();
+  //     navigate("/dashboard");
+  //     window.location.reload();
+  //   }
+  // };
+
+  const handleSubmit = (values: LoginFormValues) => {
+    setInputValue(values);
+    toggleAuth();
     if (isAuthenticated) {
-      toggleAuth();
       navigate("/dashboard");
       window.location.reload();
     }
