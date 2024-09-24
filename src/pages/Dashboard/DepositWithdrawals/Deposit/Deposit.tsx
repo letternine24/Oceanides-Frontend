@@ -2,17 +2,32 @@ import React, { useState, ChangeEvent } from "react";
 import "./Deposit.css";
 import BankTransferForm from "./BankTransferForm";
 import CryptoPaymentForm from "./CryptoPaymentForm";
+import { useFetchPaymentPlatforms } from "@/composables/cache/useFetchPaymentPlatforms";
+import { IPaymentPlatform } from "@/interface/cache/IPaymentPlatform";
+import { useFetchCurrencies } from "@/composables/cache/useFetchCurrencies";
+import { ICurrency } from "@/interface/cache/ICurrency";
 
 const Deposit: React.FC = () => {
   const BANK_TRANSFER = "Bank Transfer";
-  const CRYPTO = "Crypto";
-
-  const conversionRate = 4.5;
+  const CRYPTO = "Cryptocurrency";
+  const CURRENCY_CODE = "MYR";
 
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
   const [usdAmount, setUsdAmount] = useState<string>("");
   const [showForm, setShowForm] = useState<boolean>(false);
+
+  // @TODO Payment action and companyid?
+  const { paymentPlatforms } = useFetchPaymentPlatforms(1, 2);
+  const { currencies } = useFetchCurrencies();
+
+  const filterCurrencyMyr = currencies?.find(
+    (currency: ICurrency) => currency.currencyCode === CURRENCY_CODE
+  );
+
+  // Fetch conversion rates for buy and sell
+  const buyConversionRate = filterCurrencyMyr?.buyRate || 0; // MYR to USD Buy Rate
+  const sellConversionRate = filterCurrencyMyr?.sellRate || 0; // USD to MYR Sell Rate
 
   const handleMethodClick = (method: string) => {
     setSelectedMethod(method);
@@ -21,13 +36,14 @@ const Deposit: React.FC = () => {
     setShowForm(false);
   };
 
-  // Handle conversion from MYR to USD
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     const myrValue = e.target.value;
     setAmount(myrValue);
 
-    if (myrValue) {
-      const convertedUsd = (parseFloat(myrValue) / conversionRate).toFixed(2);
+    if (myrValue && sellConversionRate) {
+      const convertedUsd = (parseFloat(myrValue) / sellConversionRate).toFixed(
+        2
+      );
       setUsdAmount(convertedUsd);
     } else {
       setUsdAmount("");
@@ -38,8 +54,10 @@ const Deposit: React.FC = () => {
     const usdValue = e.target.value;
     setUsdAmount(usdValue);
 
-    if (usdValue) {
-      const convertedMyr = (parseFloat(usdValue) * conversionRate).toFixed(2);
+    if (usdValue && buyConversionRate) {
+      const convertedMyr = (parseFloat(usdValue) * buyConversionRate).toFixed(
+        2
+      );
       setAmount(convertedMyr);
     } else {
       setAmount("");
@@ -56,6 +74,14 @@ const Deposit: React.FC = () => {
   };
 
   const isConfirmDisabled = !amount || !usdAmount;
+
+  const bankTransferPlatform = paymentPlatforms?.find(
+    (platform: IPaymentPlatform) => platform.paymentTypeName === BANK_TRANSFER
+  );
+
+  const cryptoPlatform = paymentPlatforms?.find(
+    (platform: IPaymentPlatform) => platform.paymentTypeName === CRYPTO
+  );
 
   return (
     <div className="deposit-container">
@@ -76,7 +102,11 @@ const Deposit: React.FC = () => {
         </div>
 
         <div>
-          <p>Conversion Rate: 1 USD = {conversionRate} MYR</p>
+          <p>
+            Conversion Rates: <br />
+            MYR to USD (Sell): {sellConversionRate} <br />
+            USD to MYR (Buy): {buyConversionRate}
+          </p>
         </div>
 
         <div className="amount-section">
@@ -113,8 +143,24 @@ const Deposit: React.FC = () => {
           "Confirm" and you will be redirected to the payment page.
         </p>
 
-        {showForm && selectedMethod === BANK_TRANSFER && <BankTransferForm />}
-        {showForm && selectedMethod === CRYPTO && <CryptoPaymentForm />}
+        {showForm &&
+          selectedMethod === BANK_TRANSFER &&
+          bankTransferPlatform && (
+            <BankTransferForm
+              bankName={bankTransferPlatform.bankName}
+              accountName={bankTransferPlatform.bankAccountName}
+              accountNumber={bankTransferPlatform.bankAccountNumber}
+              swiftCode={bankTransferPlatform.bankSwiftCode}
+              amount={amount}
+            />
+          )}
+        {showForm && selectedMethod === CRYPTO && cryptoPlatform && (
+          <CryptoPaymentForm
+            walletAddress={cryptoPlatform.walletAddress}
+            amount={amount}
+            usdAmount={usdAmount}
+          />
+        )}
       </div>
 
       <div className="deposit-notes">

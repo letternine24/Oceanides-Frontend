@@ -47,6 +47,10 @@ export default defineConfig({
         find: "@enum",
         replacement: fileURLToPath(new URL("./src/enum", import.meta.url)),
       },
+      {
+        find: "@store",
+        replacement: fileURLToPath(new URL("./src/store", import.meta.url)),
+      },
     ],
   },
 });

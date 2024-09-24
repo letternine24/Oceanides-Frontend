@@ -30,7 +30,8 @@
       "@composables/*": ["composables/*"],
       "@css/*": ["css/*"],
       "@interface/*": ["interface/*"],
-      "@enum/*": ["enum/*"]
+      "@enum/*": ["enum/*"],
+      "@store/*": ["store/*"]
     }
   },
   "include": ["src"]

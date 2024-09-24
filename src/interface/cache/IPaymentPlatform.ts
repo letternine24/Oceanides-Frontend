@@ -16,4 +16,5 @@ export interface IPaymentPlatform {
   description: string;
   activeDeposit: boolean;
   activeWithdrawal: boolean;
+  extraConfig?: string;
 }

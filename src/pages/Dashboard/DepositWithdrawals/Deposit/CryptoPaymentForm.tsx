@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import "./CryptoPaymentForm.css";
 
-const CryptoPaymentForm: React.FC = () => {
-  const [usdtAddress] = useState("Th4ALDMbTngHzzWvrPdLPbsqic6zGANYfi");
-  const [networkType] = useState("TRC20");
+interface CryptoPaymentFormProps {
+  walletAddress: string;
+  amount: string;
+  usdAmount: string;
+}
+
+const CryptoPaymentForm: React.FC<CryptoPaymentFormProps> = ({
+  walletAddress,
+  amount,
+  usdAmount,
+}) => {
   const [file, setFile] = useState<File | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,16 +35,19 @@ const CryptoPaymentForm: React.FC = () => {
         <span className="method-badge">Your payment method: USDT</span>
       </div>
       <p>
-        You are to make payment of MYR/IDR 431 (USD 100) using your selected
-        payment method.
+        You are to make payment of{" "}
+        <strong>
+          MYR/IDR {amount} (USD {usdAmount})
+        </strong>
+        using your selected payment method.
       </p>
       <div>
         <label>USDT Address:</label>
-        <input type="text" value={usdtAddress} readOnly />
+        <input type="text" value={walletAddress} readOnly disabled />
       </div>
       <div>
-        <label>Network Type:</label>
-        <input type="text" value={networkType} readOnly />
+        <label>Network Type:&nbsp;</label>
+        <span>TRC20</span>
       </div>
       <div>
         <label>Upload Payment proof after payment:</label>

@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { ApiEndpoints } from "@enum/apiEndpoints";
 import { ICurrency } from "@interface/cache/ICurrency";
 import { useFetch } from "@composables/useFetch";
+import { useCurrencyStore } from "@store/useCurrencyStore"; // Import Zustand store
 
 export const useFetchCurrencies = () => {
   const {
@@ -10,9 +11,13 @@ export const useFetchCurrencies = () => {
     error: fetchError,
   } = useFetch<ICurrency[]>(ApiEndpoints.GetCurrencies);
 
-  const [currencies, setCurrencies] = useState<ICurrency[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const setCurrencies = useCurrencyStore((state) => state.setCurrencies);
+  const setLoading = useCurrencyStore((state) => state.setLoading);
+  const setError = useCurrencyStore((state) => state.setError);
+
+  const currencies = useCurrencyStore((state) => state.currencies);
+  const loading = useCurrencyStore((state) => state.loading);
+  const error = useCurrencyStore((state) => state.error);
 
   useEffect(() => {
     if (data) {
@@ -20,7 +25,7 @@ export const useFetchCurrencies = () => {
     }
     setLoading(fetchLoading);
     setError(fetchError);
-  }, [data, fetchLoading, fetchError]);
+  }, [data, fetchLoading, fetchError, setCurrencies, setLoading, setError]);
 
   return { currencies, loading, error };
 };

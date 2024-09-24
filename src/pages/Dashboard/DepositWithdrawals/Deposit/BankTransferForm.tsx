@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import "./BankTransferForm.css";
 
-const BankTransferForm: React.FC = () => {
-  const [bankName, setBankName] = useState("MAYBANK");
-  const [accountName, setAccountName] = useState("ALCARWASH Enterprise");
-  const [accountNumber, setAccountNumber] = useState("562889151751");
-  const [swiftCode, setSwiftCode] = useState("MBBEMYKL");
-  const [amount, setAmount] = useState("100.00");
+interface BankTransferFormProps {
+  bankName: string;
+  accountName: string;
+  accountNumber: string;
+  swiftCode: string;
+  amount: string;
+}
+
+const BankTransferForm: React.FC<BankTransferFormProps> = ({
+  bankName,
+  accountName,
+  accountNumber,
+  swiftCode,
+  amount,
+}) => {
   const [proofOfPayment, setProofOfPayment] = useState<File | null>(null);
 
   const handleProofOfPaymentChange = (

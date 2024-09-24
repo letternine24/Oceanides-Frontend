@@ -1,7 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { ApiEndpoints } from "@enum/apiEndpoints";
 import { IPaymentPlatform } from "@interface/cache/IPaymentPlatform";
 import { useFetch } from "@composables/useFetch";
+import { usePaymentPlatformStore } from "@store/usePaymentPlatformStore";
 
 export const useFetchPaymentPlatforms = (
   paymentAction?: number,
@@ -14,7 +15,6 @@ export const useFetchPaymentPlatforms = (
     return params;
   }, [paymentAction, companyId]);
 
-  // Call useFetch at the top level
   const {
     data,
     loading: fetchLoading,
@@ -24,11 +24,11 @@ export const useFetchPaymentPlatforms = (
     Object.keys(queryParams).length ? queryParams : undefined
   );
 
-  const [paymentPlatforms, setPaymentPlatforms] = useState<
-    IPaymentPlatform[] | null
-  >(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const setPaymentPlatforms = usePaymentPlatformStore(
+    (state) => state.setPaymentPlatforms
+  );
+  const setLoading = usePaymentPlatformStore((state) => state.setLoading);
+  const setError = usePaymentPlatformStore((state) => state.setError);
 
   useEffect(() => {
     if (data) {
@@ -36,7 +36,21 @@ export const useFetchPaymentPlatforms = (
     }
     setLoading(fetchLoading);
     setError(fetchError);
-  }, [data, fetchLoading, fetchError]);
+  }, [
+    data,
+    fetchLoading,
+    fetchError,
+    setPaymentPlatforms,
+    setLoading,
+    setError,
+  ]);
+
+  // Returning the values from the Zustand store
+  const paymentPlatforms = usePaymentPlatformStore(
+    (state) => state.paymentPlatforms
+  );
+  const loading = usePaymentPlatformStore((state) => state.loading);
+  const error = usePaymentPlatformStore((state) => state.error);
 
   return { paymentPlatforms, loading, error };
 };
