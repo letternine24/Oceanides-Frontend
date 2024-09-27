@@ -5,7 +5,7 @@ import Disclaimer from "../shared/Disclaimer/Disclaimer";
 
 const Index: React.FC = () => {
   const [verificationComplete, setVerificationComplete] =
-    useState<boolean>(true);
+    useState<boolean>(false);
 
   return (
     <>
