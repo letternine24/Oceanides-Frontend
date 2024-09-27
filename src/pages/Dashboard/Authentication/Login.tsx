@@ -8,6 +8,7 @@ import useAuth from "../../../composables/useAuth";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useLogin } from "@composables/user/useLogin";  // Importing useLogin
+import CryptoJS from "crypto-js"; // Import crypto-js for MD5 hashing
 
 interface LoginFormValues {
   loginName: string;
@@ -40,31 +41,26 @@ const Login: React.FC = () => {
     }));
   };
 
-  // const handleSubmit = (values: LoginFormValues) => {
-  //   const loginRequest = {
-  //     email: values.loginName,
-  //     password: values.password,
-  //     companyId: 1, // Example companyId, adjust as needed
-  //     loginMode: 0, // Example loginMode, adjust as needed
-  //   };
-
-  //   console.log(loginRequest)
-    
-  //   // Call the login function from useLogin hook
-  //   login(loginRequest);
-
-  //   // Handle the response if necessary, e.g., after the login completes
-  //   if (isAuthenticated) {
-  //     toggleAuth();
-  //     navigate("/dashboard");
-  //     window.location.reload();
-  //   }
-  // };
-
   const handleSubmit = (values: LoginFormValues) => {
-    setInputValue(values);
-    toggleAuth();
+    // Apply MD5 hashing to the password before submitting
+    console.log(values)
+    const hashedPassword = CryptoJS.MD5(values.password).toString();
+
+    const loginRequest = {
+      email: values.loginName,
+      password: hashedPassword,
+      companyId: 2,
+      loginMode: 2,
+    };
+
+    // Call the login function from useLogin hook
+    console.log(loginRequest)
+    login(loginRequest);
+
+    console.log(localStorage.getItem("user_data"));
     if (isAuthenticated) {
+      
+      toggleAuth();
       navigate("/dashboard");
       window.location.reload();
     }
@@ -85,9 +81,10 @@ const Login: React.FC = () => {
               <Formik
                 initialValues={inputValue}
                 validationSchema={SignupSchema}
-                onSubmit={handleSubmit} // Submit action calls handleSubmit
+                onSubmit={handleSubmit}
+                enableReinitialize
               >
-                {() => (
+                {({values}) => (
                   <Form className="login-content-container">
                     <div className="login-content-textbox-container">
                       <h1 className="text-center">
@@ -99,7 +96,7 @@ const Login: React.FC = () => {
                       </h1>
                       <div className="login-content-textbox">
                         <Textbox
-                          value={inputValue.loginName}
+                          value={values.loginName}
                           labelName="Username/Email"
                           fieldName="loginName"
                           fieldType="text"
@@ -114,7 +111,7 @@ const Login: React.FC = () => {
                       </div>
                       <div className="login-content-textbox">
                         <Textbox
-                          value={inputValue.password}
+                          value={values.password}
                           labelName="Password"
                           fieldName="password"
                           fieldType="password"
@@ -131,7 +128,7 @@ const Login: React.FC = () => {
                         <input
                           type="checkbox"
                           name="rememberMe"
-                          checked={inputValue.rememberMe}
+                          checked={values.rememberMe}
                           onChange={handleInputChange}
                           className="form-check-input"
                         />
