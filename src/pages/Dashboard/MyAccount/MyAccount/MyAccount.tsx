@@ -10,7 +10,6 @@ const MyAccount: React.FC = () => {
     <section className="my-account">
       <h1>Account</h1>
       <AccountBalance accountId="36358601 | 3970752" accountAmount={123.0} />
-      <AccountBalance accountId="397332 | 3633301" accountAmount={456.67} />
 
       <h1>Account Summary</h1>
       <hr />

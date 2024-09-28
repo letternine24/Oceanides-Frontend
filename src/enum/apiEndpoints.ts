@@ -26,4 +26,9 @@ export enum ApiEndpoints {
   Login = "/api/User/Login",
   ResendVerificationEmail = "/api/User/ResendVefificationEmail",
   VerifyEmail = "/api/User/VerifyEmail",
+  KycVerification = "/api/User/KycVerification",
+  GetUserInfo = "/api/User/GetUserInfo",
+  UpdateUserInfo = "/api/User/UpdateUserInfo",
+  UpdateUserPassword = "/api/User/UpdateUserPassword",
+  GetReferralHierarchy = "/api/User/GetReferralHierarchy",
 }

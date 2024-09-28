@@ -3,7 +3,7 @@ import "./Header.css";
 import useAuth from "../../../composables/useAuth";
 
 const Header: React.FC = () => {
-  const { toggleAuth } = useAuth();
+  const { logout } = useAuth();
 
   return (
     <header className="user-header">
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="/" onClick={toggleAuth}>
+            <a href="/" onClick={logout}>
               Logout
             </a>
           </li>

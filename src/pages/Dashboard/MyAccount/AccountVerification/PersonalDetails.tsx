@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./PersonalDetails.css";
 
 interface PersonalDetailsProps {
-  onSubmit: (values: PersonalDetailsFormValues) => void;
+  onChange: (values: PersonalDetailsFormValues) => void;
 }
 
 interface PersonalDetailsFormValues {
@@ -20,7 +20,7 @@ interface PersonalDetailsFormValues {
   postalCode: string;
 }
 
-const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onSubmit }) => {
+const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onChange }) => {
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),
@@ -50,10 +50,15 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onSubmit }) => {
       postalCode: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      onSubmit(values); // Pass personal details to the parent component
+    onSubmit: () => {
+      // No need to submit separately as "Submit All" will handle it
     },
   });
+
+  // Use useEffect to call onChange whenever values change
+  useEffect(() => {
+    onChange(formik.values);
+  }, [formik.values, onChange]);
 
   return (
     <div className="personal-details">
@@ -65,7 +70,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onSubmit }) => {
           can’t edit these details once you submit the form.
         </p>
 
-        <form onSubmit={formik.handleSubmit}>
+        <form>
           <div className="form-row">
             <div className="form-column">
               <input
@@ -192,7 +197,6 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onSubmit }) => {
               ) : null}
             </div>
           </div>
-          <button type="submit" className="hidden-button" />
         </form>
       </div>
     </div>

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo } from "react";
 import AccountCard from "./AccountCard";
+import { useUserInfoStore } from "@/store/user/useUserInfoStore";
 
 interface Account {
   title: string;
@@ -9,76 +10,62 @@ interface Account {
 }
 
 const AccountSummary: React.FC = () => {
-  const [accounts, setAccounts] = useState<Account[]>([
-    {
-      title: "E-Wallet",
-      amount: 0.0,
-      icon: "icon-wallet",
-      action: "Transfer Ewallet",
-    },
-    {
-      title: "Trading Balance",
-      amount: 0.0,
-      icon: "icon-trading-balance",
-      action: "Transfer Trading",
-    },
-    { title: "Cash Equity", amount: 0.0, icon: "icon-cash-equity", action: "" },
-    { title: "Bonus", amount: 0.0, icon: "icon-bonus", action: "" },
-    {
-      title: "Total Deposit",
-      amount: 0.0,
-      icon: "icon-total-deposit",
-      action: "",
-    },
-    {
-      title: "Total Withdrawal",
-      amount: 0.0,
-      icon: "icon-total-withdrawal",
-      action: "",
-    },
-    {
-      title: "Balance Available Withdrawal",
-      amount: 0.0,
-      icon: "icon-available-balance",
-      action: "",
-    },
-    { title: "Used Margin", amount: 0.0, icon: "icon-used-margin", action: "" },
-  ]);
+  const { userInfo } = useUserInfoStore();
 
-  useEffect(() => {
-    const dataFromAPI = {
-      Ewallet: 1000,
-      TradingBalance: 1500,
-      CashEquity: 2000,
-      Bonus: 300,
-      TotalDeposit: 5000,
-      TotalWithdrawal: 1500,
-      BalanceAvailableWithdrawal: 3500,
-      UsedMargin: 1000,
-    };
+  const accounts = useMemo((): Account[] => {
+    if (!userInfo) return [];
 
-    const updatedAccounts = accounts.map((account) => {
-      // Define the mapping from account title to the key in the dataFromAPI object
-      const keyMap: { [key: string]: keyof typeof dataFromAPI } = {
-        "E-Wallet": "Ewallet",
-        "Trading Balance": "TradingBalance",
-        "Cash Equity": "CashEquity",
-        Bonus: "Bonus",
-        "Total Deposit": "TotalDeposit",
-        "Total Withdrawal": "TotalWithdrawal",
-        "Balance Available Withdrawal": "BalanceAvailableWithdrawal",
-        "Used Margin": "UsedMargin",
-      };
-
-      const apiKey = keyMap[account.title];
-      return {
-        ...account,
-        amount: dataFromAPI[apiKey] || account.amount,
-      };
-    });
-
-    setAccounts(updatedAccounts);
-  }, []);
+    return [
+      {
+        title: "E-Wallet",
+        amount: userInfo.eWalletBalance,
+        icon: "icon-wallet",
+        action: "Transfer Ewallet",
+      },
+      {
+        title: "Trading Balance",
+        amount: userInfo.cTraderBalance,
+        icon: "icon-trading-balance",
+        action: "Transfer Trading",
+      },
+      {
+        title: "Cash Equity",
+        amount: userInfo.cTraderCashEquity,
+        icon: "icon-cash-equity",
+        action: "",
+      },
+      {
+        title: "Bonus",
+        amount: userInfo.cTraderBonus,
+        icon: "icon-bonus",
+        action: "",
+      },
+      {
+        title: "Total Deposit",
+        amount: 0.0, // Placeholder value, since it's not available from userInfo
+        icon: "icon-total-deposit",
+        action: "",
+      },
+      {
+        title: "Total Withdrawal",
+        amount: 0.0, // Placeholder value, since it's not available from userInfo
+        icon: "icon-total-withdrawal",
+        action: "",
+      },
+      {
+        title: "Balance Available Withdrawal",
+        amount: userInfo.cTraderWithdrawableBalance,
+        icon: "icon-available-balance",
+        action: "",
+      },
+      {
+        title: "Used Margin",
+        amount: 0.0, // Placeholder value, since it's not available from userInfo
+        icon: "icon-used-margin",
+        action: "",
+      },
+    ];
+  }, [userInfo]);
 
   return (
     <div className="account-summary">
@@ -89,7 +76,9 @@ const AccountSummary: React.FC = () => {
             title={account.title}
             amount={account.amount}
             icon={account.icon}
-            onTransferClick={() => console.log(account.action)}
+            onTransferClick={() =>
+              account.action && console.log(account.action)
+            }
           />
         ))}
       </div>

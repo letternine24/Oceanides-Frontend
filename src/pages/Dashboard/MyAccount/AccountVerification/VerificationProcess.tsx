@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./VerificationProcess.css";
 
 interface VerificationProcessProps {
-  onSubmit: (data: VerificationProcessFormValues) => void;
+  onChange: (data: VerificationProcessFormValues) => void;
 }
 
 interface VerificationProcessFormValues {
@@ -15,10 +15,8 @@ interface VerificationProcessFormValues {
 }
 
 const VerificationProcess: React.FC<VerificationProcessProps> = ({
-  onSubmit,
+  onChange,
 }) => {
-  const [isInfoCorrect, setIsInfoCorrect] = useState(false);
-
   const validationSchema = Yup.object({
     selectedID: Yup.string().required("ID type is required"),
     frontFile: Yup.mixed().required("Front side of ID is required"),
@@ -33,20 +31,15 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
       isInfoCorrect: false,
     },
     validationSchema,
-    onSubmit: (values) => {
-      const combinedData = {
-        ...values,
-        isInfoCorrect,
-      };
-
-      if (!isInfoCorrect) {
-        alert("Please confirm that all the information is correct.");
-        return;
-      }
-
-      onSubmit(combinedData); // Pass verification details to the parent component
+    onSubmit: () => {
+      // No need to submit separately as "Submit All" will handle it
     },
   });
+
+  useEffect(() => {
+    // Update parent state whenever formik values change
+    onChange(formik.values);
+  }, [formik.values, onChange]);
 
   const handleIDSelection = (idType: string) => {
     formik.setFieldValue("selectedID", idType);
@@ -90,7 +83,6 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
             }`}
             onClick={() => handleIDSelection("passport")}
           >
-            <img src="/icons/passport-icon.png" alt="International Passport" />
             <p>International Passport</p>
           </div>
           <div
@@ -99,7 +91,6 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
             }`}
             onClick={() => handleIDSelection("national-id")}
           >
-            <img src="/icons/national-id-icon.png" alt="National ID" />
             <p>National ID</p>
           </div>
           <div
@@ -108,7 +99,6 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
             }`}
             onClick={() => handleIDSelection("driver-id")}
           >
-            <img src="/icons/driver-id-icon.png" alt="Driver ID" />
             <p>Driver ID</p>
           </div>
         </div>
@@ -141,19 +131,15 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
           <label>
             <input
               type="checkbox"
-              checked={isInfoCorrect}
+              checked={formik.values.isInfoCorrect}
               onChange={(e) => {
-                setIsInfoCorrect(e.target.checked);
-                formik.setFieldValue("isInfoCorrect", e.target.checked);
+                const checked = e.target.checked;
+                formik.setFieldValue("isInfoCorrect", checked);
               }}
             />
             All The Information I Have Entered Is Correct.
           </label>
         </div>
-
-        <button type="submit" className="submit-button">
-          Submit
-        </button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import "@styles/Components/PageBody.css";
 import "@styles/Authentication/Login.css";
 import Textbox from "@components/TextBox/TextBox";
@@ -7,8 +7,8 @@ import { Formik, Form, ErrorMessage } from "formik";
 import useAuth from "../../../composables/useAuth";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { useLogin } from "@composables/user/useLogin";  // Importing useLogin
-import CryptoJS from "crypto-js"; // Import crypto-js for MD5 hashing
+import { useLogin } from "@composables/user/useLogin";
+import CryptoJS from "crypto-js";
 
 interface LoginFormValues {
   loginName: string;
@@ -17,14 +17,18 @@ interface LoginFormValues {
 }
 
 const Login: React.FC = () => {
-  const { isAuthenticated, toggleAuth } = useAuth();
+  const { isAuthenticated, login: authenticate } = useAuth();
+  const { login, loading, error, data } = useLogin();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (data?.data) {
+      navigate("/dashboard");
+    }
+  }, [data]);
 
   const imgBg = "/assets/images/sign-up.png";
   const corsaLogo = "/assets/images/corsa-logo-transparent.png";
-
-  // Hook for calling login API
-  const { data, loading, error, login } = useLogin();
 
   const [inputValue, setInputValue] = useState<LoginFormValues>({
     loginName: "",
@@ -41,32 +45,24 @@ const Login: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (values: LoginFormValues) => {
-    // Apply MD5 hashing to the password before submitting
-    console.log(values)
-    const hashedPassword = CryptoJS.MD5(values.password).toString();
+  const handleSubmit = async (values: LoginFormValues) => {
+    try {
+      const hashedPassword = CryptoJS.MD5(values.password).toString();
 
-    const loginRequest = {
-      email: values.loginName,
-      password: hashedPassword,
-      companyId: 2,
-      loginMode: 2,
-    };
+      const loginRequest = {
+        email: values.loginName,
+        password: hashedPassword,
+        companyId: 2,
+        loginMode: 2,
+      };
 
-    // Call the login function from useLogin hook
-    console.log(loginRequest)
-    login(loginRequest);
-
-    console.log(localStorage.getItem("user_data"));
-    if (isAuthenticated) {
-      
-      toggleAuth();
-      navigate("/dashboard");
-      window.location.reload();
+      await login(loginRequest);
+      authenticate();
+    } catch (e) {
+      console.error("Error Logging in", e);
     }
   };
 
-  // Schema for validation
   const SignupSchema = Yup.object().shape({
     loginName: Yup.string().min(1, "Field cannot be empty"),
     password: Yup.string().min(1, "Field cannot be empty"),
@@ -84,7 +80,7 @@ const Login: React.FC = () => {
                 onSubmit={handleSubmit}
                 enableReinitialize
               >
-                {({values}) => (
+                {({ values }) => (
                   <Form className="login-content-container">
                     <div className="login-content-textbox-container">
                       <h1 className="text-center">
@@ -145,7 +141,11 @@ const Login: React.FC = () => {
                       >
                         {loading ? "Logging in..." : "Login"}
                       </button>
-                      {error && <p className="text-danger">Login failed. Please try again.</p>}
+                      {error && (
+                        <p className="text-danger">
+                          Login failed. Please try again.
+                        </p>
+                      )}
                       <div className="text-center mt-3 login-content-link">
                         <p>
                           Don't have an account?
