@@ -5,7 +5,7 @@ interface PaymentPlatformStore {
   paymentPlatforms: IPaymentPlatform[] | null;
   loading: boolean;
   error: string | null;
-  setPaymentPlatforms: (platforms: []) => void;
+  setPaymentPlatforms: (platforms: IPaymentPlatform[]) => void; // Updated type
   setLoading: (loading: boolean) => void;
   setError: (error: string | null) => void;
 }

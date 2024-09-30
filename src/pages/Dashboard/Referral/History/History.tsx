@@ -1,5 +1,8 @@
 import React from "react";
-import { useUserReferralStore } from "@/store/user/useUserReferralStore";
+import {
+  IUserReferral,
+  useUserReferralStore,
+} from "@/store/user/useUserReferralStore";
 import "./History.css";
 
 const History: React.FC = () => {
@@ -18,8 +21,8 @@ const History: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {referralData && referralData.length > 0 ? (
-            referralData.map((referral, index) => (
+          {referralData ? (
+            referralData.map((referral: IUserReferral, index: number) => (
               <tr key={index}>
                 <td>{referral.name}</td>
                 <td>{referral.level}</td>

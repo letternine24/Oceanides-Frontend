@@ -17,7 +17,7 @@ interface LoginFormValues {
 }
 
 const Login: React.FC = () => {
-  const { isAuthenticated, login: authenticate } = useAuth();
+  const { login: authenticate } = useAuth();
   const { login, loading, error, data } = useLogin();
   const navigate = useNavigate();
 

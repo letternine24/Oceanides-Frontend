@@ -10,10 +10,10 @@ export interface IUserReferral {
 }
 
 interface UserReferralStore {
-  referralData: IUserReferral | null;
+  referralData: IUserReferral[] | null; // Change to array
   loading: boolean;
   error: string | null;
-  setReferralData: (data: IUserReferral | null) => void;
+  setReferralData: (data: IUserReferral[] | null) => void; // Change to array
   setLoading: (loading: boolean) => void;
   setError: (error: string | null) => void;
 }
@@ -24,7 +24,7 @@ export const useUserReferralStore = create<UserReferralStore>()(
       referralData: null,
       loading: false,
       error: null,
-      setReferralData: (data: IUserReferral | null) =>
+      setReferralData: (data: IUserReferral[] | null) =>
         set(() => ({
           referralData: data,
           loading: false,

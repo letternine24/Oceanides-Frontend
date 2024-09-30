@@ -53,7 +53,7 @@ const AccountVerification: React.FC<AccountVerificationProps> = ({
       // Here you would typically send `kycRequest` to your API or backend service
 
       // Mark verification as complete
-      // setVerificationComplete(true);
+      setVerificationComplete(true);
     } catch (error) {
       console.error("Error while preparing KYC request:", error);
     }

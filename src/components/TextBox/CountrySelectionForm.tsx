@@ -17,7 +17,7 @@ const CountrySelectionForm: React.FC<CountrySelectionFormProps> = ({
   selectedCountry,
   onCountrySelect,
 }) => {
-  const { countries, loading, error } = useFetchCountries();
+  const { countries, loading } = useFetchCountries();
   const [currentCountryId, setCurrentCountryId] = useState<number>(selectedCountry);
 
   useEffect(() => {

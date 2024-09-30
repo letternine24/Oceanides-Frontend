@@ -29,7 +29,7 @@ const SignUp: React.FC = () => {
   const imgBg = "/assets/images/sign-up.png";
   const registerIC = "/assets/icons/register-icon.png";
 
-  const { data, loading, error, createClient } = useCreateClient(); // Use your create client hook
+  const { loading, error, createClient } = useCreateClient(); // Use your create client hook
 
   const [inputValue, setInputValue] = useState<SignUpFormValues>({
     affiliateCode: "",
