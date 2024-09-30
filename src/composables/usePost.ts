@@ -11,7 +11,7 @@ interface PostState<T> {
 
 interface PostRequestOptions {
   headers?: HeadersInit;
-  body: Record<string, any>;
+  body: Record<string, any> | FormData;
   queryParams?: Record<string, any>;
 }
 
@@ -34,13 +34,24 @@ export const usePost = <T>(
         ? `?${new URLSearchParams(options.queryParams).toString()}`
         : "";
 
+      // Determine if the body is FormData
+      let body: BodyInit | null = null;
+      let headers: HeadersInit = options.headers || {};
+
+      if (options.body instanceof FormData) {
+        body = options.body;
+      } else {
+        body = JSON.stringify(options.body);
+        headers = {
+          ...headers,
+          "Content-Type": "application/json",
+        };
+      }
+
       const response = await fetch(`${BASE_URL}${endpoint}${queryString}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(options.headers || {}),
-        },
-        body: JSON.stringify(options.body),
+        headers,
+        body,
       });
 
       if (!response.ok) {

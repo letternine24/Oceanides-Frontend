@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./AccountVerification.css";
 import PersonalDetails from "./PersonalDetails";
 import VerificationProcess from "./VerificationProcess";
-import { IKycVerificationRequest } from "@/interface/user/IKycVerification";
 import { useUserDataStore } from "@/store/user/useUserDataStore";
+import { useKycVerification } from "@/composables/user/useKycVerification";
 
 interface AccountVerificationProps {
   setVerificationComplete: (complete: boolean) => void;
@@ -15,58 +15,42 @@ const AccountVerification: React.FC<AccountVerificationProps> = ({
   const [personalData, setPersonalData] = useState<any>({});
   const [verificationData, setVerificationData] = useState<any>({});
   const { userData } = useUserDataStore();
+  const { kycVerification, loading, error } = useKycVerification();
+
   const handleSubmit = async () => {
     try {
-      // @TODO
       // Combine data from both components
       const combinedData = { ...personalData, ...verificationData };
 
-      // Convert files to base64 strings for the KYC request
-      const frontKycBase64 = verificationData.frontFile
-        ? await fileToBase64(verificationData.frontFile)
-        : "";
-      const backKycBase64 = verificationData.backFile
-        ? await fileToBase64(verificationData.backFile)
-        : "";
+      // Construct FormData
+      const formData = new FormData();
+      formData.append("CompanyId", "2"); // Replace with actual value if available
+      formData.append("UserId", String(userData?.staffUserId || ""));
+      formData.append("FirstName", combinedData.firstName);
+      formData.append("LastName", combinedData.lastName);
+      formData.append("Email", combinedData.email);
+      formData.append("ContactNumber", combinedData.phoneNumber);
+      formData.append("DateOfBirth", combinedData.dob);
+      formData.append("Address", combinedData.addressLine);
+      formData.append("Nationality", combinedData.nationality);
+      formData.append("DocumentType", combinedData.selectedID);
 
-      // Construct the IKycVerificationRequest object
-      const kycRequest: IKycVerificationRequest = {
-        CompanyId: 2, // Replace with actual value if available
-        UserId: userData?.staffUserId, // Replace with actual value if available
-        FirstName: combinedData.firstName,
-        LastName: combinedData.lastName,
-        Email: combinedData.email,
-        ContactNumber: combinedData.phoneNumber,
-        DateOfBirth: combinedData.dob,
-        Address: combinedData.addressLine,
-        Nationality: combinedData.nationality,
-        DocumentType: combinedData.selectedID,
-        FrontKyc: frontKycBase64,
-        BackKyc: backKycBase64,
-      };
+      // Append files if available
+      if (verificationData.frontFile) {
+        formData.append("FrontKyc", verificationData.frontFile);
+      }
+      if (verificationData.backFile) {
+        formData.append("BackKyc", verificationData.backFile);
+      }
 
-      console.log(
-        "🚀 ~ handleSubmit ~ kycRequest:",
-        JSON.stringify(kycRequest)
-      );
-
-      // Here you would typically send `kycRequest` to your API or backend service
+      // Call the useKycVerification function to send the data
+      kycVerification(formData);
 
       // Mark verification as complete
       setVerificationComplete(true);
     } catch (error) {
       console.error("Error while preparing KYC request:", error);
     }
-  };
-
-  // Utility function to convert file to base64
-  const fileToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = (error) => reject(error);
-    });
   };
 
   return (
@@ -89,10 +73,12 @@ const AccountVerification: React.FC<AccountVerificationProps> = ({
             type="button"
             className="submit-button"
             onClick={handleSubmit}
+            disabled={loading}
           >
-            Submit All
+            {loading ? "Submitting..." : "Submit All"}
           </button>
         </div>
+        {error && <p className="error-message">Error: {error}</p>}
       </div>
     </>
   );
