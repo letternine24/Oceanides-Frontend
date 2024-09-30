@@ -29,7 +29,7 @@ const SignUp: React.FC = () => {
   const imgBg = "/assets/images/sign-up.png";
   const registerIC = "/assets/icons/register-icon.png";
 
-  const { loading, error, createClient } = useCreateClient(); // Use your create client hook
+  const { loading, error, createClient } = useCreateClient();
 
   const [inputValue, setInputValue] = useState<SignUpFormValues>({
     affiliateCode: "",
@@ -57,7 +57,10 @@ const SignUp: React.FC = () => {
     }));
   };
 
-  const handleCountryChange = (selectedCountry: number, selectedCountryCode: string) => {
+  const handleCountryChange = (
+    selectedCountry: number,
+    selectedCountryCode: string
+  ) => {
     setInputValue((prevValue) => ({
       ...prevValue,
       countryId: selectedCountry,
@@ -89,7 +92,6 @@ const SignUp: React.FC = () => {
     createClient(clientRequest);
   };
 
-  // Validation schema
   const SignupSchema = Yup.object().shape({
     affiliateCode: Yup.string()
       .min(2, "Affiliate Code is too Short!")
@@ -286,11 +288,17 @@ const SignUp: React.FC = () => {
                     </label>
 
                     <div className="content-spacing">
-                      <button className="register-button" type="submit" disabled={loading}>
+                      <button
+                        className="register-button"
+                        type="submit"
+                        disabled={loading}
+                      >
                         <img src={registerIC} alt="Register Icon" />
                         {loading ? "Registering..." : "Register"}
                       </button>
-                      {error && <p>Error creating account. Please try again.</p>}
+                      {error && (
+                        <p>Error creating account. Please try again.</p>
+                      )}
                     </div>
 
                     <p>

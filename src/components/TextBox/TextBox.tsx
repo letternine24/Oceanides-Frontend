@@ -14,7 +14,6 @@ const TextBox: React.FC<ITextBox> = ({
   const [inputValue, setInputValue] = useState<string>("");
 
   useEffect(() => {
-    // Set inputValue state based on the initial value prop
     if (value !== undefined) {
       setInputValue(value);
     }
@@ -22,9 +21,9 @@ const TextBox: React.FC<ITextBox> = ({
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
-    // Update local state
+
     setInputValue(value);
-    // Notify parent component of value change (if controlled)
+
     if (onChange) {
       onChange(event);
     }

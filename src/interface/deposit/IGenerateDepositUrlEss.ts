@@ -1,4 +1,3 @@
-// IGenerateDepositUrlEssRequest.ts
 export interface IGenerateDepositUrlEssRequest {
   userId: number;
   cTraderLogin: number;

@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import useAuth from "./composables/useAuth";
-
 // Public Pages
 import Home from "@pages/Home/Home";
 import WhoWhyCorsaFutures from "@pages/AboutUs/WhoWhyCorsaFutures";
@@ -37,9 +35,10 @@ import Profile from "@pages/Dashboard/Profile/Index";
 import DepositWithdrawals from "@pages/Dashboard/DepositWithdrawals/Index";
 import Dashboard from "@pages/Dashboard/Index";
 import Referrals from "@pages/Dashboard/Referral/Index";
+import { useAuthStore } from "./store/useAuthStore";
 
 const Router = () => {
-  const { isAuthenticated } = useAuth(); // Use the composable to get the auth state
+  const { isAuthenticated } = useAuthStore(); // Use the composable to get the auth state
 
   return (
     <BrowserRouter>

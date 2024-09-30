@@ -45,7 +45,6 @@ export const useFetchPaymentPlatforms = (
     setError,
   ]);
 
-  // Returning the values from the Zustand store
   const paymentPlatforms = usePaymentPlatformStore(
     (state) => state.paymentPlatforms
   );

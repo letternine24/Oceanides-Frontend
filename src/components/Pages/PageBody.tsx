@@ -9,7 +9,7 @@ const PageBody: React.FC<IPageBody> = ({ pageBgImg, children }) => {
     if (pageBgImg) {
       setBackgroundImg(pageBgImg);
     }
-  }, [pageBgImg]); // This dependency should be `pageBgImg` instead of `backgroundImg`
+  }, [pageBgImg]);
 
   return (
     <section

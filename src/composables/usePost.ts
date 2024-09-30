@@ -34,7 +34,6 @@ export const usePost = <T>(
         ? `?${new URLSearchParams(options.queryParams).toString()}`
         : "";
 
-      // Determine if the body is FormData
       let body: BodyInit | null = null;
       let headers: HeadersInit = options.headers || {};
 

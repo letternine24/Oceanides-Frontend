@@ -4,7 +4,6 @@ import { IExternalPaymentType } from "@interface/cache/IExternalPaymentType";
 import { useFetch } from "@composables/useFetch";
 
 export const useFetchExternalPaymentTypes = () => {
-  // Call useFetch at the top level
   const {
     data,
     loading: fetchLoading,

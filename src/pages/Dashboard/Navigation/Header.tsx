@@ -1,9 +1,9 @@
 import React from "react";
 import "./Header.css";
-import useAuth from "../../../composables/useAuth";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const Header: React.FC = () => {
-  const { logout } = useAuth();
+  const { logout } = useAuthStore();
 
   return (
     <header className="user-header">

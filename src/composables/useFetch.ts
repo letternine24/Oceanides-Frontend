@@ -46,7 +46,7 @@ export const useFetch = <T>(
           loading: false,
           error: (error as Error).message,
         });
-        hasFetched.current = false; // Reset the flag on error
+        hasFetched.current = false;
       }
     };
 

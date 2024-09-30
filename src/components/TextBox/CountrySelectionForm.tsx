@@ -18,7 +18,8 @@ const CountrySelectionForm: React.FC<CountrySelectionFormProps> = ({
   onCountrySelect,
 }) => {
   const { countries, loading } = useFetchCountries();
-  const [currentCountryId, setCurrentCountryId] = useState<number>(selectedCountry);
+  const [currentCountryId, setCurrentCountryId] =
+    useState<number>(selectedCountry);
 
   useEffect(() => {
     setCurrentCountryId(selectedCountry);
@@ -31,7 +32,6 @@ const CountrySelectionForm: React.FC<CountrySelectionFormProps> = ({
       (country: ICountry) => country.countryId === selectedValue
     );
 
-    // Get the country code
     const countryCode = selectedCountryData?.mobileCode || "";
 
     setCurrentCountryId(selectedValue);

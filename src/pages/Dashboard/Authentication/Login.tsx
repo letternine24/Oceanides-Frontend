@@ -4,11 +4,11 @@ import "@styles/Authentication/Login.css";
 import Textbox from "@components/TextBox/TextBox";
 import PageBody from "@components/Pages/PageBody";
 import { Formik, Form, ErrorMessage } from "formik";
-import useAuth from "../../../composables/useAuth";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useLogin } from "@composables/user/useLogin";
 import CryptoJS from "crypto-js";
+import { useAuthStore } from "@/store/useAuthStore";
 
 interface LoginFormValues {
   loginName: string;
@@ -17,7 +17,7 @@ interface LoginFormValues {
 }
 
 const Login: React.FC = () => {
-  const { login: authenticate } = useAuth();
+  const { login: authenticate } = useAuthStore();
   const { login, loading, error, data } = useLogin();
   const navigate = useNavigate();
 
