@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 // Public Pages
 import Home from "@pages/Home/Home";
 import WhoWhyCorsaFutures from "@pages/AboutUs/WhoWhyCorsaFutures";
@@ -42,6 +43,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
