@@ -8,7 +8,7 @@ export interface IUserData {
   emailVerifiedAt: string;
   cTraderLogin: number;
   currencyCode: string;
-  kycStatus: string | null;
+  kycStatus:  number | null;
 }
 
 interface UserDataStore {

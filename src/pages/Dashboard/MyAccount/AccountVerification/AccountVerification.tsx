@@ -5,13 +5,7 @@ import VerificationProcess from "./VerificationProcess";
 import { useUserDataStore } from "@/store/user/useUserDataStore";
 import { useKycVerification } from "@/composables/user/useKycVerification";
 
-interface AccountVerificationProps {
-  setVerificationComplete: (complete: boolean) => void;
-}
-
-const AccountVerification: React.FC<AccountVerificationProps> = ({
-  setVerificationComplete,
-}) => {
+const AccountVerification: React.FC = () => {
   const [personalData, setPersonalData] = useState<any>({});
   const [verificationData, setVerificationData] = useState<any>({});
   const { userData } = useUserDataStore();
@@ -45,9 +39,6 @@ const AccountVerification: React.FC<AccountVerificationProps> = ({
 
       // Call the useKycVerification function to send the data
       kycVerification(formData);
-
-      // Mark verification as complete
-      setVerificationComplete(true);
     } catch (error) {
       console.error("Error while preparing KYC request:", error);
     }
