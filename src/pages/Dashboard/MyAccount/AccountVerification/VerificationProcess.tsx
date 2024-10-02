@@ -19,8 +19,42 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
 }) => {
   const validationSchema = Yup.object({
     selectedID: Yup.string().required("ID type is required"),
-    frontFile: Yup.mixed().required("Front side of ID is required"),
-    backFile: Yup.mixed().required("Back side of ID is required"),
+    frontFile: Yup.mixed()
+      .required("Front side of ID is required")
+      .test(
+        "fileType",
+        "Unsupported file format. Only jpg, jpeg, and png are allowed.",
+        (value) => {
+          return value instanceof File
+            ? ["image/jpeg", "image/jpg", "image/png"].includes(value.type)
+            : false;
+        }
+      )
+      .test(
+        "fileSize",
+        "File size is too large. Maximum size allowed is 5MB.",
+        (value) => {
+          return value instanceof File ? value.size <= 5 * 1024 * 1024 : false;
+        }
+      ),
+    backFile: Yup.mixed()
+      .required("Back side of ID is required")
+      .test(
+        "fileType",
+        "Unsupported file format. Only jpg, jpeg, and png are allowed.",
+        (value) => {
+          return value instanceof File
+            ? ["image/jpeg", "image/jpg", "image/png"].includes(value.type)
+            : false;
+        }
+      )
+      .test(
+        "fileSize",
+        "File size is too large. Maximum size allowed is 5MB.",
+        (value) => {
+          return value instanceof File ? value.size <= 5 * 1024 * 1024 : false;
+        }
+      ),
   });
 
   const formik = useFormik<VerificationProcessFormValues>({
@@ -137,7 +171,7 @@ const VerificationProcess: React.FC<VerificationProcessProps> = ({
                 formik.setFieldValue("isInfoCorrect", checked);
               }}
             />
-            All The Information I Have Entered Is Correct.
+            &nbsp;All The Information I Have Entered Is Correct.
           </label>
         </div>
       </div>

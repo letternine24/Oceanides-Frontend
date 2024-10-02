@@ -27,13 +27,17 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onChange }) => {
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
-    phoneNumber: Yup.string().required("Phone number is required"),
+    phoneNumber: Yup.string()
+      .matches(/^01\d-\d{7,8}$/, "Phone number must be in the format 01X-XXXXXXX or 01X-XXXXXXXX")
+      .required("Phone number is required"),
     dob: Yup.date().required("Date of birth is required").nullable(),
     addressLine: Yup.string().required("Address line is required"),
     city: Yup.string().required("City is required"),
     state: Yup.string().required("State is required"),
     nationality: Yup.string().required("Nationality is required"),
-    postalCode: Yup.string().required("Postal code is required"),
+    postalCode: Yup.string()
+      .matches(/^\d{5}$/, "Postal code must be exactly 5 digits")
+      .required("Postal code is required"),
   });
 
   const formik = useFormik<PersonalDetailsFormValues>({
@@ -55,7 +59,6 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onChange }) => {
     },
   });
 
-  // Use useEffect to call onChange whenever values change
   useEffect(() => {
     onChange(formik.values);
   }, [formik.values, onChange]);
@@ -73,128 +76,54 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({ onChange }) => {
         <form>
           <div className="form-row">
             <div className="form-column">
-              <input
-                type="text"
-                name="firstName"
-                value={formik.values.firstName}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="First Name"
-                className="input-field"
-              />
-              {formik.touched.firstName && formik.errors.firstName ? (
-                <p className="error">{formik.errors.firstName}</p>
-              ) : null}
-              <input
-                type="text"
-                name="lastName"
-                value={formik.values.lastName}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Last Name"
-                className="input-field"
-              />
-              {formik.touched.lastName && formik.errors.lastName ? (
-                <p className="error">{formik.errors.lastName}</p>
-              ) : null}
-              <input
-                type="email"
-                name="email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Email"
-                className="input-field"
-              />
-              {formik.touched.email && formik.errors.email ? (
-                <p className="error">{formik.errors.email}</p>
-              ) : null}
-              <input
-                type="tel"
-                name="phoneNumber"
-                value={formik.values.phoneNumber}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Phone Number"
-                className="input-field"
-              />
-              {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                <p className="error">{formik.errors.phoneNumber}</p>
-              ) : null}
-              <input
-                type="date"
-                name="dob"
-                value={formik.values.dob}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Date of Birth"
-                className="input-field"
-              />
-              {formik.touched.dob && formik.errors.dob ? (
-                <p className="error">{formik.errors.dob}</p>
-              ) : null}
+              {["firstName", "lastName", "email", "phoneNumber", "dob"].map(
+                (field, index) => (
+                  <div className="form-field" key={index}>
+                    <input
+                      type={field === "email" ? "email" : field === "dob" ? "date" : "text"}
+                      name={field}
+                      value={formik.values[field as keyof PersonalDetailsFormValues]}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      placeholder={field.replace(/([A-Z])/g, " $1").replace(/^./, str => str.toUpperCase())}
+                      className={`input-field ${formik.touched[field as keyof PersonalDetailsFormValues] &&
+                        formik.errors[field as keyof PersonalDetailsFormValues]
+                        ? "error"
+                        : ""
+                      }`}
+                    />
+                    {formik.touched[field as keyof PersonalDetailsFormValues] &&
+                      formik.errors[field as keyof PersonalDetailsFormValues] ? (
+                      <p className="error">{formik.errors[field as keyof PersonalDetailsFormValues]}</p>
+                    ) : null}
+                  </div>
+                )
+              )}
             </div>
             <div className="form-column">
-              <input
-                type="text"
-                name="addressLine"
-                value={formik.values.addressLine}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Address Line"
-                className="input-field"
-              />
-              {formik.touched.addressLine && formik.errors.addressLine ? (
-                <p className="error">{formik.errors.addressLine}</p>
-              ) : null}
-              <input
-                type="text"
-                name="city"
-                value={formik.values.city}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="City"
-                className="input-field"
-              />
-              {formik.touched.city && formik.errors.city ? (
-                <p className="error">{formik.errors.city}</p>
-              ) : null}
-              <input
-                type="text"
-                name="state"
-                value={formik.values.state}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="State"
-                className="input-field"
-              />
-              {formik.touched.state && formik.errors.state ? (
-                <p className="error">{formik.errors.state}</p>
-              ) : null}
-              <input
-                type="text"
-                name="nationality"
-                value={formik.values.nationality}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Nationality"
-                className="input-field"
-              />
-              {formik.touched.nationality && formik.errors.nationality ? (
-                <p className="error">{formik.errors.nationality}</p>
-              ) : null}
-              <input
-                type="text"
-                name="postalCode"
-                value={formik.values.postalCode}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Postal Code"
-                className="input-field"
-              />
-              {formik.touched.postalCode && formik.errors.postalCode ? (
-                <p className="error">{formik.errors.postalCode}</p>
-              ) : null}
+              {["addressLine", "city", "state", "nationality", "postalCode"].map(
+                (field, index) => (
+                  <div className="form-field" key={index}>
+                    <input
+                      type="text"
+                      name={field}
+                      value={formik.values[field as keyof PersonalDetailsFormValues]}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      placeholder={field.replace(/([A-Z])/g, " $1").replace(/^./, str => str.toUpperCase())}
+                      className={`input-field ${formik.touched[field as keyof PersonalDetailsFormValues] &&
+                        formik.errors[field as keyof PersonalDetailsFormValues]
+                        ? "error"
+                        : ""
+                      }`}
+                    />
+                    {formik.touched[field as keyof PersonalDetailsFormValues] &&
+                      formik.errors[field as keyof PersonalDetailsFormValues] ? (
+                      <p className="error">{formik.errors[field as keyof PersonalDetailsFormValues]}</p>
+                    ) : null}
+                  </div>
+                )
+              )}
             </div>
           </div>
         </form>

@@ -31,13 +31,27 @@
   margin-right: 10px;
 }
 
+.form-field {
+  margin-bottom: 20px; /* Consistent spacing for each field */
+}
+
 .input-field {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.input-field.error {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  min-height: 18px; /* Consistent height for the error message section */
 }
 
 .button-row {

@@ -57,7 +57,9 @@ const Login: React.FC = () => {
       };
 
       await login(loginRequest);
-      authenticate();
+      if (data != null) {
+        authenticate();
+      }
     } catch (e) {
       console.error("Error Logging in", e);
     }

@@ -69,7 +69,7 @@ const AccountVerification: React.FC = () => {
             {loading ? "Submitting..." : "Submit All"}
           </button>
         </div>
-        {error && <p className="error-message">Error: {error}</p>}
+        {/* {error && <p className="error-message">Error: {error}</p>} */}
       </div>
     </>
   );
