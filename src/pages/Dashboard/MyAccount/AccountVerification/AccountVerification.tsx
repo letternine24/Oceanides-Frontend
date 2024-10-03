@@ -9,7 +9,7 @@ const AccountVerification: React.FC = () => {
   const [personalData, setPersonalData] = useState<any>({});
   const [verificationData, setVerificationData] = useState<any>({});
   const { userData } = useUserDataStore();
-  const { kycVerification, loading, error } = useKycVerification();
+  const { kycVerification, loading } = useKycVerification();
 
   const handleSubmit = async () => {
     try {
