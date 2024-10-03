@@ -17,7 +17,6 @@ const Deposit: React.FC = () => {
   const [usdAmount, setUsdAmount] = useState<string>("");
   const [showForm, setShowForm] = useState<boolean>(false);
 
-  // @TODO Payment action and companyid?
   const { paymentPlatforms } = useFetchPaymentPlatforms(1, 2);
   const { currencies } = useFetchCurrencies();
 
@@ -25,9 +24,7 @@ const Deposit: React.FC = () => {
     (currency: ICurrency) => currency.currencyCode === CURRENCY_CODE
   );
 
-  // Fetch conversion rates for buy and sell
-  const buyConversionRate = filterCurrencyMyr?.buyRate || 0; // MYR to USD Buy Rate
-  const sellConversionRate = filterCurrencyMyr?.sellRate || 0; // USD to MYR Sell Rate
+  const sellConversionRate = filterCurrencyMyr?.sellRate || 0;
 
   const handleMethodClick = (method: string) => {
     setSelectedMethod(method);
@@ -54,8 +51,8 @@ const Deposit: React.FC = () => {
     const usdValue = e.target.value;
     setUsdAmount(usdValue);
 
-    if (usdValue && buyConversionRate) {
-      const convertedMyr = (parseFloat(usdValue) * buyConversionRate).toFixed(
+    if (usdValue && sellConversionRate) {
+      const convertedMyr = (parseFloat(usdValue) * sellConversionRate).toFixed(
         2
       );
       setAmount(convertedMyr);
@@ -102,11 +99,7 @@ const Deposit: React.FC = () => {
         </div>
 
         <div>
-          <p>
-            Conversion Rates: <br />
-            MYR to USD (Sell): {sellConversionRate} <br />
-            USD to MYR (Buy): {buyConversionRate}
-          </p>
+          <p>MYR TO USD Rate: {sellConversionRate}</p>
         </div>
 
         <div className="amount-section">
