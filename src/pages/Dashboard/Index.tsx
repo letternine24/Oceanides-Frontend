@@ -6,10 +6,11 @@ import { Outlet } from "react-router-dom";
 import { useUserDataStore } from "@/store/user/useUserDataStore";
 import { useEffect } from "react";
 import { useGetUserInfo } from "@/composables/user/useGetUserInfo";
+import AppLoader from "@/components/Loader/AppLoader";
 
 const Index: React.FC = () => {
   const { userData } = useUserDataStore();
-  const { getUserInfo } = useGetUserInfo();
+  const { getUserInfo, loading } = useGetUserInfo();
   const companyId = 2;
   const getUserInfoRequest = {
     userId: userData?.staffUserId,
@@ -22,8 +23,10 @@ const Index: React.FC = () => {
     };
     getInfo();
   }, []);
+
   return (
     <>
+      {loading && <AppLoader />}
       <Header />
       <Sidebar />
       <CenterWrapper>

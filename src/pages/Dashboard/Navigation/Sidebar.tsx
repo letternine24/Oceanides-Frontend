@@ -1,16 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Sidebar.css";
 import UserProfile from "./modules/UserProfile/UserProfile";
+import "./Sidebar.css";
 
-// Define the type for menu items
 interface MenuItem {
   path: string;
   label: string;
   icon: string;
 }
 
-// Array of menu items with path, label, and icon
 const menuItems: MenuItem[] = [
   {
     path: "/dashboard",
@@ -68,7 +66,7 @@ const Sidebar: React.FC = () => {
           <li key={item.path}>
             <NavLink
               to={item.path}
-              className={({ isActive }) => (isActive ? "active" : "")} // Use the className prop for better readability
+              className={({ isActive }) => (isActive ? "active" : "")}
               end
             >
               <img src={item.icon} alt={item.label} className="menu-icon" />

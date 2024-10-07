@@ -45,7 +45,6 @@
 }
 
 .account-summary {
-  padding: 20px;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -90,7 +89,6 @@
 }
 
 .account-summary-h1 {
-  padding-left: 1em;
   font-size: 30px;
   font-weight: 600;
 }

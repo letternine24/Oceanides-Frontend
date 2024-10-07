@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
+import ScrollToTop from "./utils/helpers/ScrollToTop";
 // Public Pages
 import Home from "@pages/Home/Home";
 import WhoWhyCorsaFutures from "@pages/AboutUs/WhoWhyCorsaFutures";

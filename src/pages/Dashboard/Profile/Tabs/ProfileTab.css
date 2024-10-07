@@ -35,6 +35,7 @@
   margin: 5px 0;
 }
 
+.save-button,
 .edit-button {
   position: absolute;
   bottom: 10px;

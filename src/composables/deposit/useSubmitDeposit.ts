@@ -1,6 +1,5 @@
 import { usePost } from "@composables/usePost";
 import { ApiEndpoints } from "@enum/apiEndpoints";
-import { ISubmitDeposit } from "@interface/deposit/ISubmitDeposit";
 import { IResponse } from "@interface/IResponse";
 
 export const useSubmitDeposit = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 interface PaymentFormProps {
   formHTMLString: string;
-  isSmilePayzDeposit: boolean; 
+  isSmilePayzDeposit?: boolean; 
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ formHTMLString, isSmilePayzDeposit }) => {

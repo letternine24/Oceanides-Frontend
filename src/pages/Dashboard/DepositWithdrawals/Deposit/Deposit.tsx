@@ -351,13 +351,6 @@ if (selectedMethod === CRYPTO) {
             usdAmount={usdAmount}
           />
         )}
-        {showForm && selectedMethod === CRYPTO && cryptoPlatform && (
-          <CryptoPaymentForm
-            walletAddress={cryptoPlatform.walletAddress}
-            amount={amount}
-            usdAmount={usdAmount}
-          />
-        )}
 
         {showForm && selectedMethod === PAYMENT_GATEWAY && selectedPaymentGatewayPlatform && (
           <PaymentForm

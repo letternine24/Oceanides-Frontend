@@ -1,6 +1,5 @@
 .sidebar {
-  width: 15%; /* Sidebar takes up 20% of the viewport width */
-
+  width: 15%;
   background-color: var(--corsa-membersite-light-blue);
   color: var(--corsa-membersite-cream);
   position: fixed;
@@ -43,6 +42,8 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .menu li a:hover {

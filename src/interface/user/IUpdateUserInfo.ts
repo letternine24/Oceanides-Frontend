@@ -1,5 +1,5 @@
 export interface IUpdateUserInfoRequest {
-  userId: number;
+  userId: number | undefined;
   companyId: number;
   fullName: string;
   contactNumber: string;

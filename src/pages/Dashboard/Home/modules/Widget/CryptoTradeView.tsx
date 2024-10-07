@@ -28,7 +28,7 @@ const CryptoTradeView: React.FC = () => {
         if (window.TradingView) {
           new window.TradingView.widget({
             container_id: containerId,
-            width: 980,
+            width: "100%",
             height: 1000,
             symbol: "NASDAQ:AAPL",
             interval: "D",

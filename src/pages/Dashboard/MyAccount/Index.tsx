@@ -6,10 +6,11 @@ import { useUserDataStore } from "@/store/user/useUserDataStore";
 
 const Index: React.FC = () => {
   const { userData } = useUserDataStore();
+  const isUserVerified = userData?.kycStatus == 1;
 
   return (
     <>
-      {userData?.kycStatus != 1 ? <AccountVerification /> : <MyAccount />}
+      {isUserVerified ? <MyAccount /> : <AccountVerification />}
       <Disclaimer />
     </>
   );

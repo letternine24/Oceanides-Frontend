@@ -19,7 +19,7 @@ const ForexTradeView: React.FC = () => {
         "https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js";
       script.async = true;
       script.innerHTML = JSON.stringify({
-        width: 980,
+        width: "100%",
         height: 1000,
         currencies: [
           "EUR",

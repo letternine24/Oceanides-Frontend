@@ -10,10 +10,10 @@ export interface IUserReferral {
 }
 
 interface UserReferralStore {
-  referralData: IUserReferral[] | null; // Change to array
+  referralData: IUserReferral[] | null;
   loading: boolean;
   error: string | null;
-  setReferralData: (data: IUserReferral[] | null) => void; // Change to array
+  setReferralData: (data: IUserReferral[] | null) => void;
   setLoading: (loading: boolean) => void;
   setError: (error: string | null) => void;
 }
