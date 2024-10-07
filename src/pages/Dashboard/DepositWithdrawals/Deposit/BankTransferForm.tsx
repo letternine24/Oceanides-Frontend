@@ -7,6 +7,7 @@ interface BankTransferFormProps {
   accountNumber: string;
   swiftCode: string;
   amount: string;
+  onProofOfPaymentChange: (file: File | null) => void;
 }
 
 const BankTransferForm: React.FC<BankTransferFormProps> = ({
@@ -15,6 +16,7 @@ const BankTransferForm: React.FC<BankTransferFormProps> = ({
   accountNumber,
   swiftCode,
   amount,
+  onProofOfPaymentChange
 }) => {
   const [proofOfPayment, setProofOfPayment] = useState<File | null>(null);
 
@@ -22,7 +24,13 @@ const BankTransferForm: React.FC<BankTransferFormProps> = ({
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (e.target.files && e.target.files.length > 0) {
-      setProofOfPayment(e.target.files[0]);
+      const file = e.target.files[0];
+      setProofOfPayment(file);
+      onProofOfPaymentChange(file);
+    }
+    else {
+      setProofOfPayment(null);
+      onProofOfPaymentChange(null); // Call the callback prop with null if no file
     }
   };
 
@@ -33,6 +41,8 @@ const BankTransferForm: React.FC<BankTransferFormProps> = ({
     console.log("Swift Code:", swiftCode);
     console.log("Amount:", amount);
     console.log("Proof of Payment:", proofOfPayment);
+
+    
   };
 
   return (

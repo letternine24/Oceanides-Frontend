@@ -5,4 +5,6 @@ export interface IDepositRequest {
   amount: number;
   amountUsd: number;
   paymentPlatformId: number;
+  currencyCode: string;
+  receipt: string;
 }

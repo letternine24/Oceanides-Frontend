@@ -7,4 +7,5 @@ export interface IGenerateDepositUrlEssRequest {
   paymentPlatformId: number;
   amount: number;
   amountUsd: number;
+  currencyCode: string;
 }
