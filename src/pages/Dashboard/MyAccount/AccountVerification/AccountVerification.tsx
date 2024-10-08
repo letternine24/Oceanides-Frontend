@@ -13,12 +13,10 @@ const AccountVerification: React.FC = () => {
 
   const handleSubmit = async () => {
     try {
-      // Combine data from both components
       const combinedData = { ...personalData, ...verificationData };
 
-      // Construct FormData
       const formData = new FormData();
-      formData.append("CompanyId", "2"); // Replace with actual value if available
+      formData.append("CompanyId", "2");
       formData.append("UserId", String(userData?.staffUserId || ""));
       formData.append("FirstName", combinedData.firstName);
       formData.append("LastName", combinedData.lastName);
@@ -29,7 +27,6 @@ const AccountVerification: React.FC = () => {
       formData.append("Nationality", combinedData.nationality);
       formData.append("DocumentType", combinedData.selectedID);
 
-      // Append files if available
       if (verificationData.frontFile) {
         formData.append("FrontKyc", verificationData.frontFile);
       }
@@ -37,7 +34,6 @@ const AccountVerification: React.FC = () => {
         formData.append("BackKyc", verificationData.backFile);
       }
 
-      // Call the useKycVerification function to send the data
       kycVerification(formData);
     } catch (error) {
       console.error("Error while preparing KYC request:", error);

@@ -5,10 +5,13 @@ import { ApiEndpoints } from "@enum/apiEndpoints";
 import { IResponse } from "@interface/IResponse";
 
 export const useGenerateDepositUrlSmilePayz = () => {
-  const [postData, state] = usePost<IResponse>(ApiEndpoints.GenerateDepositUrlEss);
+  const [postData, state] = usePost<IResponse>(
+    ApiEndpoints.GenerateDepositUrlSmilePayz
+  );
 
   const generateDepositUrlSmilePayz = async (
-    request: IGenerateDepositUrlSmilePayz): Promise<IPaymentGatewayResponse | undefined> => {
+    request: IGenerateDepositUrlSmilePayz
+  ): Promise<IPaymentGatewayResponse | undefined> => {
     try {
       console.log(request);
       const response = await postData({ body: request });

@@ -17,7 +17,7 @@ export interface IUserInfo {
   verified: boolean;
   active: boolean;
   cTraderLogin: number;
-  kycStatus: string | null;
+  kycStatus: number | null;
   cTraderBalance: number;
   cTraderBonus: number;
   cTraderCashEquity: number;

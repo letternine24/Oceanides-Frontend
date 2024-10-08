@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from "react";
 import "./Deposit.css";
 import BankTransferForm from "./BankTransferForm";
 import CryptoPaymentForm from "./CryptoPaymentForm";
-import PaymentForm from './PaymentForm';
+import PaymentForm from "./PaymentForm";
 import { useFetchPaymentPlatforms } from "@/composables/cache/useFetchPaymentPlatforms";
 import { IPaymentPlatform } from "@/interface/cache/IPaymentPlatform";
 import { useFetchCurrencies } from "@/composables/cache/useFetchCurrencies";
@@ -10,11 +10,10 @@ import { ICurrency } from "@/interface/cache/ICurrency";
 import { useUserDataStore } from "@/store/user/useUserDataStore";
 import { useGenerateDepositUrlEss } from "@/composables/deposit/useGenerateDepositUrlEss";
 import { IGenerateDepositUrlEssRequest } from "@/interface/deposit/IGenerateDepositUrlEss";
-import { useGenerateDepositUrlSmilePayz } from "@/composables/deposit/userGenerateDepositUrlSmilePayz";
+import { useGenerateDepositUrlSmilePayz } from "@/composables/deposit/useGenerateDepositUrlSmilePayz";
 import { IGenerateDepositUrlSmilePayz } from "@/interface/deposit/IGenerateDepositUrlSmilePayz";
 import { useDepositRequest } from "@/composables/deposit/useDepositRequest";
 import { useSubmitDeposit } from "@/composables/deposit/useSubmitDeposit";
-
 
 const Deposit: React.FC = () => {
   const [selectedMethod, setSelectedMethod] = useState<string>("");
@@ -34,8 +33,8 @@ const Deposit: React.FC = () => {
 
   const BANK_TRANSFER = "Bank Transfer";
   const CRYPTO = "Cryptocurrency";
-  const PAYMENT_GATEWAY = "Payment Gateway"
-  const CURRENCY_CODE = userData?.currencyCode
+  const PAYMENT_GATEWAY = "Payment Gateway";
+  const CURRENCY_CODE = userData?.currencyCode;
 
   const filterCurrency = currencies?.find(
     (currency: ICurrency) => currency.currencyCode === CURRENCY_CODE
@@ -59,9 +58,9 @@ const Deposit: React.FC = () => {
     setAmount(currencyVal);
 
     if (currencyVal && sellConversionRate) {
-      const convertedUsd = (parseFloat(currencyVal) / sellConversionRate).toFixed(
-        2
-      );
+      const convertedUsd = (
+        parseFloat(currencyVal) / sellConversionRate
+      ).toFixed(2);
       setUsdAmount(convertedUsd);
     } else {
       setUsdAmount("");
@@ -88,130 +87,150 @@ const Deposit: React.FC = () => {
   };
 
   const bankTransferPlatform = paymentPlatforms?.find(
-    (platform: IPaymentPlatform) => platform.paymentTypeName === BANK_TRANSFER && platform.activeDeposit === true
+    (platform: IPaymentPlatform) =>
+      platform.paymentTypeName === BANK_TRANSFER &&
+      platform.activeDeposit === true
   );
 
   const isConfirmDisabled = !amount || !usdAmount;
 
   const cryptoPlatform = paymentPlatforms?.find(
-    (platform: IPaymentPlatform) => platform.paymentTypeName === CRYPTO && platform.activeDeposit === true
+    (platform: IPaymentPlatform) =>
+      platform.paymentTypeName === CRYPTO && platform.activeDeposit === true
   );
 
   const selectedPaymentGatewayPlatform = paymentPlatforms?.find(
     (platform: IPaymentPlatform) =>
-      platform.paymentTypeName === PAYMENT_GATEWAY && platform.activeDeposit === true
-      && (CURRENCY_CODE === "MYR" && platform.paymentPlatformName === "ESS") //hardcode currency to select payment gateway
-      || (CURRENCY_CODE === "IDR" && platform.paymentPlatformName === "SmilePayz")
+      (platform.paymentTypeName === PAYMENT_GATEWAY &&
+        platform.activeDeposit === true &&
+        CURRENCY_CODE === "MYR" &&
+        platform.paymentPlatformName === "ESS") || //hardcode currency to select payment gateway
+      (CURRENCY_CODE === "IDR" && platform.paymentPlatformName === "SmilePayz")
   );
 
   const handleConfirm = async () => {
     // Bank Transfer
-if (selectedMethod === BANK_TRANSFER) {
-  if (bankTransferPlatform && userData) {
-    // Create FormData to handle the request, including possible file uploads
-    const requestData = new FormData();
-    requestData.append('companyId', '2');
-    requestData.append('userId', userData.staffUserId.toString());
-    requestData.append('username', userData.username);
-    requestData.append('paymentPlatformId', bankTransferPlatform.paymentPlatformId.toString());
-    requestData.append('currencyCode', CURRENCY_CODE!);
-    requestData.append('amount', amount);
-    requestData.append('amountUsd', usdAmount);
+    if (selectedMethod === BANK_TRANSFER) {
+      if (bankTransferPlatform && userData) {
+        // Create FormData to handle the request, including possible file uploads
+        const requestData = new FormData();
+        requestData.append("companyId", "2");
+        requestData.append("userId", userData.staffUserId.toString());
+        requestData.append("username", userData.username);
+        requestData.append(
+          "paymentPlatformId",
+          bankTransferPlatform.paymentPlatformId.toString()
+        );
+        requestData.append("currencyCode", CURRENCY_CODE!);
+        requestData.append("amount", amount);
+        requestData.append("amountUsd", usdAmount);
 
-    // If there is a file for receipt, append it as well (assuming proofOfPayment is the file object)
-    if (proofOfPayment) {
-      requestData.append('receipt', proofOfPayment);
-    }
-
-    console.log("Bank Transfer Request Data:", requestData);
-
-    try {
-      const response = await makeDepositRequest(requestData);
-      console.log("Transaction Response:", response);
-      
-      if (response) {
-        const submitDepositData = new FormData();
-        submitDepositData.append('companyId', '2');
-        submitDepositData.append('userId', userData.staffUserId.toString());
-        submitDepositData.append('currencyCode', CURRENCY_CODE!);
-        submitDepositData.append('paymentPlatformId', bankTransferPlatform.paymentPlatformId.toString());
-        submitDepositData.append('amount', amount);
-        submitDepositData.append('amountUsd', usdAmount);
-        submitDepositData.append('transactionId', response.toString());
-
-        // If there is a file for receipt, append it as well
+        // If there is a file for receipt, append it as well (assuming proofOfPayment is the file object)
         if (proofOfPayment) {
-          submitDepositData.append('receipt', proofOfPayment);
+          requestData.append("receipt", proofOfPayment);
         }
 
-        console.log("Submit Deposit Data:", submitDepositData);
-        
-        await submitDeposit(submitDepositData);
+        console.log("Bank Transfer Request Data:", requestData);
+
+        try {
+          const response = await makeDepositRequest(requestData);
+          console.log("Transaction Response:", response);
+
+          if (response) {
+            const submitDepositData = new FormData();
+            submitDepositData.append("companyId", "2");
+            submitDepositData.append("userId", userData.staffUserId.toString());
+            submitDepositData.append("currencyCode", CURRENCY_CODE!);
+            submitDepositData.append(
+              "paymentPlatformId",
+              bankTransferPlatform.paymentPlatformId.toString()
+            );
+            submitDepositData.append("amount", amount);
+            submitDepositData.append("amountUsd", usdAmount);
+            submitDepositData.append("transactionId", response.toString());
+
+            // If there is a file for receipt, append it as well
+            if (proofOfPayment) {
+              submitDepositData.append("receipt", proofOfPayment);
+            }
+
+            console.log("Submit Deposit Data:", submitDepositData);
+
+            await submitDeposit(submitDepositData);
+          }
+        } catch (err) {
+          console.error("Error generating Transaction ID:", err);
+        }
+      } else {
+        console.error("Bank platform or user data is missing");
       }
-    } catch (err) {
-      console.error("Error generating Transaction ID:", err);
-    }
-  } else {
-    console.error("Bank platform or user data is missing");
-  }
-  setShowForm(true);
-}
-
-// Crypto
-if (selectedMethod === CRYPTO) {
-  if (cryptoPlatform && userData) {
-    // Create FormData to handle the request, including possible file uploads
-    const requestData = new FormData();
-    requestData.append('companyId', '2');
-    requestData.append('userId', userData.staffUserId.toString());
-    requestData.append('username', userData.username);
-    requestData.append('paymentPlatformId', cryptoPlatform.paymentPlatformId.toString());
-    requestData.append('currencyCode', CURRENCY_CODE!);
-    requestData.append('amount', amount);
-    requestData.append('amountUsd', usdAmount);
-
-    // If there is a file for receipt, append it as well (assuming proofOfPayment is the file object)
-    if (proofOfPayment) {
-      requestData.append('receipt', proofOfPayment);
+      setShowForm(true);
     }
 
-    console.log("Crypto Request Data:", requestData);
+    // Crypto
+    if (selectedMethod === CRYPTO) {
+      if (cryptoPlatform && userData) {
+        // Create FormData to handle the request, including possible file uploads
+        const requestData = new FormData();
+        requestData.append("companyId", "2");
+        requestData.append("userId", userData.staffUserId.toString());
+        requestData.append("username", userData.username);
+        requestData.append(
+          "paymentPlatformId",
+          cryptoPlatform.paymentPlatformId.toString()
+        );
+        requestData.append("currencyCode", CURRENCY_CODE!);
+        requestData.append("amount", amount);
+        requestData.append("amountUsd", usdAmount);
 
-    try {
-      const response = await makeDepositRequest(requestData);
-      console.log("Transaction Response:", response);
-
-      if (response) {
-        const submitDepositData = new FormData();
-        submitDepositData.append('companyId', '2');
-        submitDepositData.append('userId', userData.staffUserId.toString());
-        submitDepositData.append('currencyCode', CURRENCY_CODE!);
-        submitDepositData.append('paymentPlatformId', cryptoPlatform.paymentPlatformId.toString());
-        submitDepositData.append('amount', amount);
-        submitDepositData.append('amountUsd', usdAmount);
-        submitDepositData.append('transactionId', response.toString());
-
-        // If there is a file for receipt, append it as well
+        // If there is a file for receipt, append it as well (assuming proofOfPayment is the file object)
         if (proofOfPayment) {
-          submitDepositData.append('receipt', proofOfPayment);
+          requestData.append("receipt", proofOfPayment);
         }
 
-        console.log("Submit Deposit Data:", submitDepositData);
+        console.log("Crypto Request Data:", requestData);
 
-        await submitDeposit(submitDepositData);
+        try {
+          const response = await makeDepositRequest(requestData);
+          console.log("Transaction Response:", response);
+
+          if (response) {
+            const submitDepositData = new FormData();
+            submitDepositData.append("companyId", "2");
+            submitDepositData.append("userId", userData.staffUserId.toString());
+            submitDepositData.append("currencyCode", CURRENCY_CODE!);
+            submitDepositData.append(
+              "paymentPlatformId",
+              cryptoPlatform.paymentPlatformId.toString()
+            );
+            submitDepositData.append("amount", amount);
+            submitDepositData.append("amountUsd", usdAmount);
+            submitDepositData.append("transactionId", response.toString());
+
+            // If there is a file for receipt, append it as well
+            if (proofOfPayment) {
+              submitDepositData.append("receipt", proofOfPayment);
+            }
+
+            console.log("Submit Deposit Data:", submitDepositData);
+
+            await submitDeposit(submitDepositData);
+          }
+        } catch (err) {
+          console.error("Error generating Transaction ID:", err);
+        }
+      } else {
+        console.error("Crypto platform or user data is missing");
       }
-    } catch (err) {
-      console.error("Error generating Transaction ID:", err);
+      setShowForm(true);
     }
-  } else {
-    console.error("Crypto platform or user data is missing");
-  }
-  setShowForm(true);
-}
 
     if (selectedMethod === PAYMENT_GATEWAY) {
-
-      if (selectedPaymentGatewayPlatform && selectedPaymentGatewayPlatform.paymentPlatformName === "ESS" && userData) {
+      if (
+        selectedPaymentGatewayPlatform &&
+        selectedPaymentGatewayPlatform.paymentPlatformName === "ESS" &&
+        userData
+      ) {
         const requestData: IGenerateDepositUrlEssRequest = {
           userId: userData.staffUserId,
           cTraderLogin: userData.cTraderLogin,
@@ -230,15 +249,18 @@ if (selectedMethod === CRYPTO) {
           const response = await generateDepositUrl(requestData);
           console.log(response);
           if (response) {
-            console.log("paymenturl:" + response.paymentUrl)
+            console.log("paymenturl:" + response.paymentUrl);
             setShowForm(true);
             setFormHTMLString(response.paymentUrl);
           }
         } catch (err) {
           console.error("Error generating deposit URL:", err);
         }
-      }
-      else if (selectedPaymentGatewayPlatform && selectedPaymentGatewayPlatform.paymentPlatformName === "SmilePayz" && userData) {
+      } else if (
+        selectedPaymentGatewayPlatform &&
+        selectedPaymentGatewayPlatform.paymentPlatformName === "SmilePayz" &&
+        userData
+      ) {
         const requestData: IGenerateDepositUrlSmilePayz = {
           userId: userData.staffUserId,
           cTraderLogin: userData.cTraderLogin,
@@ -249,7 +271,7 @@ if (selectedMethod === CRYPTO) {
           currencyCode: CURRENCY_CODE!,
           amount: parseFloat(amount),
           amountUsd: parseFloat(usdAmount),
-          paymentMethodCode: "BNI" // TODO: hard code first then fetch from dropdown list
+          paymentMethodCode: "BNI", // TODO: hard code first then fetch from dropdown list
         };
 
         console.log(requestData);
@@ -258,14 +280,13 @@ if (selectedMethod === CRYPTO) {
           const response = await generateDepositUrlSmilePayz(requestData);
           console.log(response);
           if (response) {
-            console.log("paymenturl:" + response.paymentUrl)
+            console.log("paymenturl:" + response.paymentUrl);
             setShowForm(true);
             setFormHTMLString(response.paymentUrl);
           }
         } catch (err) {
           console.error("Error generating deposit URL:", err);
         }
-
       } else {
         console.error("Payment platform or user data is missing");
       }
@@ -295,7 +316,9 @@ if (selectedMethod === CRYPTO) {
         </div>
 
         <div>
-          <p>${CURRENCY_CODE} TO USD Rate: {sellConversionRate}</p>
+          <p>
+            ${CURRENCY_CODE} TO USD Rate: {sellConversionRate}
+          </p>
         </div>
 
         <div className="amount-section">
@@ -352,11 +375,11 @@ if (selectedMethod === CRYPTO) {
           />
         )}
 
-        {showForm && selectedMethod === PAYMENT_GATEWAY && selectedPaymentGatewayPlatform && (
-          <PaymentForm
-            formHTMLString={formHTMLString}
-          />
-        )}
+        {showForm &&
+          selectedMethod === PAYMENT_GATEWAY &&
+          selectedPaymentGatewayPlatform && (
+            <PaymentForm formHTMLString={formHTMLString} />
+          )}
       </div>
 
       <div className="deposit-notes">

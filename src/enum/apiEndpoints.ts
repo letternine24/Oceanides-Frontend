@@ -11,8 +11,17 @@ export enum ApiEndpoints {
 
   // Deposit
   GenerateDepositUrlEss = "/api/Deposit/GenerateDepositUrlEss",
+  GenerateDepositUrlSmilePayz = "/api/Deposit/GenerateDepositUrlSmilePayz",
   DepositRequest = "/api/Deposit/DepositRequest",
   SubmitDeposit = "/api/Deposit/SubmitDeposit",
+  GetSmilePayzDepositMethod = "/api/Deposit/GetSmilePayzDepositMethod",
+
+  // Withdrawal
+  RequestOtpWithdrawal = "api/Withdrawal/RequestOtpWithdrawal",
+  WithdrawalRequest = "/api/Withdrawal/WithdrawalRequest",
+  ApproveWithdrawalRequest = "/api/Withdrawal/ApproveWithdrawalRequest",
+  UpdateWithdrawalStatus = "/api/Withdrawal/UpdateWithdrawalStatus",
+  GetWithdrawalMethod = "/api/Withdrawal/GetWithdrawalMethod",
 
   // Test ???
   SendEmailVerificationTest = "/api/Test/SendEmailVerificationTest",
